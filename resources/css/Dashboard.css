@@ -1,0 +1,30 @@
+.main{
+    height: 100vh;
+}
+.brand{
+    text-align: center;
+}
+.side-bar{
+    background-color: #2b7e7a;
+}
+#side-menu{
+    padding: 0;
+    display: table;
+    margin: 1em 0 auto 0;
+    text-align: right;
+    list-style-type: none;
+}
+#side-menu li{
+    width: 100%;
+}
+#side-menu a{
+    text-decoration: none;
+    color: white;
+}
+.header{
+    background-color: #4dc0ba;
+    color: white;
+}
+.analytic-cards{
+    box-shadow: 0 8px 12px black;
+}

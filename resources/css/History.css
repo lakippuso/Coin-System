@@ -1,0 +1,180 @@
+* {
+	margin: 0;
+	padding: 0;
+	outline: none;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+body {
+	height: 100vh;
+	width: 100%;
+	background: linear-gradient(to right, #33ccff 0%, #ff99cc 100%);
+}
+ 
+/* sidebar */
+.sidebar {
+    position: fixed;
+    background: linear-gradient(to right,  #f5f7fa 0%, #c3cfe2 100%); 
+    width: 200px;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.sidebar .profile img {
+    width: 150px;
+    z-index: 2;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 8px rgba(49, 46, 46, 0.4);
+}
+
+.sidebar .name {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 80px;
+}
+
+.sidebar .side_profile, .side_dashboard, .side_logout {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.sidebar .side_profile:hover, .side_dashboard:hover, .side_logout:hover, .side_report:hover {
+    background: lightgray;
+}
+.sidebar .side_profile button{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    background: none;
+    border: none;
+    text-align: left;
+    font-weight: 700;
+    cursor: pointer;
+
+}
+.sidebar .side_profile a{
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+}
+.sidebar .side_dashboard button{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    background: none;
+    border: none;
+    text-align: left;
+    font-weight: 700;
+    cursor: pointer;
+}
+.sidebar .side_dashboard a{
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+}
+.sidebar .side_report {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin-top: 30px;
+    padding: 10px 20px;
+
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.fas {
+    float: right;
+    padding: 3px;
+}
+
+.sidebar .side_report .dropdown_report {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    background: none;
+    border: none;
+    text-align: left;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.sidebar .dropdown .dropdown_choices {
+    display: none;
+    padding: 10px;
+    background: #fff;
+    width: 100%;
+    height: 100px;
+}
+
+.sidebar .dropdown .dropdown_choices button{
+    width: 100%;
+    height: 30px;
+    margin: 5px 0;
+    padding-left: 5px;
+    background: none;
+    border: none;
+    text-align: left;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.sidebar .dropdown .dropdown_choices button:hover {
+    background: lightgray;
+}
+
+.active {
+    background-color: #c3cfe2;
+    color: white;
+  }
+
+.sidebar .side_logout button {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    background: none;
+    border: none;
+    text-align: left;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* Header */
+.header {
+    position: absolute;
+    margin-top: 10px;
+    left: 15%;
+    padding: 30px;
+    width: 75em;
+    height: 250px;
+    background: grey;
+    border-radius: 30px;
+    color: #fff;
+}
+
+.hd_dashboard .page_name{
+    padding-top: 50px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.table-responsive-md {
+    background: #fff;
+    position: absolute;
+    width: 70em;
+    float: right;
+    top: 19em;
+    left: 16em;
+    box-shadow: 0 0 8px rgba(49, 46, 46, 0.4);
+
+}

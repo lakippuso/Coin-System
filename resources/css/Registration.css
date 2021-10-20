@@ -1,0 +1,29 @@
+*{
+    font-family:'Courier New', Courier, monospace;
+    font-size: 20px;
+}
+h1, h6{
+    text-align: center;
+}
+.registration-body{ 
+    background-color: aqua;
+    padding: 9em 9em;
+}
+.registration-row{
+    background-color: #3AAFA9;
+}
+
+.login-card{
+    box-shadow: 0 8px 12px black;
+}
+input{
+    width: 100%;
+    margin-bottom: 2px;
+    border-radius: 10px;
+}
+.row{
+    margin-bottom: 2px;
+}
+.error{
+    color: red;
+}
