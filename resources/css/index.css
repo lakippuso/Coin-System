@@ -32,40 +32,34 @@ body{
     cursor: pointer;
 }
 
-.loginkulay:hover {
-
+.modal_bg {
+    z-index: 1;
+	position:fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgba(0,0,0,0.7);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0s, opacity 0.5s;
 }
 
-
+.bg-active {
+	visibility: visible;
+	opacity: 1;
+}
 
 .login_form{
-    z-index: 1;
 	position: fixed;
-	top: -150%;
-	left: 50%;
-	opacity: 0;
-	transform: translate(-50%, -50%) scale(1.25);
-	transition: top 0ms ease-in-out 200ms, 
-				opacity 200ms ease-in-out 0ms, 
-				transform 200ms ease-in-out 0ms;
-
-
-}
-
-.login_form.active {
-	top: 50%;
-	opacity: 1;
-	transform: translate(-50%, -50%) scale(1);
-	transition: top 0ms ease-in-out 0ms, 
-				opacity 200ms ease-in-out 0ms, 
-				transform 200ms ease-in-out 0ms;
-}
-
-.login_form {
-	background: linear-gradient(to right,  #cfd9df 0%, #e2ebf0 100%);
+    background: linear-gradient(to right,  #cfd9df 0%, #e2ebf0 100%);
 	width: 410px;
 	padding: 30px;
 	box-shadow: 0 0 8px rgba(0,0,0,0.4);
+
 }
 
 .login_form .close_btn {
@@ -134,7 +128,6 @@ form .submit .design {
 	left: -100%;
 	z-index: -1;
 	background: linear-gradient(to right, #33ccff 0%, #ff99cc 100%);
-	transition: all 0.4s;
 }
 form .submit:hover .design {
 	left: 0;

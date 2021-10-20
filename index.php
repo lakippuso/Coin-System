@@ -28,30 +28,32 @@
             <button type="button" class="loginkulay" id="open_form">LOGIN</button>
         </div>
         
-        <div class="login_form">
-			<label class="close_btn">&times;</label>
-			<div class="title">Login</div>
-			<form method="POST" action="includes/login-include.php">
-				<div class="inputs">
-					<label>Username</label>
-					<input type="text" name="username">
-                    <span id="username_error" class="my-3"><?php if(isset($_GET['username_error'])){ echo $_GET['username_error'];}?></span>
-				</div>
-				<div class="inputs">
-					<label>Password</label>
-					<input type="password" name="password">
-                    <span id="password_error"><?php if(isset($_GET['password_error'])){ echo $_GET['password_error'];}?></span>
-				</div>
-				<div class="forgot">
-					<label><a href="#">Forgot Password?</a></label>
-				</div >
-				<div class="submit">
-					<div class="design"></div>
-					<input type="submit" name="submit" value="LOGIN">
-				</div>
-				<div class="register" style="text-align: center;">New User?&nbsp;<a href="registration.php">Register Here!</a></div>
-			</form>
-		</div>
+        <div class="modal_bg">
+            <div class="login_form">
+                <label class="close_btn">&times;</label>
+                <div class="title">Login</div>
+                <form method="POST" action="includes/login-include.php">
+                    <div class="inputs">
+                        <label>Username</label>
+                        <input type="text" name="username">
+                        <span id="username_error" class="my-3"><?php if(isset($_GET['username_error'])){ echo $_GET['username_error'];}?></span>
+                    </div>
+                    <div class="inputs">
+                        <label>Password</label>
+                        <input type="password" name="password">
+                        <span id="password_error"><?php if(isset($_GET['password_error'])){ echo $_GET['password_error'];}?></span>
+                    </div>
+                    <div class="forgot">
+                        <label><a href="#">Forgot Password?</a></label>
+                    </div >
+                    <div class="submit">
+                        <div class="design"></div>
+                        <input type="submit" name="submit" value="LOGIN">
+                    </div>
+                    <div class="register" style="text-align: center;">New User?&nbsp;<a href="registration.php">Register Here!</a></div>
+                </form>
+            </div>
+        </div>
 
 
         <section class="section1" id="gallery"> 
@@ -87,7 +89,6 @@
                             necessitatibus, rerum maiores nam! Beatae necessitatibus corporis praesentium labore dolorum quod ut 
                             esse velit ipsam, alias, tempora iusto blanditiis.
                         </p>
-                        <a href="#" class="btn-card">Login</a>
                         </div>
                     </div>
                 </div>

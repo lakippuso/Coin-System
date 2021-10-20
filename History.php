@@ -28,101 +28,99 @@
                 </div>
                 <!-- Content -->
                 <div class="content">
-                    <div class="dashboard">
-                        <div class="table-responsive-sm">
-                            <table class="table table-striped table-hover table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Machine ID</th>
-                                        <th scope="col">Daily Income</th>
-                                        <th scope="col">Monthly Income</th>
-                                        <th scope="col">File</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="col">Machine_001</th>
-                                        <th scope="col">90,000</th>
-                                        <th scope="col">90,000</th>
-                                    </tr>
-                                    <tr>
-                                        <th scope="col">Machine_001</th>
-                                        <th scope="col">90,000</th>
-                                        <th scope="col">90,000</th>
-                                    </tr>
-                                    <tr>
-                                        <th scope="col">Machine_001</th>
-                                        <th scope="col">90,000</th>
-                                        <th scope="col">90,000</th>
-                                    </tr>
-                                    <tr>
-                                        <th scope="col">Machine_001</th>
-                                        <th scope="col">90,000</th>
-                                        <th scope="col">90,000</th>
-                                    </tr>
-                                    <tr>
-                                        <th scope="col">Machine_001</th>
-                                        <th scope="col">90,000</th>
-                                        <th scope="col">90,000</th>
-                                    </tr>
-                                    <tr>
-                                        <th scope="col">Machine_001</th>
-                                        <th scope="col">90,000</th>
-                                        <th scope="col">90,000</th>
-                                    </tr>
-                                    <tr>
-                                        <th scope="col">Machine_001</th>
-                                        <th scope="col">90,000</th>
-                                        <th scope="col">90,000</th>
-                                    </tr>
-                                    <tr>
-                                        <th scope="col">Machine_001</th>
-                                        <th scope="col">90,000</th>
-                                        <th scope="col">90,000</th>
-                                    </tr>
-                                    <tr>
-                                        <th scope="col">Machine_001</th>
-                                        <th scope="col">90,000</th>
-                                        <th scope="col">90,000</th>
-                                    </tr>
-                                    <tr>
-                                        <th scope="col">Machine_001</th>
-                                        <th scope="col">90,000</th>
-                                        <th scope="col">90,000</th>
-                                    </tr>
-                                    <tr>
-                                        <th scope="col">Machine_001</th>
-                                        <th scope="col">90,000</th>
-                                        <th scope="col">90,000</th>
-                                    </tr>
-                                    <tr>
-                                        <th scope="col">Machine_001</th>
-                                        <th scope="col">90,000</th>
-                                        <th scope="col">90,000</th>
-                                    </tr>
-                                    <tr>
-                                        <th scope="col">Machine_001</th>
-                                        <th scope="col">90,000</th>
-                                        <th scope="col">90,000</th>
-                                    </tr>
-                                    <tr>
-                                        <th scope="col">Machine_001</th>
-                                        <th scope="col">90,000</th>
-                                        <th scope="col">90,000</th>
-                                    </tr>
-                                    <tr>
-                                        <th scope="col">Machine_001</th>
-                                        <th scope="col">90,000</th>
-                                        <th scope="col">90,000</th>
-                                    </tr>
-                                    <tr>
-                                        <th scope="col">Machine_001</th>
-                                        <th scope="col">90,000</th>
-                                        <th scope="col">90,000</th>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                    <div class="history_table">
+                        <table class="table table-striped table-hover table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Start Date</th>
+                                    <th scope="col">End Date</th>
+                                    <th scope="col">Date Generated</th>
+                                    <th scope="col">File</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="col">Machine_001</th>
+                                    <th scope="col">90,000</th>
+                                    <th scope="col">90,000</th>
+                                </tr>
+                                <tr>
+                                    <th scope="col">Machine_001</th>
+                                    <th scope="col">90,000</th>
+                                    <th scope="col">90,000</th>
+                                </tr>
+                                <tr>
+                                    <th scope="col">Machine_001</th>
+                                    <th scope="col">90,000</th>
+                                    <th scope="col">90,000</th>
+                                </tr>
+                                <tr>
+                                    <th scope="col">Machine_001</th>
+                                    <th scope="col">90,000</th>
+                                    <th scope="col">90,000</th>
+                                </tr>
+                                <tr>
+                                    <th scope="col">Machine_001</th>
+                                    <th scope="col">90,000</th>
+                                    <th scope="col">90,000</th>
+                                </tr>
+                                <tr>
+                                    <th scope="col">Machine_001</th>
+                                    <th scope="col">90,000</th>
+                                    <th scope="col">90,000</th>
+                                </tr>
+                                <tr>
+                                    <th scope="col">Machine_001</th>
+                                    <th scope="col">90,000</th>
+                                    <th scope="col">90,000</th>
+                                </tr>
+                                <tr>
+                                    <th scope="col">Machine_001</th>
+                                    <th scope="col">90,000</th>
+                                    <th scope="col">90,000</th>
+                                </tr>
+                                <tr>
+                                    <th scope="col">Machine_001</th>
+                                    <th scope="col">90,000</th>
+                                    <th scope="col">90,000</th>
+                                </tr>
+                                <tr>
+                                    <th scope="col">Machine_001</th>
+                                    <th scope="col">90,000</th>
+                                    <th scope="col">90,000</th>
+                                </tr>
+                                <tr>
+                                    <th scope="col">Machine_001</th>
+                                    <th scope="col">90,000</th>
+                                    <th scope="col">90,000</th>
+                                </tr>
+                                <tr>
+                                    <th scope="col">Machine_001</th>
+                                    <th scope="col">90,000</th>
+                                    <th scope="col">90,000</th>
+                                </tr>
+                                <tr>
+                                    <th scope="col">Machine_001</th>
+                                    <th scope="col">90,000</th>
+                                    <th scope="col">90,000</th>
+                                </tr>
+                                <tr>
+                                    <th scope="col">Machine_001</th>
+                                    <th scope="col">90,000</th>
+                                    <th scope="col">90,000</th>
+                                </tr>
+                                <tr>
+                                    <th scope="col">Machine_001</th>
+                                    <th scope="col">90,000</th>
+                                    <th scope="col">90,000</th>
+                                </tr>
+                                <tr>
+                                    <th scope="col">Machine_001</th>
+                                    <th scope="col">90,000</th>
+                                    <th scope="col">90,000</th>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>

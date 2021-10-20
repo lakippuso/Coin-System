@@ -1,7 +1,12 @@
-document.querySelector("#open_form").addEventListener("click", function(){
-    document.querySelector(".login_form").classList.add("active");
+var modalBtn = document.querySelector('#open_form');
+var modalBg = document.querySelector('.modal_bg');
+var modalClose = document.querySelector('.close_btn');
+
+
+modalBtn.addEventListener('click', function () {
+    modalBg.classList.add('bg-active');
 });
 
-document.querySelector(".login_form .close_btn").addEventListener("click", function(){
-    document.querySelector(".login_form").classList.remove("active");
+modalClose.addEventListener('click', function () {
+    modalBg.classList.remove('bg-active');
 });

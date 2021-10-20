@@ -34,13 +34,13 @@
                             <div class="calendar d-flex justify-content-evenly" style="width: 600px;">
                                 <div><input type="datetime-local" name="start_date" style="border-radius: 5px; padding: 3px;"></div>
                                 <div><input type="datetime-local"  name="start_date" style="border-radius: 5px; padding: 3px;"></div>
-                                <div><button id="start" style="padding: 4px; width: 40px; border: none; border-radius: 4px; font-size: 18px;"><i class="fas fa-search"></i></button></div>
+                                <div><button id="start" style="margin-top: 3px; padding: 4px; width: 40px; border: none; background: none; border-radius: 4px; font-size: 18px;"><img src="resources/images/search.png" style="width: 30px;"/></i></button></div>
                             </div>
                             <input type="button" name="generate" value="Generate Report" style="color: #FEFFFF; width: 200px; background: #2B7A78; border: none; border-radius: 5px;">
                         </div>
                     </div>
 
-                    <div class="table-responsive-sm overflow-scroll" id="scroll">
+                    <div class="overflow-scroll" id="scroll">
                         <table class="table table-striped table-hover table-bordered">
                             <thead>
                                 <tr>

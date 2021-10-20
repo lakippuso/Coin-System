@@ -56,6 +56,48 @@ body{
     box-shadow: 0 8px 12px black;
 }
 
-#scroll {
-    height: 80vh;
+/* History USER */
+.history_table {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 25px;
 }
+
+/* Daily Report USER */
+#scroll {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 76vh;
+}
+
+/* Admin Dashboard */
+
+.user_info{
+    width: 115vh;
+}
+.user_info #fix_table {
+    height: 57vh;
+}
+
+.user_info label, input {
+    margin: 5px;
+}
+
+.user_list {
+    margin: 5px;
+}
+
+.add_user {
+    margin-top: 8px;
+}
+.add_user button {
+    width: 150px;
+}
+#user_manipulate {
+    margin-top: 15px;
+    width: 15em;
+    height: 54.5vh;
+}
+
+

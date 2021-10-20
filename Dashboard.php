@@ -60,6 +60,108 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Add Users -->
+                    <div class="context m-3 d-flex justify-content-around">
+                        <div class="user_info">
+                            <div class="d-flex justify-content-between">
+                                <label>Monthly Income Chart</label>
+                                <div>
+                                    <input type="text" name="search" placeholder="Search">
+                                    <button><img src="resources/images/search.png" style="width: 20px;"/></button>
+                                </div>
+                            </div>
+                            <canvas id="myChart" st yle="width:100%;width:550px"></canvas>
+                            <script>
+                                var xValues = ['Jan','Feb','Mar','Apr','May','Jun','July','Aug','Sept','Oct','Nov','Dec'];
+                                var yValues = [15000,13000,20000,35000,23000];
+
+                                new Chart("myChart", {
+                                type: "line",
+                                data: {
+                                    labels: xValues,
+                                    datasets: [{
+                                    fill: false,
+                                    lineTension: 0,
+                                    backgroundColor: "rgba(0,0,255,1.0)",
+                                    borderColor: "rgba(0,0,255,0.1)",
+                                    data: yValues
+                                    }]
+                                },
+                                options: {
+                                    legend: {display: false},
+                                    scales: {
+                                    yAxes: [{ticks: {beginAtZero: true, stepSize: 10000, max: 70000}}],
+                                    }
+                                }
+                                });
+                            </script>
+                        </div>
+
+                        <div class="user_list">
+                            <div class="add_user"><center><button>Add Machine</button></center></div>
+                            <div class="overflow-scroll" id="user_manipulate">
+                                <ul class="list-group">
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        jovita025
+                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white;">Edit</button></span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        gabatino015
+                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white;">Edit</button></span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        moy024
+                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white;">Edit</button></span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        ambosxz02
+                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white;">Edit</button></span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        joelski06
+                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white;">Edit</button></span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        joelski06
+                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white;">Edit</button></span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        joelski06
+                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white;">Edit</button></span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        joelski06
+                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white;">Edit</button></span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        joelski06
+                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white;">Edit</button></span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        joelski06
+                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white;">Edit</button></span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        joelski06
+                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white;">Edit</button></span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        joelski06
+                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white;">Edit</button></span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        joelski06
+                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white;">Edit</button></span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        joelski06
+                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white;">Edit</button></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        <div>
+                    </div>
                 </div>
             </div>
         </div>
