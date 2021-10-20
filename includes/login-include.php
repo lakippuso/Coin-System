@@ -20,12 +20,6 @@ if(isset($_POST['submit'])){
     else{
         $sql = "SELECT * FROM users WHERE username=".$username.";";
         $result = mysqli_query($con, $sql);
-        echo $result;
-        if($result){
-            echo 'IF RESULT' ;
-        }
-        else{
-            echo 'ELSE RESULT';
-        }
+        echo " ".mysqli_num_row($result);
     }
 }

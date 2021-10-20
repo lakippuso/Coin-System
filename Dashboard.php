@@ -13,33 +13,9 @@
     <body>
         <div class="main mx-auto row g-0">
             <div class="side-bar col-lg-2 d-flex flex-column">
-                <a class="nav-link mx-auto" href="#">
-                    <img src="resources/images/Logo1.png" alt="LOGO" width="140">
-                </a>
-                <hr class="m-1">
-                <ul id="side-menu">
-                    <li class="nav-item bg-info">
-                        <a class="nav-link" href="# D">Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="# R">Reports</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="# S">Reports</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="# D">Dashboard</a>
-                    </li>
-                </ul>
-                <div class="profile row align-items-end">
-                    <div class="col-2">
-                        PIC
-                    </div>
-                    <div class="col-10">
-                        <span class="row">Matthew Daniel Gabatino</span>
-                        <span class="row">Admin</span>
-                    </div>
-                </div>
+                <?php 
+                    include 'includes/side-bar.php';
+                ?>
             </div>
             <div class="dashboard col-lg-10">
                 <div class="header row m-0 p-2 d-flex justify-content-between">
