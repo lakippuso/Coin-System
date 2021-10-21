@@ -33,12 +33,12 @@
                     <div class="inputs">
                         <label>Username</label>
                         <input type="text" name="username">
-                        <span name="username_error"><?php if(isset($_GET['username_error'])){ echo $_GET['username_error'];}?></span>
+                        <span id="username_error"><?php if(isset($_GET['username_error'])){ echo $_GET['username_error'];}?></span>
                     </div>
                     <div class="inputs">
                         <label>Password</label>
                         <input type="password" name="password">
-                        <span name="password_error"><?php if(isset($_GET['password_error'])){ echo $_GET['password_error'];}?></span>
+                        <span id="password_error"><?php if(isset($_GET['password_error'])){ echo $_GET['password_error'];}?></span>
                     </div>
                     <div class="forgot">
                         <label><a href="#">Forgot Password?</a></label>

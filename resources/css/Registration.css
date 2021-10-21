@@ -37,6 +37,5 @@ input{
     margin-bottom: 1em;
 }
 .error{
-    display: none;
     color: red;
 }
