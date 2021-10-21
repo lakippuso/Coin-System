@@ -1,29 +1,42 @@
 *{
-    font-family:'Courier New', Courier, monospace;
-    font-size: 20px;
+    font-family: 'Karma', serif;
+    font-size: 1em;
+    color: white;
+}
+
+body{
+    background-color: chartreuse;
+}
+.navbar a, .navbar button{
+    color: white;
+}
+.navbar{
+    background-color: #4dc0ba;
 }
 h1, h6{
     text-align: center;
 }
-.registration-body{ 
-    background-color: aqua;
-    padding: 9em 9em;
+.registration-body{
+    background-color: #2b7e7a;
 }
 .registration-row{
-    background-color: #3AAFA9;
+    padding: 7em 7em;
 }
-
 .login-card{
     box-shadow: 0 8px 12px black;
+    padding: 2em 2em;
 }
 input{
     width: 100%;
-    margin-bottom: 2px;
+    color: black;
+    padding: 1em;
+    border: 1px solid black;
     border-radius: 10px;
 }
 .row{
-    margin-bottom: 2px;
+    margin-bottom: 1em;
 }
 .error{
+    display: none;
     color: red;
 }
