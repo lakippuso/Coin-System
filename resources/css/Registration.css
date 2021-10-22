@@ -36,6 +36,7 @@ input{
 .row{
     margin-bottom: 1em;
 }
-.error{
-    color: red;
+.error, #firstname_error, #lastname_error{
+    margin-left: 1em;
+    color: rgb(255, 128, 149);
 }

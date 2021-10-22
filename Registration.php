@@ -77,7 +77,7 @@
                     </div>
                     <span class="error" id="password_error"  name="password_error"><?php if(isset($_GET['password_error'])) echo $_GET['password_error'];?></span>
                 </div>
-                <div class="row justify-content-center">
+                <div class="row">
                     <div class="col">
                         <input type="password" name="cpassword" id="cpassword" placeholder="Confirm Password"> 
                     </div>
