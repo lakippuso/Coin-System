@@ -75,7 +75,7 @@
                 mysqli_stmt_store_result($stmt);
                 $result = mysqli_stmt_num_rows($stmt);
                 if($result > 0){
-                    header("Location: ../registration.php?SQLERROR2");
+                    header("Location: ../registration.php?username_error=Username is already taken!&".$message);
                     exit();
                 }
                 else{
