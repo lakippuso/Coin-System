@@ -1,23 +1,3 @@
-<?php 
-// include 'config.php';
-
-// if(isset($_POST['register'])){
-//     $firstname = $_POST['Fname'];
-//     $lastname = $_POST['Lname'];
-//     $username = $_POST['username'];
-//     $password = $_POST['password'];
-//     $email = $_POST['email'];
-    
-//     $sql = 'INSERT into users( username, password, firstname, lastname, email) VALUES ("'.$username.'", "'.$password.'", "'.$firstname.'", "'.$lastname.'", "'.$email.'");';
-//     $result = mysqli_query($con, $sql);
-//     echo '<script>alert("Welcome '.$firstname.'")</script>';
-//     header("Location: ../Coin System/Dashboard.php");
-//     exit();
-// }
-
-
-?>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -85,7 +65,7 @@
                 </div>
                 <div class="row">
                     <div class="button-submit col">
-                        <input type="submit" value="Register">
+                        <input type="submit" value="Register" name="submit-button">
                     </div>
                 </div>
             </form>

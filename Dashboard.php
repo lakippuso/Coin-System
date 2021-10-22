@@ -9,37 +9,11 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="//fonts.googleapis.com/css2?family=Arvo" rel="stylesheet">
     </head>
-
     <body>
         <div class="main mx-auto row g-0">
             <!-- Side Bar -->
             <div class="side-bar col-lg-2 g-0 d-flex flex-column">
-                <a class="logo-link row g-0 nav-link " href="#">
-                    <img src="LogoCC.png" alt="LOGO" id="logo">
-                </a>
-                <hr class="m-1">
-                <!-- Navigation Buttons -->
-                <ul id="side-menu">
-                    <li class="nav-item">
-                        <a class="link nav-link active" href="Dashboard.php">Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="link nav-link" href="dailyReport.php">Daily Reports</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="link nav-link" href="History.php">History</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="link nav-link" href="Homepage.php">Logout</a>
-                    </li>
-                </ul>
-                <!-- Profile Section -->
-                <div class="profile row align-items-end">
-                    <a href="#" id="profile-link">
-                        <img src="resources/images/profile.png" alt="" width="30" height="32" class="rounded-circle">
-                        <strong>Matthew Daniel Gabatino</strong>
-                    </a>
-                </div>
+                <?php include 'includes/side-bar.php' ?>
             </div>
             <!-- Content -->
             <div class="dashboard col-lg-10">
