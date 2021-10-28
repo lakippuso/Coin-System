@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="resources/css/Registration.css">
+        <link rel="stylesheet" href="../resources/css/Registration.css">
         <!-- FONT -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +22,7 @@
     </nav>
     <div class="registration-body container-fluid">
         <div class="registration-row mx-center row">
-            <form method="POST" action="includes/registration-include.php" class="login-card col-sm-12 col-md-12 col-lg-4 offset-lg-1" id="form">
+            <form method="POST" action="../includes/registration-include.php" class="login-card col-sm-12 col-md-12 col-lg-4 offset-lg-1" id="form">
                 <div class="row">
                     <h1>Sign Up!</h1>
                 </div>
