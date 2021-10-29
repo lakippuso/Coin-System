@@ -30,7 +30,7 @@ body{
 #side-menu li{
     width: 100%;
 }
-.nav-item:hover, .link:active{
+.nav-item:hover{
     background-color: white;
     color: black;
 }

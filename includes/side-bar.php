@@ -5,7 +5,7 @@
 <!-- Navigation Buttons -->
 <ul id="side-menu">
     <li class="nav-item">
-        <a class="link nav-link active" href="dashboard.php">Dashboard</a>
+        <a class="link nav-link" href="dashboard.php">Dashboard</a>
     </li>
     <li class="nav-item">
         <a class="link nav-link" href="dailyreport.php">Daily Reports</a>
