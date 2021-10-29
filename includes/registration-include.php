@@ -89,7 +89,7 @@
                         $hashed_pass = password_hash($password, PASSWORD_DEFAULT);
                         mysqli_stmt_bind_param($stmt, "sssss", $firstname, $lastname, $email, $username, $hashed_pass);
                         mysqli_stmt_execute($stmt);
-                        header("Location: ../homepage.php?signup=success");
+                        header("Location: ../index.php?signup=success");
                         exit();
                     }
                 }

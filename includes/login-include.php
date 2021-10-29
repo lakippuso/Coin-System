@@ -13,14 +13,14 @@ if(isset($_POST['submit'])){
         if(empty($password)){
             $message = $message."password_error=Field is Required";
         }
-        header("Location: ../homepage.php?".$message);
+        header("Location: ../index.php?".$message);
         exit();
     }
     else{
         $sql = "SELECT * FROM users WHERE username=? OR email=?;";
         $stmt = mysqli_stmt_init($con);
         if(!mysqli_stmt_prepare($stmt, $sql)){
-            header("Location: ../homepage.php?SQL_ERROR");
+            header("Location: ../index.php?SQL_ERROR");
             exit();
         }
         else{
@@ -30,7 +30,7 @@ if(isset($_POST['submit'])){
             if($row = mysqli_fetch_assoc($result)){
                 $check_pass = password_verify($password, $row['password']);
                 if($check_pass == false){
-                    header("Location: ../homepage.php?password_error=Wrong Password!1");
+                    header("Location: ../index.php?password_error=Wrong Password!1");
                     exit();
                 }
                 else if($check_pass == true){
@@ -43,12 +43,12 @@ if(isset($_POST['submit'])){
                     exit();
                 }
                 else{
-                    header("Location: ../homepage.php?password_error=Wrong Password!2");
+                    header("Location: ../index.php?password_error=Wrong Password!2");
                     exit();
                 }
             }
             else{
-                header("Location: ../homepage.php?username_error=User does not exist!");
+                header("Location: ../index.php?username_error=User does not exist!");
                 exit();
             }
         }

@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="Homepage.css">
+        <link rel="stylesheet" href="homepage.css">
         <title>Home Page</title>
     </head>
     <body>

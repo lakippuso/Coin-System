@@ -3,5 +3,5 @@
     session_unset();
     session_destroy();
 
-    header("Location: ../homepage.php?logout");
+    header("Location: ../index.php?logout");
     exit();

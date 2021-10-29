@@ -5,13 +5,13 @@
 <!-- Navigation Buttons -->
 <ul id="side-menu">
     <li class="nav-item">
-        <a class="link nav-link active" href="Dashboard.php">Dashboard</a>
+        <a class="link nav-link active" href="dashboard.php">Dashboard</a>
     </li>
     <li class="nav-item">
-        <a class="link nav-link" href="DailyReport.php">Daily Reports</a>
+        <a class="link nav-link" href="dailyreport.php">Daily Reports</a>
     </li>
     <li class="nav-item">
-        <a class="link nav-link" href="History.php">History</a>
+        <a class="link nav-link" href="history.php">History</a>
     </li>
     <li class="nav-item">
         <a class="link nav-link" href="../includes/logout.php">Logout</a>
@@ -28,7 +28,7 @@
                     echo $_SESSION['session_firstname'];
                 }
                 else{
-                    header('Location: ../homepage.php?notloggedin');
+                    header('Location: ../index.php?notloggedin');
                 }
             ?>
         </strong>
