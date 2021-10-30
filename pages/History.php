@@ -28,14 +28,14 @@
                     <div class="col-1">
                         <span class="row">
                             <?php 
-                                date_default_timezone_set("Asia/Singapore");
-                                echo date("Y/m/d");
+                                printDate()
                             ?>
                         </span>
                         <span class="row">
                             <?php 
-                                echo date("h:i a");
-                            ?></span>
+                                printTime()
+                            ?>
+                        </span>
                     </div>
                 </div>
                 <!-- Content -->

@@ -1,5 +1,11 @@
 <?php
+// REMOTE
+// $host = "remotemysql.com";
+// $db_user = "yZpxzSMHd2";
+// $db_password = "6t2f7VjeNu";
+// $db_name = "yZpxzSMHd2";
 
+// LOCAL
 $host = "localhost";
 $db_user = "root";
 $db_password = "";
