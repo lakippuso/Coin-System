@@ -1,6 +1,6 @@
-<?
+<?php
     session_start();
-    require 'function.php';
+    include 'function.php';
 ?>
 <!DOCTYPE html>
 <html>

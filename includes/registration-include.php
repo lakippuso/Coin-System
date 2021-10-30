@@ -58,42 +58,40 @@
         }
 
         // ADVANCE FILTER
+        $sql =  "SELECT username FROM users WHERE username=?";
+        $stmt = mysqli_stmt_init($con);
+        if(!mysqli_stmt_prepare($stmt, $sql)){
+            $message = $message."SQLERROR1&";
+            $valid++;
+        }
+        else{
+            mysqli_stmt_bind_param($stmt, "s", $username);
+            mysqli_stmt_execute($stmt);
+            mysqli_stmt_store_result($stmt);
+            $result = mysqli_stmt_num_rows($stmt);
+            if($result > 0){
+                $message = $message."username_error=Username is already taken!";
+                $valid++;
+            }
+            else{
+                $sql =  "INSERT INTO users (first_name, last_name, email, username, password) VALUES (?, ?, ?, ?, ?)";
+                $stmt = mysqli_stmt_init($con);
+                if(!mysqli_stmt_prepare($stmt, $sql)){ 
+                    $message = $message."SQLERROR3&";
+                    $valid++;
+                }
+                else{
+                    $hashed_pass = password_hash($password, PASSWORD_DEFAULT);
+                    mysqli_stmt_bind_param($stmt, "sssss", $firstname, $lastname, $email, $username, $hashed_pass);
+                    mysqli_stmt_execute($stmt);
+                    header("Location: ../index.php?signup=success");
+                    exit();
+                }
+            }
+        }
         if($valid != 0){
             header("Location: ../pages/registration.php?".$message);
             exit();
-        }
-        else{
-            $sql =  "SELECT username FROM users WHERE username=?";
-            $stmt = mysqli_stmt_init($con);
-            if(!mysqli_stmt_prepare($stmt, $sql)){
-                header("Location: ../pages/registration.php?SQLERROR1");
-                exit();
-            }
-            else{
-                mysqli_stmt_bind_param($stmt, "s", $username);
-                mysqli_stmt_execute($stmt);
-                mysqli_stmt_store_result($stmt);
-                $result = mysqli_stmt_num_rows($stmt);
-                if($result > 0){
-                    header("Location: ../pages/registration.php?username_error=Username is already taken!&".$message);
-                    exit();
-                }
-                else{
-                    $sql =  "INSERT INTO users (first_name, last_name, email, username, password) VALUES (?, ?, ?, ?, ?)";
-                    $stmt = mysqli_stmt_init($con);
-                    if(!mysqli_stmt_prepare($stmt, $sql)){
-                        header("Location: ../pages/registration.php?SQLERROR3");
-                        exit();
-                    }
-                    else{
-                        $hashed_pass = password_hash($password, PASSWORD_DEFAULT);
-                        mysqli_stmt_bind_param($stmt, "sssss", $firstname, $lastname, $email, $username, $hashed_pass);
-                        mysqli_stmt_execute($stmt);
-                        header("Location: ../index.php?signup=success");
-                        exit();
-                    }
-                }
-            }
         }
         mysqli_stmt_close($stmt);
         mysqli_close($con);

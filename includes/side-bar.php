@@ -23,7 +23,6 @@
         <img src="../resources/images/profile.png" alt="" width="30" height="32" class="rounded-circle">
         <strong>
             <?php
-                session_start();
                 if(isset($_SESSION['session_id'])){
                     echo $_SESSION['session_firstname'];
                 }

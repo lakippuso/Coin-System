@@ -29,12 +29,12 @@
                     <div class="col-1">
                         <span class="row">
                             <?php 
-                                printDate()
+                                echo printDate();
                             ?>
                         </span>
                         <span class="row">
                             <?php 
-                                printTime()
+                                echo printTime();
                             ?>
                         </span>
                     </div>
@@ -47,7 +47,7 @@
                                 <div class="card-body">
                                     <h4>Total Machines </h4>
                                     <hr>
-                                    <label for="">Online Machines: 69</label>
+                                    <label for="">Online Machines: <?php echo getNumMachines($_SESSION['session_username']);?></label>
                                     <br>
                                     <label for="">Offline Machines: 69</label>
                                 </div>
@@ -56,18 +56,18 @@
                                 <div class="card-body">
                                     <h4>Daily Income</h4>
                                     <hr>
-                                    <label for="">Today's Income: 69</label>
+                                    <label for="">Today's Income: <?php echo getIncomeToday($_SESSION['session_username'])?></label>
                                     <br>
-                                    <label for="">Yesterday's Income: 69</label>
+                                    <label for="">Yesterday's Income: <?php echo getIncomeYesterday($_SESSION['session_username'])?></label>
                                 </div>
                             </div>
                             <div class="analytic-cards card col-lg-3">
                                 <div class="card-body">
                                     <h4>Monthly Income</h4>
                                     <hr>
-                                    <label for="">This Month's Income: 69</label>
+                                    <label for="">This Month's Income: <?php echo getIncomeThisMonth($_SESSION['session_username'])?></label>
                                     <br>
-                                    <label for="">Last Month's Income: 69</label>
+                                    <label for="">Last Month's Income: <?php echo getIncomeLastMonth($_SESSION['session_username'])?></label>
                                 </div>
                             </div>
                         </div>
