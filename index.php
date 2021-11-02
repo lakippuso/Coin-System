@@ -49,7 +49,7 @@
 					<div class="design"></div>
 					<input type="submit" name="submit" value="LOGIN">
 				</div>
-				<div class="register" style="text-align: center;">New User?&nbsp;<a href="pages/registration.php">Register Here!</a></div>
+				<div class="register" style="text-align: center;">New User?&nbsp;<a href="registration.php">Register Here!</a></div>
 			</form>
 		</div>
 

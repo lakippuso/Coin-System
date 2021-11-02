@@ -11,19 +11,19 @@
         $message = "";
         $valid = 0;
         // firstname
-        if(empty($firstname)){
+        if(empty($firstname)||$firstname===''||$firstname===NULL){
             $message = $message."firstname_error=Field is Required&";
             $valid++;
         }   
         else    $message = $message."firstname=".$firstname."&";
         // lastname
-        if(empty($lastname)){   
+        if(empty($lastname)||$lastname===''||$lastname===NULL){   
             $message = $message."lastname_error=Field is Required&";
             $valid++;
         }
         else    $message = $message."lastname=".$lastname."&";
         // email
-        if(empty($email)){   
+        if(empty($email)||$email===''||$email===NULL){   
             $message = $message."email_error=Field is Required&";
             $valid++;
         }
@@ -33,7 +33,7 @@
         }
         else $message = $message."email=".$email."&";
         // username
-        if(empty($username)){
+        if(empty($username)||$username===''||$username===NULL){
             $message = $message."&username_error=Field is Required&";
             $valid++;
         }
@@ -44,11 +44,11 @@
         else    $message = $message."username=".$username."&";
 
         // password
-        if(empty($password)){   
+        if(empty($password)||$password===''||$password===NULL){   
             $message = $message."password_error=Field is Required&";
             $valid++;
         }
-        if(empty($cpassword)){   
+        if(empty($cpassword)||$cpassword===''||$cpassword===NULL){   
             $message = $message."cpassword_error=Field is Required&";
             $valid++;
         }
@@ -81,11 +81,16 @@
                     $valid++;
                 }
                 else{
-                    $hashed_pass = password_hash($password, PASSWORD_DEFAULT);
-                    mysqli_stmt_bind_param($stmt, "sssss", $firstname, $lastname, $email, $username, $hashed_pass);
-                    mysqli_stmt_execute($stmt);
-                    header("Location: ../index.php?signup=success");
-                    exit();
+                    if($valid != 0){
+                        $hashed_pass = password_hash($password, PASSWORD_DEFAULT);
+                        mysqli_stmt_bind_param($stmt, "sssss", $firstname, $lastname, $email, $username, $hashed_pass);
+                        mysqli_stmt_execute($stmt);
+                        header("Location: ../registration.php?".$message);
+                        exit();
+                    }else{
+                        header("Location: ../index.php?signup=success");
+                        exit();
+                    }
                 }
             }
         }
