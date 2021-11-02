@@ -90,7 +90,7 @@
             }
         }
         if($valid != 0){
-            header("Location: ../pages/registration.php?".$message);
+            header("Location: ../registration.php?".$message);
             exit();
         }
         mysqli_stmt_close($stmt);
@@ -98,6 +98,6 @@
     }
     else{
         
-        header("Location: ../pages/registration.php?notclicked");
+        header("Location: ../registration.php?notclicked");
         exit();
     }

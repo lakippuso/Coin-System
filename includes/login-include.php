@@ -40,11 +40,11 @@ if(isset($_POST['submit'])){
                     $_SESSION['session_firstname'] = $row['first_name'];
                     $_SESSION['session_category'] = $row['category'];
                     if($_SESSION['session_category']=='admin'){
-                        header("Location: ../pages/admin-dashboard.php");
+                        header("Location: ../admin-dashboard.php");
                         exit();
                     }
                     else{
-                        header("Location: ../pages/dashboard.php");
+                        header("Location: ../dashboard.php");
                         exit();
                     }
                 }

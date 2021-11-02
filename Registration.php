@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="../resources/css/registration.css">
+        <link rel="stylesheet" href="resources/css/registration.css">
         <!-- FONT -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,14 +17,14 @@
     </head>
     <body>
     <!-- Header -->
-    <?php
-        include '../includes/header-index.php';
-    ?>
+    <div class="header navbar navbar-expand-lg justify-content-between" id="myHeader">
+            <div class="floater"><a href="index.php"><h3>CCM</h3></a></div>
+    </div>
     <!-- Content -->
     <section>
         <div class="registration-body g-0 container-fluid">
             <div class="registration-row mx-center my-0 row">
-                <form method="POST" action="../includes/registration-include.php" class="login-card col-sm-12 col-md-12 col-lg-4 offset-lg-1" id="form">
+                <form method="POST" action="includes/registration-include.php" class="login-card col-sm-12 col-md-12 col-lg-4 offset-lg-1" id="form">
                     <div class="row">
                         <h1>Sign Up!</h1>
                     </div>
@@ -89,7 +89,7 @@
     </section>
     <!-- Footer -->
     <?php 
-        include '../includes/footer-index.php';
+        include 'includes/footer-index.php';
     ?>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

@@ -1,31 +1,12 @@
 <!-- Header -->
 <?php
-    include '../includes/header-inside.php';
+    include 'includes/header-inside.php';
 ?>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <title>Dashboard</title>
-        <link rel="stylesheet" href="../resources/css/main.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="//fonts.googleapis.com/css2?family=Arvo" rel="stylesheet">
-
-        <?php
-            $conn = mysqli_connect("localhost", "root", "", "coin_machine_database");
-            
-            $query="SELECT * FROM report";
-            $result= $conn->query($query);
-        ?>
-    </head>
-    <body>
 <!-- Body -->
         <div class="main mx-auto row g-0">
             <!-- Side Bar -->
             <div class="side-bar col-lg-2 g-0 d-flex flex-column">
-                <?php include '../includes/side-bar.php' ?>
+                <?php include 'includes/side-bar.php' ?>
             </div>
             <!-- Content -->
             <div class="dashboard col-lg-10">
@@ -70,17 +51,21 @@
                             </thead>
                             <tbody>
                                 <?php
+                                    require 'includes/config.php';
+
+                                    $query="SELECT * FROM daily_report";
+                                    $result= $con->query($query);
                                     while($rows= $result-> fetch_assoc())
                                     {
                                 ?>
                                         <tr>
-                                            <th scope="col"><?php echo $rows['Machine_Name']; ?></th>
-                                            <th scope="col"><?php echo $rows['Date']; ?></th>
-                                            <th scope="col"><?php echo $rows['Daily_Income']; ?></th>
+                                            <th scope="col"><?php echo $rows['machine_id']; ?></th>
+                                            <th scope="col"><?php echo $rows['date']; ?></th>
+                                            <th scope="col"><?php echo $rows['day_income']; ?></th>
                                         </tr>
                                 <?php
                                     }
-                                    $conn-> close();
+                                    $con-> close();
                                 ?>
                             </tbody>
                         </table>
@@ -91,5 +76,5 @@
         </div>
 <!-- Footer -->
 <?php
-    include '../includes/footer-inside.php';
+    include 'includes/footer-inside.php';
 ?>
