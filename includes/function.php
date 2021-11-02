@@ -10,6 +10,24 @@ function printTime(){
 
 //Dashboard Getters
 
+//ADMIN FUNCTIONS
+//GET number of users
+function getAllUsers($owner){
+    require 'config.php';
+    $sql =  "SELECT * FROM machine_info";
+    $stmt = mysqli_stmt_init($con);
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+        echo 'error!';
+    }
+    else{
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_store_result($stmt);
+        return mysqli_stmt_num_rows($stmt);
+    }
+}
+//GET number of  NEW USERS
+
+//USERS FUNCTIONS
 //GET number of machines
 function getNumMachines($owner){
     require 'config.php';

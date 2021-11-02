@@ -5,13 +5,10 @@
 <!-- Navigation Buttons -->
 <ul id="side-menu">
     <li class="nav-item">
-        <a class="link nav-link" href="dashboard.php">Dashboard</a>
+        <a class="link nav-link" href="../pages/admin-dashboard.php">Dashboard</a>
     </li>
     <li class="nav-item">
-        <a class="link nav-link" href="dailyreport.php">Daily Reports</a>
-    </li>
-    <li class="nav-item">
-        <a class="link nav-link" href="history.php">History</a>
+        <a class="link nav-link" href="admin-transaction.php">Transactions</a>
     </li>
     <li class="nav-item">
         <a class="link nav-link" href="../includes/logout.php">Logout</a>

@@ -18,23 +18,23 @@
         <div class="main mx-auto row g-0">
             <!-- Side Bar -->
             <div class="side-bar col-lg-2 g-0 d-flex flex-column">
-                <?php include '../includes/side-bar.php' ?>
+                <?php include '../includes/admin-side-bar.php' ?>
             </div>
             <!-- Content -->
             <div class="dashboard col-lg-10">
                 <!-- Header -->
                 <div class="header d-flex justify-content-between">
-                    <h4 class="col-auto">Daily Report</h1>
+                    <h4 class="col-auto">Transactions</h1>
                     <!-- Date and Time -->
                     <div class="col-1">
                         <span class="row">
                             <?php 
-                                echo printDate()
+                                printDate()
                             ?>
                         </span>
                         <span class="row">
                             <?php 
-                                echo printTime()
+                                printTime()
                             ?>
                         </span>
                     </div>
@@ -46,9 +46,8 @@
                             <div class="calendar d-flex justify-content-evenly" style="width: 600px;">
                                 <div><input type="datetime-local" name="start_date" style="border-radius: 5px; padding: 3px;"></div>
                                 <div><input type="datetime-local"  name="start_date" style="border-radius: 5px; padding: 3px;"></div>
-                                <div><button id="start" style="padding: 4px; width: 40px; border: none; border-radius: 4px; font-size: 18px;"><i class="fas fa-search"></i></button></div>
                             </div>
-                            <input type="button" name="generate" value="Generate Report" style="color: #FEFFFF; width: 200px; background: #2B7A78; border: none; border-radius: 5px;">
+                            <input type="button" name="generate" value="Search" style="color: #FEFFFF; width: 200px; background: #2B7A78; border: none; border-radius: 5px;">
                         </div>
                     </div>
 

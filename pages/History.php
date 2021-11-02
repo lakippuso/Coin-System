@@ -28,12 +28,12 @@
                     <div class="col-1">
                         <span class="row">
                             <?php 
-                                printDate()
+                                echo printDate();
                             ?>
                         </span>
                         <span class="row">
                             <?php 
-                                printTime()
+                                echo printTime();
                             ?>
                         </span>
                     </div>
