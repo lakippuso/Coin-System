@@ -56,8 +56,6 @@ body{
     box-shadow: 0 8px 12px black;
 }
 
-
-.daily-table{
+#scroll {
     height: 80vh;
-    margin-top: 10px;
 }

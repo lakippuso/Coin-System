@@ -1,15 +1,6 @@
 <?php
     session_start();
     include 'function.php';
-    $_SESSION['session_category'] = $row['category'];
-    if($_SESSION['session_category']=='admin'){
-        header("Location: ../pages/admin-dashboard.php");
-        exit();
-    }
-    else{
-        header("Location: ../pages/dashboard.php");
-        exit();
-    }
 ?>
 <!DOCTYPE html>
 <html>

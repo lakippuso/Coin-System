@@ -15,7 +15,7 @@
                 </p>
             </div>
             <div class="col-md-2">
-                <img src="resources/images/bg.png" class="footer-logo">
+                <img src="resources/images/LogoCC.png" class="footer-logo">
             </div>
         </div>
     </div>

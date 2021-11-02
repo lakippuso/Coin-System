@@ -12,6 +12,13 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="//fonts.googleapis.com/css2?family=Arvo" rel="stylesheet">
+
+        <?php
+            $conn = mysqli_connect("localhost", "root", "", "coin_machine_database");
+            
+            $query="SELECT * FROM report";
+            $result= $conn->query($query);
+        ?>
     </head>
     <body>
 <!-- Body -->
@@ -52,7 +59,7 @@
                         </div>
                     </div>
 
-                    <div class="daily-table overflow-scroll">
+                    <div class="table-responsive-sm overflow-scroll" id="scroll">
                         <table class="table table-striped table-hover table-bordered">
                             <thead>
                                 <tr>
@@ -62,141 +69,19 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th scope="col">Machine_001</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">Machine_001</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">Machine_001</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">Machine_001</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">Machine_001</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">Machine_001</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">Machine_001</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">Machine_001</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">Machine_001</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">Machine_001</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">Machine_001</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">Machine_001</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">Machine_001</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">Machine_001</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">Machine_001</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">Machine_001</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">Machine_001</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">Machine_001</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">Machine_001</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">Machine_001</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">Machine_001</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">Machine_001</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">Machine_001</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">Machine_001</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">Machine_001</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">Machine_001</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">Machine_001</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                </tr>
+                                <?php
+                                    while($rows= $result-> fetch_assoc())
+                                    {
+                                ?>
+                                        <tr>
+                                            <th scope="col"><?php echo $rows['Machine_Name']; ?></th>
+                                            <th scope="col"><?php echo $rows['Date']; ?></th>
+                                            <th scope="col"><?php echo $rows['Daily_Income']; ?></th>
+                                        </tr>
+                                <?php
+                                    }
+                                    $conn-> close();
+                                ?>
                             </tbody>
                         </table>
                     </div>

@@ -16,36 +16,36 @@
         <title>Home Page</title>
     </head>
     <body>
+         <div class="header navbar navbar-expand-lg justify-content-between" id="myHeader">
+            <div class="floater"><h3>CCM</h3></div>
+            <button type="button" class="loginkulay" id="open_form">LOGIN</button>
+        </div>
         
-        <?php
-            include 'includes/header-index.php';
-        ?>
         <div class="login_form">
 			<label class="close_btn">&times;</label>
-            <fieldset>
-			<legend class="title">Login</legend>
-                <form method="POST" action="includes/login-include.php">
-                    <div class="inputs">
-                        <label>Username</label>
-                        <input type="text" name="username">
-                        <span id="username_error"><?php if(isset($_GET['username_error'])){ echo $_GET['username_error'];}?></span>
-                    </div>
-                    <div class="inputs">
-                        <label>Password</label>
-                        <input type="password" name="password">
-                        <span id="password_error"><?php if(isset($_GET['password_error'])){ echo $_GET['password_error'];}?></span>
-                    </div>
-                    <div class="forgot">
-                        <label><a href="#">Forgot Password?</a></label>
-                    </div >
-                    <div class="submit">
-                        <div class="design"></div>
-                        <input type="submit" name="submit" value="LOGIN">
-                    </div>
-                    <div class="register">New User?&nbsp;<a href="pages/registration.php">Register Here!</a></div>
-                </form>
-            </fieldset>
+			<div class="title">Login</div>
+			<form method="POST" action="includes/login-include.php">
+				<div class="inputs">
+					<label>Username</label>
+					<input type="text" name="username">
+                    <span id="username_error" class="my-3"><?php if(isset($_GET['username_error'])){ echo $_GET['username_error'];}?></span>
+				</div>
+				<div class="inputs">
+					<label>Password</label>
+					<input type="password" name="password">
+                    <span id="password_error"><?php if(isset($_GET['password_error'])){ echo $_GET['password_error'];}?></span>
+				</div>
+				<div class="forgot">
+					<label><a href="#">Forgot Password?</a></label>
+				</div >
+				<div class="submit">
+					<div class="design"></div>
+					<input type="submit" name="submit" value="LOGIN">
+				</div>
+				<div class="register" style="text-align: center;">New User?&nbsp;<a href="pages/registration.php">Register Here!</a></div>
+			</form>
 		</div>
+
 
         <section class="section1" id="gallery"> 
         <div class="container pt-md-5">
@@ -147,7 +147,7 @@
         include 'includes/footer-index.php';
     ?>
 
-    <script src="js/bootstrap.js"></script>
+    <script src="resources/js/login.js"></script>
 
     </body>
 </html>

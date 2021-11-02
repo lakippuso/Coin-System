@@ -3,6 +3,16 @@
     font-size: 1em;
     color: white;
 }
+
+.header {
+    padding: 20px 30px;
+    min-height: 80px;
+    max-height: 100px;
+    background-color: #4dc0ba;
+}
+.header a {
+    text-decoration: none;
+}
 html, body{
     background-color: chartreuse;
     width: 100%;
@@ -63,7 +73,7 @@ footer{
     color: #fff;
 }
 .footer-logo{
-    height: 200px;
+    height: 150px;
     padding-top: 40px;
     text-align: center;
     padding-left: 30%;
