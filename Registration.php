@@ -21,7 +21,6 @@
             <div class="floater"><a href="index.php"><h3>CCM</h3></a></div>
     </div>
     <!-- Content -->
-    <section>
         <div class="registration-body g-0 container-fluid">
             <div class="registration-row mx-center my-0 row">
                 <form method="POST" action="includes/registration-include.php" class="login-card col-sm-12 col-md-12 col-lg-4 offset-lg-1" id="form">
@@ -86,7 +85,6 @@
                 </div>
             </div>
         </div>
-    </section>
     <!-- Footer -->
     <?php 
         include 'includes/footer-index.php';
