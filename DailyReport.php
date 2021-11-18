@@ -30,8 +30,19 @@
                 <!-- Content -->
                 <div class="content">
                     <div class="dailyReport" id="daily">
-                        <div class="m-4 d-flex justify-content-evenly">
-                            <div class="calendar d-flex justify-content-evenly" style="width: 600px;">
+                        <div class="m-4 d-flex justify-content-around">
+                            <div class="calendar d-flex justify-content-around">
+                                
+                                <div class="dropdown">
+                                    <select id="list">
+                                        <optgroup label="Machine List">
+                                            <option value="daily">1001</option> 
+                                            <option value="biweekly">1002</option> 
+                                            <option value="monthly">1003</option>
+                                            <option value="annually">1004</option> 
+                                        </optgroup> 
+                                    </select>
+                                </div>
                                 <div><input type="datetime-local" name="start_date" style="border-radius: 5px; padding: 3px;"></div>
                                 <div><input type="datetime-local"  name="start_date" style="border-radius: 5px; padding: 3px;"></div>
                                 <div><button id="start" style="margin-top: 3px; padding: 4px; width: 40px; border: none; background: none; border-radius: 4px; font-size: 18px;"><img src="resources/images/search.png" style="width: 30px;"/></i></button></div>
@@ -44,26 +55,30 @@
                         <table class="table table-striped table-hover table-bordered">
                             <thead>
                                 <tr>
-                                    <th scope="col">Machine ID</th>
-                                    <th scope="col">Daily Income</th>
-                                    <th scope="col">Monthly Income</th>
+                                    <th class="col">No.</th>
+                                    <th class="col-lg-4">Machine Name</th>
+                                    <th class="col-lg-4">Date</th>
+                                    <th class="col-lg-4">Monthly Income</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
                                     require 'includes/config.php';
-
+                                    $i = 1;
                                     $query="SELECT * FROM daily_report";
                                     $result= $con->query($query);
                                     while($rows= $result-> fetch_assoc())
                                     {
                                 ?>
                                         <tr>
+                                            <th scope="col"><?php echo $i ?></th>
                                             <th scope="col"><?php echo $rows['machine_id']; ?></th>
                                             <th scope="col"><?php echo $rows['date']; ?></th>
                                             <th scope="col"><?php echo $rows['day_income']; ?></th>
                                         </tr>
                                 <?php
+                                
+                                        $i+=1;
                                     }
                                     $con-> close();
                                 ?>

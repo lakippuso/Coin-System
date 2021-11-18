@@ -56,11 +56,16 @@ body{
     box-shadow: 0 8px 12px black;
 }
 
-/* History USER */
-.history_table {
-    margin-top: 10px;
-    margin-left: 10px;
-    margin-right: 25px;
+/* Dashboard User */
+
+.dropdown_graph {
+    margin-top: 0.5vh;
+}
+
+.dropdown_graph select{
+    width: 7em;
+    height: 30px;
+    border-radius: 5px;
 }
 
 /* Daily Report USER */
@@ -69,6 +74,24 @@ body{
     margin-left: 10px;
     margin-right: 10px;
     height: 76vh;
+}
+
+.dropdown {
+    margin-top: 0.75vh;
+}
+.dropdown select{
+    width: 7em;
+    height: 33px;
+    border-radius: 5px;
+}
+
+
+
+/* History USER */
+#history_table {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 25px;
 }
 
 /* Admin Dashboard */
@@ -101,3 +124,17 @@ body{
 }
 
 
+/* Machine Tab*/
+
+.search_label {
+    margin-right: 3em;
+    margin-left: 1em;
+    margin-top: 1em;
+}
+.search_label .machine_label {
+    margin-top: 1em;
+}
+
+.config {
+    margin: 5em;
+}

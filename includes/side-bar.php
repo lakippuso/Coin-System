@@ -11,6 +11,9 @@
         <a class="link nav-link" href="dailyreport.php">Daily Reports</a>
     </li>
     <li class="nav-item">
+        <a class="link nav-link" href="machine.php">Machine</a>
+    </li>
+    <li class="nav-item">
         <a class="link nav-link" href="history.php">History</a>
     </li>
     <li class="nav-item">

@@ -2,6 +2,22 @@
 <?php
     include 'includes/header-inside.php';
 ?>
+<script type="text/javascript">
+$(document).ready(function(){
+    $("select").change(function(){
+        $(this).find("option:selected").each(function(){
+            var optionValue = $(this).attr("value");
+            if(optionValue){
+                $(".graph").not("." + optionValue).hide();
+                $("." + optionValue).show();
+            }
+            else {
+                $(".graph").hide();
+            }
+        });
+    }).change();
+});
+</script>
 <!-- Body -->
         <div class="main mx-auto row g-0">
             <!-- Side Bar -->
@@ -35,9 +51,11 @@
                                 <div class="card-body">
                                     <h4>Total Machines </h4>
                                     <hr>
-                                    <label for="">Online Machines: <?php echo getNumMachines($_SESSION['session_username']);?></label>
+                                    <label for="">Registered Machines: </label>
                                     <br>
-                                    <label for="">Offline Machines: 69</label>
+                                    <label for="">Online Machines: <?php echo getNumMachines($_SESSION['session_username']);?></label>
+                                    
+                                    
                                 </div>
                             </div>
                             <div class="analytic-cards card col-lg-3">
@@ -45,8 +63,6 @@
                                     <h4>Daily Income</h4>
                                     <hr>
                                     <label for="">Today's Income: <?php echo getIncomeToday($_SESSION['session_username'])?></label>
-                                    <br>
-                                    <label for="">Yesterday's Income: <?php echo getIncomeYesterday($_SESSION['session_username'])?></label>
                                 </div>
                             </div>
                             <div class="analytic-cards card col-lg-3">
@@ -65,102 +81,43 @@
                     <div class="context m-3 d-flex justify-content-around">
                         <div class="user_info">
                             <div class="d-flex justify-content-between">
-                                <label>Monthly Income Chart</label>
+                                <label>Income Chart</label>
                                 <div>
-                                    <input type="text" name="search" placeholder="Search">
-                                    <button><img src="resources/images/search.png" style="width: 20px;"/></button>
+                                    <div class="dropdown_graph">
+                                        <select>
+                                                <option value="daily">Daily</option> 
+                                                <option value="biweekly">Biweekly</option> 
+                                                <option value="monthly">Monthly</option>
+                                                <option value="annually">Annually</option> 
+                                        </select>
+                                        <input type="text" name="search" placeholder="Search">
+                                        <button><img src="resources/images/search.png" style="width: 20px;"/></button>
+                                    </div>
                                 </div>
                             </div>
-                            <canvas id="myChart" st yle="width:100%;width:550px"></canvas>
-                            <script>
-                                var xValues = ['Jan','Feb','Mar','Apr','May','Jun','July','Aug','Sept','Oct','Nov','Dec'];
-                                var yValues = [15000,13000,20000,35000,23000];
+                            <div class="graphs">
+                                <div class="daily graph">
+                                    <canvas id="graph1" style="width:100%;width:500px;height:245px;"></canvas>
+                                    <script src="resources/js/daily.js"></script>
+                                </div>
 
-                                new Chart("myChart", {
-                                type: "line",
-                                data: {
-                                    labels: xValues,
-                                    datasets: [{
-                                    fill: false,
-                                    lineTension: 0,
-                                    backgroundColor: "rgba(0,0,255,1.0)",
-                                    borderColor: "rgba(0,0,255,0.1)",
-                                    data: yValues
-                                    }]
-                                },
-                                options: {
-                                    legend: {display: false},
-                                    scales: {
-                                    yAxes: [{ticks: {beginAtZero: true, stepSize: 10000, max: 70000}}],
-                                    }
-                                }
-                                });
-                            </script>
-                        </div>
 
-                        <div class="user_list">
-                            <div class="add_user"><center><button>Add Machine</button></center></div>
-                            <div class="overflow-scroll" id="user_manipulate">
-                                <ul class="list-group">
-                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        jovita025
-                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white;">Edit</button></span>
-                                    </li>
-                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        gabatino015
-                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white;">Edit</button></span>
-                                    </li>
-                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        moy024
-                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white;">Edit</button></span>
-                                    </li>
-                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        ambosxz02
-                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white;">Edit</button></span>
-                                    </li>
-                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        joelski06
-                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white;">Edit</button></span>
-                                    </li>
-                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        joelski06
-                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white;">Edit</button></span>
-                                    </li>
-                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        joelski06
-                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white;">Edit</button></span>
-                                    </li>
-                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        joelski06
-                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white;">Edit</button></span>
-                                    </li>
-                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        joelski06
-                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white;">Edit</button></span>
-                                    </li>
-                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        joelski06
-                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white;">Edit</button></span>
-                                    </li>
-                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        joelski06
-                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white;">Edit</button></span>
-                                    </li>
-                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        joelski06
-                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white;">Edit</button></span>
-                                    </li>
-                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        joelski06
-                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white;">Edit</button></span>
-                                    </li>
-                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        joelski06
-                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white;">Edit</button></span>
-                                    </li>
-                                </ul>
+                                <div class="monthly graph">
+                                    <canvas id="graph2" style="width:100%;width:500px;height:245px;"></canvas>
+                                    <script src="resources/js/monthly.js"></script>
+                                </div>
+
+                                <div class="biweekly graph">
+                                    <canvas id="graph3" style="width:100%;width:500px;height:245px;"></canvas>
+                                    <script src="resources/js/biweekly.js"></script>
+                                </div>
+
+                                <div class="annually graph">
+                                    <canvas id="graph4" style="width:100%;width:500px;height:245px;"></canvas>
+                                    <script src="resources/js/annually.js"></script>
+                                </div>
                             </div>
-                        <div>
+                        </div>
                     </div>
                 </div>
             </div>

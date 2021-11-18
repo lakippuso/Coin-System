@@ -28,14 +28,32 @@
                 </div>
                 <!-- Content -->
                 <div class="content">
-                    <div class="history_table">
+                    <div class="dailyReport" id="daily">
+                        <div class="search_label d-flex justify-content-between">
+                            <label class="machine_label"></label>
+                            <div>
+                                <div class="dropdown_graph">
+                                    <select>
+                                            <optgroup label="Machine List">
+                                            <option value="daily">1001</option> 
+                                            <option value="biweekly">1002</option> 
+                                            <option value="monthly">1003</option>
+                                            <option value="annually">1004</option> 
+                                    </select>
+                                    <input type="text" name="search" placeholder="Search">
+                                    <button><img src="resources/images/search.png" style="width: 20px;"/></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <div class="content">
+                    <div class="overflow-scroll" id="history_table" style="height: 77vh;">
                         <table class="table table-striped table-hover table-bordered">
                             <thead>
                                 <tr>
-                                    <th scope="col">Start Date</th>
-                                    <th scope="col">End Date</th>
-                                    <th scope="col">Date Generated</th>
-                                    <th scope="col">File</th>
+                                    <th scope="col">Machine Name</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Income</th>
                                 </tr>
                             </thead>
                             <tbody>
