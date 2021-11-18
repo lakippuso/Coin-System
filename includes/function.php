@@ -31,7 +31,7 @@ function getAllUsers($owner){
 //GET number of machines
 function getNumMachines($owner){
     require 'config.php';
-    $sql = "SELECT count(*) FROM machine_info where username = ?";
+    $sql = "SELECT * FROM machine_info where username = ?";
     $stmt = mysqli_stmt_init($con);
     if(!mysqli_stmt_prepare($stmt, $sql)){
         echo 'error!';

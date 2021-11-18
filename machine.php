@@ -32,10 +32,10 @@
                         <div class="search_label d-flex justify-content-between">
                             <label class="machine_label">Machine List</label>
                             <div>
-                                <div class="dropdown_graph">
+                                <form method = "POST" action="machine.php" class="dropdown_graph">
                                     <input type="text" name="search" placeholder="Search">
-                                    <button><img src="resources/images/search.png" style="width: 20px;"/></button>
-                                </div>
+                                    <button type="submit"><img src="resources/images/search.png" style="width: 20px;"/></button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -47,6 +47,7 @@
                                     <th class="col-lg-4">Machine Name</th>
                                     <th class="col-lg-3">Machine Type</th>
                                     <th class="col-lg-3">Income</th>
+                                    <th class="col-lg-3">Date Created</th>
                                     <th class="col-lg-2" style="text-align: center;">Configuration</th>
                                 </tr>
                             </thead>
@@ -54,19 +55,27 @@
                                 <?php
                                     require 'includes/config.php';
                                     $x = 1;
-                                    $query="SELECT machine_id, machine_type, income FROM machine_info";
+                                    $username = $_SESSION['session_username'];
+                                    $query="SELECT * FROM machine_info where username = '$username'";
+                                    if(isset($_POST['search'])){
+                                        $search_id = $_POST['search'];
+                                        if(!empty($search_id)){
+                                            $query = $query."AND machine_name = '$search_id'";
+                                        }
+                                    }
                                     $result= $con->query($query);
                                     while($rows= $result-> fetch_assoc())
                                     {
                                 ?>
                                 <tr>
                                             <th scope="col"><?php echo $x ?></th>
-                                            <th scope="col"><?php echo $rows['machine_id']; ?></th>
+                                            <th scope="col"><?php echo $rows['machine_name']; ?></th>
                                             <th scope="col"><?php echo $rows['machine_type']; ?></th>
                                             <th scope="col"><?php echo $rows['income']; ?></th>
+                                            <th scope="col"><?php echo $rows['date_created']; ?></th>
                                             <th scope="col"style="text-align: center;">
                                                 <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white; width:4em;">Info</button></span>
-                                                <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white; width:4em;">Reset</button></span>
+                                                <a class="badge bg-primary rounded-pill" href="includes/reset-machine.php?machine_id=<?php echo $rows['machine_id']; ?>"><button style="background: None; border: None; color: white; width:4em;">Reset</button></a>
                                             </th>
                                 </tr>
                                 <?php

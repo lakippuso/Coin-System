@@ -32,10 +32,10 @@
                         <div class="search_label d-flex justify-content-between">
                             <label class="machine_label"></label>
                             <div>
-                                <div class="dropdown_graph">
+                                <form method = "POST" action="history.php"  class="dropdown_graph">
                                     <input type="text" name="search" placeholder="Search">
-                                    <button><img src="resources/images/search.png" style="width: 20px;"/></button>
-                                </div>
+                                    <button type="submit"><img src="resources/images/search.png" style="width: 20px;"/></button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -44,92 +44,34 @@
                         <table class="table table-striped table-hover table-bordered">
                             <thead>
                                 <tr>
-                                    <th scope="col">Machine Name</th>
+                                    <th scope="col">History ID </th>
+                                    <th scope="col">Machine ID</th>
+                                    <th scope="col">Total Income</th>
                                     <th scope="col">Date</th>
-                                    <th scope="col">Income</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                    <?php 
+                                        require 'includes/config.php';
+                                        $username = $_SESSION['session_username'];
+                                        $sql="SELECT * FROM history where username = '$username'";
+                                        if(isset($_POST['search'])){
+                                            $search_id = $_POST['search'];
+                                            if(!empty($search_id)){
+                                                $sql = $sql."AND machine_id = '$search_id'";
+                                            }
+                                        }
+                                        $result = mysqli_query($con,$sql);
+                                            while($rows = mysqli_fetch_assoc($result)){
+                                    ?>
                                 <tr>
-                                    <th scope="col">Machine_001</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
+                                                <th scope="col"><?php echo $rows['history_id'];?></th>
+                                                <th scope="col"><?php echo $rows['machine_id'];?></th>
+                                                <th scope="col"><?php echo $rows['total_income'];?></th>
+                                                <th scope="col"><?php echo $rows['reset_date'];?></th>
                                 </tr>
-                                <tr>
-                                    <th scope="col">Machine_001</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">Machine_001</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">Machine_001</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">Machine_001</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">Machine_001</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">Machine_001</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">Machine_001</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">Machine_001</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">Machine_001</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">Machine_001</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">Machine_001</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">Machine_001</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">Machine_001</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">Machine_001</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">Machine_001</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                </tr>
+                                                
+                                <?php  }?>
                             </tbody>
                         </table>
                     </div>
