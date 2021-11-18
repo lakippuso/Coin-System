@@ -58,166 +58,30 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php
+                                    require 'includes/config.php';
+                                    $x = 1;
+                                    $query="SELECT machine_id, machine_type, income FROM machine_info";
+                                    $result= $con->query($query);
+                                    while($rows= $result-> fetch_assoc())
+                                    {
+                                ?>
                                 <tr>
-                                    <th scope="col">1</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col"style="text-align: center;">
-                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white; width:4em;">Info</button></span>
-                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white; width:4em;">Reset</button></span>
-                                    </th>
+                                            <th scope="col"><?php echo $x ?></th>
+                                            <th scope="col"><?php echo $rows['machine_id']; ?></th>
+                                            <th scope="col"><?php echo $rows['machine_type']; ?></th>
+                                            <th scope="col"><?php echo $rows['income']; ?></th>
+                                            <th scope="col"style="text-align: center;">
+                                                <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white; width:4em;">Info</button></span>
+                                                <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white; width:4em;">Reset</button></span>
+                                            </th>
                                 </tr>
-                                <tr>
-                                    <th scope="col">1</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col"style="text-align: center;">
-                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white; width:4em;">Info</button></span>
-                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white; width:4em;">Reset</button></span>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">1</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col"style="text-align: center;">
-                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white; width:4em;">Info</button></span>
-                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white; width:4em;">Reset</button></span>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">1</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col"style="text-align: center;">
-                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white; width:4em;">Info</button></span>
-                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white; width:4em;">Reset</button></span>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">1</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col"style="text-align: center;">
-                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white; width:4em;">Info</button></span>
-                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white; width:4em;">Reset</button></span>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">1</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col"style="text-align: center;">
-                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white; width:4em;">Info</button></span>
-                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white; width:4em;">Reset</button></span>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">1</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col"style="text-align: center;">
-                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white; width:4em;">Info</button></span>
-                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white; width:4em;">Reset</button></span>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">1</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col"style="text-align: center;">
-                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white; width:4em;">Info</button></span>
-                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white; width:4em;">Reset</button></span>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">1</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col"style="text-align: center;">
-                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white; width:4em;">Info</button></span>
-                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white; width:4em;">Reset</button></span>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">1</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col"style="text-align: center;">
-                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white; width:4em;">Info</button></span>
-                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white; width:4em;">Reset</button></span>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">1</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col"style="text-align: center;">
-                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white; width:4em;">Info</button></span>
-                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white; width:4em;">Reset</button></span>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">1</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col"style="text-align: center;">
-                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white; width:4em;">Info</button></span>
-                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white; width:4em;">Reset</button></span>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">1</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col"style="text-align: center;">
-                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white; width:4em;">Info</button></span>
-                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white; width:4em;">Reset</button></span>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">1</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col"style="text-align: center;">
-                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white; width:4em;">Info</button></span>
-                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white; width:4em;">Reset</button></span>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">1</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col"style="text-align: center;">
-                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white; width:4em;">Info</button></span>
-                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white; width:4em;">Reset</button></span>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th scope="col">1</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col">90,000</th>
-                                    <th scope="col"style="text-align: center;">
-                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white; width:4em;">Info</button></span>
-                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white; width:4em;">Reset</button></span>
-                                    </th>
-                                </tr>
+                                <?php
+                                
+                                        $x+=1;
+                                    }
+                                    $con-> close();
+                                ?>
                             </tbody>
                         </table>
                     </div>

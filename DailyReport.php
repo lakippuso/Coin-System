@@ -65,7 +65,7 @@
                                 <?php
                                     require 'includes/config.php';
                                     $i = 1;
-                                    $query="SELECT * FROM daily_report";
+                                    $query="SELECT * FROM daily_report ORDER By date DESC";
                                     $result= $con->query($query);
                                     while($rows= $result-> fetch_assoc())
                                     {
