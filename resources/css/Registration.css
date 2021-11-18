@@ -32,12 +32,15 @@ h1, h6{
 }
 .registration-body{
     background-color: #2b7e7a;
+    height: 100%;
+    padding-top: 7em;
 }
 .registration-row{
-    padding: 7em 7em;
+    padding: 1em 1em;
+    box-shadow: 12px 12px 12px 12px black;
+    width: 50%;
 }
 .login-card{
-    box-shadow: 0 8px 12px black;
     padding: 2em 2em;
 }
 input{
@@ -53,6 +56,12 @@ input{
 .error, #firstname_error, #lastname_error{
     margin-left: 1em;
     color: rgb(255, 128, 149);
+}
+.desc-card{
+    text-align: center;
+}
+.desc-card h4{
+    text-align: left;
 }
 /* Footer */
 

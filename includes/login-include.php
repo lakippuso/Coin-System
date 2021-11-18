@@ -38,15 +38,15 @@ if(isset($_POST['submit'])){
                     $_SESSION['session_id'] = $row['user_id'];
                     $_SESSION['session_username'] = $row['username'];
                     $_SESSION['session_firstname'] = $row['first_name'];
-                    $_SESSION['session_category'] = $row['category'];
-                    if($_SESSION['session_category']=='admin'){
-                        header("Location: ../admin-dashboard.php");
-                        exit();
-                    }
-                    else{
-                        header("Location: ../dashboard.php");
-                        exit();
-                    }
+                    //$_SESSION['session_category'] = $row['category'];
+                    // if($_SESSION['session_category']=='admin'){
+                    //     header("Location: ../admin-dashboard.php");
+                    //     exit();
+                    // }
+                    // else{
+                    header("Location: ../dashboard.php");
+                    exit();
+                    // }
                 }
                 else{
                     header("Location: ../index.php?password_error=Wrong Password!2");

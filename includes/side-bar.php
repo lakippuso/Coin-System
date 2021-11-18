@@ -23,7 +23,7 @@
         <img src="resources/images/profile.png" alt="" width="30" height="32" class="rounded-circle">
         <strong>
             <?php 
-                if(isset($_SESSION['session_id']) && $_SESSION['session_category'] === 'user'){
+                if(isset($_SESSION['session_id']) /*&& $_SESSION['session_category'] === 'user'*/){
                     echo $_SESSION['session_firstname'];
                 }
                 else{
