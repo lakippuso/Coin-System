@@ -18,6 +18,7 @@ $(document).ready(function(){
     }).change();
 });
 </script>
+
 <!-- Body -->
         <div class="main mx-auto row g-0">
             <!-- Side Bar -->
@@ -51,11 +52,7 @@ $(document).ready(function(){
                                 <div class="card-body">
                                     <h4>Total Machines </h4>
                                     <hr>
-                                    <label for="">Registered Machines: </label>
-                                    <br>
-                                    <label for="">Online Machines: <?php echo getNumMachines($_SESSION['session_username']);?></label>
-                                    
-                                    
+                                    <label for="">Registered Machines: <strong><?php echo getNumMachines($_SESSION['session_username']);?></strong></label>
                                 </div>
                             </div>
                             <div class="analytic-cards card col-lg-3">
@@ -65,13 +62,13 @@ $(document).ready(function(){
                                     <label for="">Today's Income: <?php echo getIncomeToday($_SESSION['session_username'])?></label>
                                 </div>
                             </div>
-                            <div class="analytic-cards card col-lg-3">
+                            <div class="cards analytic-cards card col-lg-3">
                                 <div class="card-body">
-                                    <h4>Monthly Income</h4>
+                                    <h4 id="income_type">Daily Income</h4>
                                     <hr>
-                                    <label for="">This Month's Income: <?php echo getIncomeThisMonth($_SESSION['session_username'])?></label>
+                                    <label for="">Total Current Income: <?php echo getIncomeThisMonth($_SESSION['session_username'])?></label>
                                     <br>
-                                    <label for="">Last Month's Income: <?php echo getIncomeLastMonth($_SESSION['session_username'])?></label>
+                                    <label for="">Total Previous Income: <?php echo getIncomeLastMonth($_SESSION['session_username'])?></label>
                                 </div>
                             </div>
                         </div>
@@ -84,7 +81,7 @@ $(document).ready(function(){
                                 <label>Income Chart</label>
                                 <div>
                                     <div class="dropdown_graph">
-                                        <select>
+                                        <select id="income_list" onchange="getSelectedValue();">
                                                 <option value="daily">Daily</option> 
                                                 <option value="biweekly">Biweekly</option> 
                                                 <option value="monthly">Monthly</option>
@@ -93,6 +90,7 @@ $(document).ready(function(){
                                         <input type="text" name="search" placeholder="Search">
                                         <button><img src="resources/images/search.png" style="width: 20px;"/></button>
                                     </div>
+                                    <script type="text/javascript" src="resources/js/card.js"></script>
                                 </div>
                             </div>
                             <div class="graphs">

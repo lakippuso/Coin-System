@@ -31,7 +31,7 @@ function getAllUsers($owner){
 //GET number of machines
 function getNumMachines($owner){
     require 'config.php';
-    $sql =  "SELECT * FROM machine_info where username = ?";
+    $sql = "SELECT count(*) FROM machine_info where username = ?";
     $stmt = mysqli_stmt_init($con);
     if(!mysqli_stmt_prepare($stmt, $sql)){
         echo 'error!';
@@ -143,6 +143,30 @@ function getIncomeLastMonth($owner){
     else{
         $date = date('m', strtotime('last month'));
         mysqli_stmt_bind_param($stmt, "ss", $owner, $date);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+        if($row = mysqli_fetch_assoc($result)){
+            if($row['total'] == NULL || $row['total'] == '')
+            return 0;
+            else
+            return $row['total'];
+        }
+    }
+}
+
+
+//DropDown Function
+function getMachineName($owner){
+    require 'config.php';
+    $sql =  "SELECT machine_id FROM machine_info WHERE username = ?";
+    $stmt = mysqli_stmt_init($con);
+
+    
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+        echo 'error!';
+    }
+    else{
+        mysqli_stmt_bind_param($stmt, "s", $owner);
         mysqli_stmt_execute($stmt);
         $result = mysqli_stmt_get_result($stmt);
         if($row = mysqli_fetch_assoc($result)){

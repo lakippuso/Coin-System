@@ -34,14 +34,27 @@
                             <div class="calendar d-flex justify-content-around">
                                 
                                 <div class="dropdown">
+                                    
                                     <select id="list">
                                         <optgroup label="Machine List">
-                                            <option value="daily">1001</option> 
-                                            <option value="biweekly">1002</option> 
-                                            <option value="monthly">1003</option>
-                                            <option value="annually">1004</option> 
-                                        </optgroup> 
+                                        <?php
+                                            require 'includes/config.php';
+                                            $i = 1;
+                                            $query="SELECT machine_id FROM machine_info ";
+                                            $result= $con->query($query);
+                                            while($rows= $result-> fetch_assoc())
+                                            {
+                                        ?>
+                                        
+                                            <option><?php echo $rows['machine_id']; ?></option>   
+                                        <?php
+                                                $i+=1;
+                                            }
+                                            $con-> close();
+                                        ?>
+                                        </optgroup>
                                     </select>
+                                    
                                 </div>
                                 <div><input type="datetime-local" name="start_date" style="border-radius: 5px; padding: 3px;"></div>
                                 <div><input type="datetime-local"  name="start_date" style="border-radius: 5px; padding: 3px;"></div>

@@ -33,13 +33,6 @@
                             <label class="machine_label"></label>
                             <div>
                                 <div class="dropdown_graph">
-                                    <select>
-                                            <optgroup label="Machine List">
-                                            <option value="daily">1001</option> 
-                                            <option value="biweekly">1002</option> 
-                                            <option value="monthly">1003</option>
-                                            <option value="annually">1004</option> 
-                                    </select>
                                     <input type="text" name="search" placeholder="Search">
                                     <button><img src="resources/images/search.png" style="width: 20px;"/></button>
                                 </div>
