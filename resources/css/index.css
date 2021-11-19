@@ -17,12 +17,25 @@ body{
 }
 
 .floater {
+    margin-top: 0.7em;
+    margin-left: 0.5em;
     float: left;
 }
 
 /*Login form*/
 
+.registerkulay {
+    height: 39px;
+    width: 100px;
+    border: none;
+    border-radius: 10px;
+    background-color: #2B7A78;
+    color: white;
+    cursor: pointer;
+}
 .loginkulay {
+    
+    margin-right: 1em;
     height: 40px;
     width: 80px;
     border: none;
@@ -201,8 +214,8 @@ box-shadow: 4px 9px 36px 2px rgba(0,0,0,0.75);
     border: 2px solid #3aafa9;
     border-radius: 30px;
     font-size: 15px;
-    padding: 5px 15px;
-    margin-left: 39%;
+    padding: 10px 15px;
+    margin-left: 4.2em;
 }
 
 .btn-card:hover,.btn-card:active{

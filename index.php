@@ -24,8 +24,14 @@
     </head>
     <body>
          <div class="header navbar navbar-expand-lg justify-content-between" id="myHeader">
-            <div class="floater"><h3>CCM</h3></div>
-            <button type="button" class="loginkulay" id="open_form">LOGIN</button>
+            <div class="d-flex justify-content-around">
+                <img src="resources/images/LogoCC.png" style="position: relative; width: 50px;"></img>
+                <div class="floater"><h3>CCM</h3></div>
+            </div>
+            <div class="d-flex justify-content-around">
+                <button type="button" class="loginkulay" id="open_form">LOGIN</button>
+                <a href="registration.php"><button type="button" class="registerkulay">SIGN UP</button></a>
+            </div>
         </div>
         
         <div class="modal_bg">
@@ -61,7 +67,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="card cardcon mt-3 mb-3">
-                        <h3>LOREM IPSUM</h3>
+                        <h3>Website Features</h3>
                         <img src="resources/images/pic3.gif" class="card-img-top" alt="">
                         <h4>Coin Counter Machine</h4>            
                         <div class="card-body">
@@ -78,24 +84,23 @@
 
                 <div class="col-md-4">
                     <div class="card cardcon mt-5 mb-5">
-                        <h3>LOREM IPSUM</h3>
+                        <h3>Coin Counter Website</h3>
                         <img src="resources/images/pic2.gif" class="card-img-top" alt="">
-                        <h4>Coin Counter Machine</h4>            
                         <div class="card-body">
                         <p class="card-text mt-3">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                            Reiciendis eveniet minus sapiente expedita iusto voluptas dolorum corrupti deserunt aperiam 
-                            assumenda laboriosam commodi adipisci reprehenderit quo ratione fugit ullam minima ipsam aliquid 
-                            necessitatibus, rerum maiores nam! Beatae necessitatibus corporis praesentium labore dolorum quod ut 
-                            esse velit ipsam, alias, tempora iusto blanditiis.
+                            Coin Counter Website (CCW) enables a user to monitor its total income and generate a report for specific span of time, this enable the user to differentiate the differences of income of user's machine.
                         </p>
+                        <p class="card-text mt-3" style="margin-bottom: 3em; align-text: center;">
+                            User's required to sign-up to use our website and GREAT NEWS! Signing is free. Register to be able to experiences our innovation's capabilities.
+                        </p>
+                        <a href="#" class="btn-card">Create your own Account</a>
                         </div>
                     </div>
                 </div>
                 
                 <div class="col-md-4">
                     <div class="card cardcon mt-3 mb-3">
-                        <h3>LOREM IPSUM</h3>
+                        <h3>Machine Features</h3>
                         <img src="resources/images/pic4.gif" class="card-img-top" alt="">
                         <h4>Coin Counter Machine</h4>            
                         <div class="card-body">
@@ -116,7 +121,7 @@
 
     <section class="section2">
         <div class="container">
-            <h2 class="title-content text-center">Lorem Ipsum</h2>
+            <h2 class="title-content text-center">coin Counter Machine</h2>
             <hr/>
             <div class="row content-name text-center text-md-start">
                 <div class="col-md-2">
@@ -125,11 +130,7 @@
                 <div class="col content-detail">
                     <h5 class="content-name-2 p-2 p-md-0 pt-md-2">INFO</h5>
                     <p class="Con-p p-2 p-md-0 pt-md-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
-                        nobis molestiae tenetur maxime inventore neque eos totam qui est temporibus 
-                        dolor quidem animi, eum officia praesentium odit odio consectetur reprehenderit.
-                        Ab eligendi similique dolore doloribus cumque sit, culpa voluptatem illum iste
-                        tempora asperiores placeat amet ratione fugiat sunt quia aliquid!
+                        Coin Counter machine(CCM) is a embedded coin sorting machine that sort and counts coins. This machine has a web interface which display income that machine process throughtout its process. This invention was meant for small business which uses coin operated system such as vending machine, piso-net, Wi-Fi etc.
                     </p>
                 </div>
 
@@ -140,11 +141,7 @@
                     <div class="col content-detail">
                         <h5 class="content-name-2 p-2 p-md-0 pt-md-2">INFO</h5>
                         <p class="Con-p p-2 p-md-0 pt-md-2">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
-                            nobis molestiae tenetur maxime inventore neque eos totam qui est temporibus 
-                            dolor quidem animi, eum officia praesentium odit odio consectetur reprehenderit.
-                            Ab eligendi similique dolore doloribus cumque sit, culpa voluptatem illum iste
-                            tempora asperiores placeat amet ratione fugiat sunt quia aliquid!
+                            Coin Counter Machine(CCM) aims to provide a better solution in manual counting of income for these types of businesses since having a coin operated business takes a lot of effort to be able to count or sort coins. Having this type of innovation will make users work to be lessen.
                         </p>
                     </div>
             </div>

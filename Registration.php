@@ -73,16 +73,12 @@
                 <div class="desc-card col-sm-12 col-md-12 col-lg-4 my-auto">
                     <img src="resources/images/Logo1.png" alt="logo" style="width: 12vw; margin-left: auto; margin-right: auto;">
                     <hr>
-                    <h3>Sign Up!</h3><h4>It's always free. Register to be able to access our website!</h4>
-                    
+                    <h3>Sign Up!</h3>
+                    <div class="register_tagline" style="font-size: 16px">It's always free. Register to be able to access our website!</div>
 
                 </div>
             </div>
         </div>
-    <!-- Footer -->
-    <?php 
-        //include 'includes/footer-index.php';
-    ?>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     </body>
