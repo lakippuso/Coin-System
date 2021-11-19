@@ -7,15 +7,15 @@
                 <div class="add_machineModal">
                     <label class="close_btn">&times;</label>
                     <div class="title">Add Your Machine</div>
-                    <form method="POST">
+                    <form method="POST" action="includes/add-machine.php">
                         <div class="inputs">
                             <label>Machine Name</label>
-                            <input type="text" name="name_machine">
+                            <input type="text" name="machine_name">
                         </div>
                         <div class="inputs">
                             <label>Machine Type</label>
                             <br>
-                            <select class="types">
+                            <select name="machine_type"class="types">
                                 <option>Piso-Wifi</option>
                                 <option>Vending Machines</option>
                                 <option>Piso-Net</option>

@@ -35,7 +35,6 @@
                                 <div class="dropdown">
                                     <select name="search_id" id="list">
                                         <option>All Machines</option>
-                                        <optgroup label="Machine List">
                                         <?php
                                             require 'includes/config.php';
                                             $query="SELECT machine_id FROM machine_info ";
@@ -48,7 +47,6 @@
                                             }
                                             $con-> close();
                                         ?>
-                                        </optgroup>
                                     </select>
                                     
                                 </div>
@@ -75,15 +73,13 @@
                                     require 'includes/config.php';
                                     $i = 1;
                                     $username = $_SESSION['session_username'];
-                                    $queryDisplay="SELECT * FROM daily_report where username = '$username' ORDER By date DESC";
-                                    $querySearch="SELECT * FROM daily_report where username = '$username'";
-                                    $query= "";
-                                    $query = $queryDisplay;
+                                    $query="SELECT * FROM daily_report where username = '$username'";
                                     if(isset($_POST['search_id'])){
                                         $search_id = $_POST['search_id'];
                                         if(!empty($search_id)){
-                                            $querySearch = $querySearch."AND machine_id = '$search_id' ORDER By date DESC";
-                                            $query = $querySearch;
+                                            if($search_id != "All Machines"){
+                                                $query = $query."AND machine_id = '$search_id'";
+                                            }
                                         }
                                     }
                                     if(isset($_POST['start_date']) && isset($_POST['end_date'])){
@@ -92,11 +88,11 @@
                                         if(!empty($start_date) && !empty($end_date)){
                                             // echo "Start Date: ".$start_date."<br>";
                                             // echo "End Date: ".$end_date."<br>";
-                                            $querySearch = $querySearch."AND date BETWEEN '$start_date' AND '$end_date' ORDER By date DESC";
-                                            $query = $querySearch;
+                                            $query = $query."AND date BETWEEN '$start_date' AND '$end_date'";
                                         }
 
                                     }
+                                    $query = $query."ORDER BY date DESC ";
                                     $result= $con->query($query);
                                     while($rows= $result-> fetch_assoc())
                                     {
