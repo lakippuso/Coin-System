@@ -34,6 +34,7 @@
                             <form method="POST" action="dailyreport.php" class="calendar d-flex justify-content-between">
                                 <div class="dropdown">
                                     <select name="search_id" id="list">
+                                        <option>All Machines</option>
                                         <optgroup label="Machine List">
                                         <?php
                                             require 'includes/config.php';
@@ -55,7 +56,7 @@
                                 <div><input type="date" name="end_date" value="<?php if(isset($_POST['end_date'])) echo $_POST['end_date']?>"style="border-radius: 5px; padding: 3px;"></div>
                                 <div><button type="submit" id="start" style="margin-top: 3px; padding: 4px; width: 40px; border: none; background: none; border-radius: 4px; font-size: 18px;"><img src="resources/images/search.png" style="width: 30px;"/></button></div>
                             </form>
-                            <input type="button" name="generate" value="Generate Report" style="color: #FEFFFF; width: 200px; background: #2B7A78; border: none; border-radius: 5px;">
+                            <input class="generate" type="button" name="generate" value="Generate Report">
                         </div>
                     </div>
 
@@ -64,7 +65,7 @@
                             <thead>
                                 <tr>
                                     <th class="col">No.</th>
-                                    <th class="col-lg-4">Machine ID</th>
+                                    <th class="col-lg-4">Machine Name</th>
                                     <th class="col-lg-4">Date</th>
                                     <th class="col-lg-4">Monthly Income</th>
                                 </tr>
@@ -74,11 +75,15 @@
                                     require 'includes/config.php';
                                     $i = 1;
                                     $username = $_SESSION['session_username'];
-                                    $query="SELECT * FROM daily_report  where username = '$username'";
+                                    $queryDisplay="SELECT * FROM daily_report where username = '$username' ORDER By date DESC";
+                                    $querySearch="SELECT * FROM daily_report where username = '$username'";
+                                    $query= "";
+                                    $query = $queryDisplay;
                                     if(isset($_POST['search_id'])){
                                         $search_id = $_POST['search_id'];
                                         if(!empty($search_id)){
-                                            $query = $query."AND machine_id = '$search_id'";
+                                            $querySearch = $querySearch."AND machine_id = '$search_id' ORDER By date DESC";
+                                            $query = $querySearch;
                                         }
                                     }
                                     if(isset($_POST['start_date']) && isset($_POST['end_date'])){
@@ -87,8 +92,10 @@
                                         if(!empty($start_date) && !empty($end_date)){
                                             // echo "Start Date: ".$start_date."<br>";
                                             // echo "End Date: ".$end_date."<br>";
-                                            $query = $query."AND date BETWEEN '$start_date' AND '$end_date'";
+                                            $querySearch = $querySearch."AND date BETWEEN '$start_date' AND '$end_date' ORDER By date DESC";
+                                            $query = $querySearch;
                                         }
+
                                     }
                                     $result= $con->query($query);
                                     while($rows= $result-> fetch_assoc())

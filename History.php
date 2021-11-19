@@ -44,10 +44,10 @@
                         <table class="table table-striped table-hover table-bordered">
                             <thead>
                                 <tr>
-                                    <th scope="col">History ID </th>
-                                    <th scope="col">Machine ID</th>
-                                    <th scope="col">Total Income</th>
-                                    <th scope="col">Date</th>
+                                    <th class="col-lg-2">History ID </th>
+                                    <th class="col-lg-3">Machine Name</th>
+                                    <th class="col-lg-3">Total Income</th>
+                                    <th class="col-lg-4">Date</th>
                                 </tr>
                             </thead>
                             <tbody>

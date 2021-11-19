@@ -3,6 +3,32 @@
     include 'includes/header-inside.php';
 ?>
         <div class="main mx-auto row g-0">
+            <div class="machine_back">
+                <div class="add_machineModal">
+                    <label class="close_btn">&times;</label>
+                    <div class="title">Add Your Machine</div>
+                    <form method="POST">
+                        <div class="inputs">
+                            <label>Machine Name</label>
+                            <input type="text" name="name_machine">
+                        </div>
+                        <div class="inputs">
+                            <label>Machine Type</label>
+                            <br>
+                            <select class="types">
+                                <option>Piso-Wifi</option>
+                                <option>Vending Machines</option>
+                                <option>Piso-Net</option>
+                                <option>Others</option>
+                            </select>
+                        </div>
+                        <div class="submit">
+                            <div class="design"></div>
+                            <input type="submit" name="submit" value="Add Machine">
+                        </div>
+                    </form>
+                </div>
+            </div>
             <!-- Side Bar -->
             <div class="side-bar col-lg-2 g-0 d-flex flex-column">
                 <?php include 'includes/side-bar.php' ?>
@@ -31,8 +57,11 @@
                     <div class="machine" id="daily">
                         <div class="search_label d-flex justify-content-between">
                             <label class="machine_label">Machine List</label>
-                            <div>
+                            <div class="d-flex justfiy-content-between">
+                                <button class="add_machine" id="open_add">Add Machine</button>
+                                <script type="text/javascript" src="resources/js/add_machine.js"></script>
                                 <form method = "POST" action="machine.php" class="dropdown_graph">
+                                    
                                     <input type="text" name="search" placeholder="Search">
                                     <button type="submit"><img src="resources/images/search.png" style="width: 20px;"/></button>
                                 </form>
@@ -44,9 +73,9 @@
                             <thead>
                                 <tr>
                                     <th scope="col">No.</th>
-                                    <th class="col-lg-4">Machine Name</th>
-                                    <th class="col-lg-3">Machine Type</th>
-                                    <th class="col-lg-3">Income</th>
+                                    <th class="col-lg-3">Machine Name</th>
+                                    <th class="col-lg-2">Machine Type</th>
+                                    <th class="col-lg-2">Total Income</th>
                                     <th class="col-lg-3">Date Created</th>
                                     <th class="col-lg-2" style="text-align: center;">Configuration</th>
                                 </tr>
@@ -90,6 +119,7 @@
                 </div>
             </div>
         </div>
+        
         </div>
 <!-- Footer -->
 <?php
