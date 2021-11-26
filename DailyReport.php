@@ -4,7 +4,7 @@
 ?>
 <script type="text/javascript">
     $(document).ready(function(){
-        var radioValue = $("input[name='period']:checked").val();
+        var radioValue = $("input[name=$_POST['period']]:checked").val();
         if(radioValue == "Daily") {
             document.getElementById('end').style.display="none";
         }
@@ -44,39 +44,36 @@
                             <form method="POST" action="dailyreport.php" class="calendar d-flex justify-content-between">
                                 
                                 <div>
-                                    <input type="radio" id="daily_report" name="period" value="Daily" onclick="document.getElementById('end').style.display='none'" checked>
+                                    <input type="radio" id="daily_report" name="period" value="Daily" <?php echo (isset($_POST['period'])) ? ($_POST['period']=='Daily')? 'checked':'':'';?> onclick="document.getElementById('end').style.display='none'" checked>
                                     <label for="Daily">Daily</label><br>
                                 </div>
                                 <div>
-                                    <input type="radio" id="biweekly_report" name="period" value="Biweekly" onclick="document.getElementById('end').style.display='none'">
+                                    <input type="radio" id="biweekly_report" name="period" value="Biweekly" <?php echo (isset($_POST['period'])) ? ($_POST['period']=='Biweekly')? 'checked':'':'';?> onclick="document.getElementById('end').style.display='none'">
                                     <label for="Biweekly">Biweekly</label><br>
                                 </div>
                                 <div>
-                                    <input type="radio" id="monthly_report" name="period" value="Monthly" onclick="document.getElementById('end').style.display='none'">
+                                    <input type="radio" id="monthly_report" name="period" value="Monthly" <?php echo (isset($_POST['period'])) ? ($_POST['period']=='Monthly')? 'checked':'':'';?> onclick="document.getElementById('end').style.display='none'">
                                     <label for="Monthly">Monthly</label>
                                 </div>
                                 <div>
-                                    <input type="radio" id="annually" name="period" value="Annually" onclick="document.getElementById('end').style.display='none'">
+                                    <input type="radio" id="annually" name="period" value="Annually" <?php echo (isset($_POST['period'])) ? ($_POST['period']=='Annually')? 'checked':'':'';?> onclick="document.getElementById('end').style.display='none'">
                                     <label for="Annually">Annually</label>
                                 </div>
                                 <div>
-                                    <input type="radio" id="custom" name="period" value="Custom" onclick="document.getElementById('end').style.display='block'">
+                                    <input type="radio" id="custom" name="period" value="Custom" <?php echo (isset($_POST['period'])) ? ($_POST['period']=='Custom')? 'checked':'':'';?> onclick="document.getElementById('end').style.display='block'">
                                     <label for="Custom">Custom</label>
                                 </div> 
                                 <div class="dropdown">
                                     <select name="search_id[]" id="list" multiple="multiple" class="machine active">
                                         <?php
-                                            $i = 0;
-                                            $name = "machine";
                                             require 'includes/config.php';
                                             $query="SELECT machine_id FROM machine_info ";
                                             $result= $con->query($query);
                                             while($rows= $result-> fetch_assoc())
                                             {
                                         ?>
-                                            <option value="<?php echo $name.$i ?>"><?php echo $rows['machine_id']; ?></option>   
+                                            <option value="<?php echo $rows['machine_id']; ?>"><?php echo $rows['machine_id']; ?></option>   
                                         <?php
-                                            $i+=1;
                                             }
                                             $con-> close();
                                         ?>
@@ -110,9 +107,11 @@
                                     $query="SELECT * FROM daily_report where username = '$username'";
                                     if(isset($_POST['search_id'])){
                                         $search_id = $_POST['search_id'];
+                                        $search_id_query = implode(",",$search_id);
+                                        echo $search_id_query;
                                         if(!empty($search_id)){
                                             if($search_id != "All Machines"){
-                                                $query = $query."AND machine_id = '$search_id'";
+                                                $query = $query."AND machine_id IN ($search_id_query)";
                                             }
                                         }
                                     }
@@ -124,9 +123,12 @@
                                             // echo "End Date: ".$end_date."<br>";
                                             $query = $query."AND date BETWEEN '$start_date' AND '$end_date'";
                                         }
+                                        else if(!empty($start_date)){
+                                            $query = $query."AND date = '$start_date'";
+                                        }
 
                                     }
-                                    $query = $query."ORDER BY date DESC ";
+                                    $query = $query."ORDER BY date DESC";
                                     $result= $con->query($query);
                                     while($rows= $result-> fetch_assoc())
                                     {
