@@ -91,7 +91,7 @@
                 $valid++;
             }
             else{
-                $sql =  "INSERT INTO users (first_name, last_name, email, username, password) VALUES (?, ?, ?, ?, ?)";
+                $sql =  "INSERT INTO users (first_name, last_name, email, username, password, date_created) VALUES (?, ?, ?, ?, ?, ?)";
                 $stmt = mysqli_stmt_init($con);
                 if(!mysqli_stmt_prepare($stmt, $sql)){ 
                     $message = $message."SQLERROR3&";
@@ -102,8 +102,9 @@
                         header("Location: ../registration.php?".$message);
                         exit();
                     }else{
+                        $date = date('Y-m-d');
                         $hashed_pass = password_hash($password, PASSWORD_DEFAULT);
-                        mysqli_stmt_bind_param($stmt, "sssss", $firstname, $lastname, $email, $username, $hashed_pass);
+                        mysqli_stmt_bind_param($stmt, "ssssss", $firstname, $lastname, $email, $username, $hashed_pass, $date);
                         mysqli_stmt_execute($stmt);
                         header("Location: ../index.php?signup=success");
                         exit();

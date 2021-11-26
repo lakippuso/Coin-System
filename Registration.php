@@ -22,19 +22,17 @@
     </div> -->
     <!-- Content -->
         <div class="registration-body g-0 container-fluid">
-            <div class="registration-row d-flex justify-content-around mx-auto row">
-                <form method="POST" action="includes/registration-include.php" class="login-card col-sm-12 col-md-12 col-lg-6" id="form">
-                    <div class="row">
+            <div class="registration-row col-sm-10 col-md-10 col-lg-7 d-flex justify-content-around mx-auto row">
+                <form method="POST" action="includes/registration-include.php" class="login-card col-sm-12 col-md-12 col-lg-6 order-sm-last order-lg-first" id="form">
+                    <div class="row d-sm-none d-lg-block">
                         <h1>Sign Up!</h1>
                     </div>
                     <div class="row">
-                    </div>
-                    <div class="row ">
-                        <div class="col-sm-6 col-lg-6">
+                        <div class="col-sm-12 col-lg-6">
                             <input type="text" name="firstname" id="firstname" placeholder="Firstname" value="<?php if(isset($_GET['firstname'])) echo $_GET['firstname'];?>">
                             <span class="error col" id="firstname_error"><?php if(isset($_GET['firstname_error'])) echo $_GET['firstname_error'];?></span>
                         </div>
-                        <div class="col-sm-6 col-lg-6">
+                        <div class="col-sm-12 mt-sm-3 col-lg-6 mt-lg-0">
                             <input type="text" name="lastname" id="lastname" placeholder="Lastname" value="<?php if(isset($_GET['lastname'])) echo $_GET['lastname'];?>">
                             <span class="error col" id="lastname_error" name="lastname_error"><?php if(isset($_GET['lastname_error'])) echo $_GET['lastname_error'];?></span>
                         </div>
@@ -70,7 +68,7 @@
                     </div>
                 </form>
 
-                <div class="desc-card col-sm-12 col-md-12 col-lg-4 my-auto">
+                <div class="desc-card col-sm-12 col-md-12 col-lg-4 my-auto order-sm-first order-lg-last">
                     <img src="resources/images/Logo1.png" alt="logo" style="width: 12vw; margin-left: auto; margin-right: auto;">
                     <hr>
                     <h3>Sign Up!</h3>
