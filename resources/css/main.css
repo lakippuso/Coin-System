@@ -86,7 +86,7 @@ body{
     margin-top: 10px;
     margin-left: 10px;
     margin-right: 10px;
-    height: 76vh;
+    height: 71vh;
 }
 
 .dropdown {
@@ -97,6 +97,14 @@ body{
     height: 33px;
     border-radius: 5px;
 }
+
+#start, #end {
+    width: 12em;
+}
+#start:hover, #end:hover {
+    cursor: pointer;
+}
+
 
 
 
@@ -161,6 +169,75 @@ body{
 .add_machine:hover {
     background-color: #4dc0ba;
 }
+
+.history_table .dbReset:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Dialog Box Reset */
+.dialog_bg {
+    z-index: 1;
+	position:fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgba(0,0,0,0.7);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor:default;
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0s, opacity 0.5s;
+	
+}
+
+.db-active {
+	visibility: visible;
+	opacity: 1;
+}
+
+.dialog_box {
+	width: 500px;   
+	background-color: white;
+}
+
+.dialog_box .dialog{
+	padding: 0.5em;
+	background: lightblue;
+}
+
+.dialog_box .title {
+	font-weight: 600; 
+	padding: 0.5em; 
+	display: flex;
+}
+
+.dialog_box .dialog_content {
+	padding: 0.5em;
+	background: white;
+}
+.dialog_box .dialog_choice{
+	display: flex;
+	justify-content: right;
+	padding: 0.5em;
+	background-color: rgba(0,0,0,0.3);
+}
+
+.dialog_choice > button, a button{
+	margin: 5px;
+	width: 8em;
+	height: 2em;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.dialog_choice > button:hover {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+
 
 /*Add machine */
 

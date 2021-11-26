@@ -27,15 +27,17 @@
                     </div>
                 </div>
                 <!-- Content -->
+                            <form action="">
                 <div class="content">
                     <div class="dailyReport" id="daily">
                         <div class="search_label d-flex justify-content-between">
-                            <label class="machine_label"></label>
                             <div>
                                 <form method = "POST" action="history.php"  class="dropdown_graph">
                                     <input type="text" name="search" placeholder="Search">
                                     <button type="submit"><img src="resources/images/search.png" style="width: 20px;"/></button>
                                 </form>
+                                <button>Delete</button>
+                                
                             </div>
                         </div>
                     </div>
@@ -44,10 +46,12 @@
                         <table class="table table-striped table-hover table-bordered">
                             <thead>
                                 <tr>
+                                    <th><input type="checkbox" name="delete"></th>
                                     <th class="col-lg-2">History ID </th>
                                     <th class="col-lg-3">Machine Name</th>
                                     <th class="col-lg-3">Total Income</th>
-                                    <th class="col-lg-4">Date</th>
+                                    <th class="col-lg-3">Date</th>
+                                    <th class="col-lg-1" style="text-align: center;">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -62,13 +66,17 @@
                                             }
                                         }
                                         $result = mysqli_query($con,$sql);
-                                            while($rows = mysqli_fetch_assoc($result)){
+                                        while($rows = mysqli_fetch_assoc($result)){
                                     ?>
                                 <tr>
-                                                <th scope="col"><?php echo $rows['history_id'];?></th>
-                                                <th scope="col"><?php echo $rows['machine_id'];?></th>
-                                                <th scope="col"><?php echo $rows['total_income'];?></th>
-                                                <th scope="col"><?php echo $rows['reset_date'];?></th>
+                                            <th><input type="checkbox" name="delete"></th>
+                                            <th scope="col"><?php echo $rows['history_id'];?></th>
+                                            <th scope="col"><?php echo $rows['machine_id'];?></th>
+                                            <th scope="col"><?php echo $rows['total_income'];?></th>
+                                            <th scope="col"><?php echo $rows['reset_date'];?></th>
+                                            <th scope="col"style="text-align: center;">
+                                            <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white; width:4em;">Delete</button></span>
+                                            </th>
                                 </tr>
                                                 
                                 <?php  }?>
@@ -76,6 +84,7 @@
                         </table>
                     </div>
                 </div>
+                                        </form>
             </div>
         </div>
         </div>

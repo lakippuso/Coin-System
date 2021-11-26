@@ -3,32 +3,6 @@
     include 'includes/header-inside.php';
 ?>
         <div class="main mx-auto row g-0">
-            <div class="machine_back">
-                <div class="add_machineModal">
-                    <label class="close_btn">&times;</label>
-                    <div class="title">Add Your Machine</div>
-                    <form method="POST" action="includes/add-machine.php">
-                        <div class="inputs">
-                            <label>Machine Name</label>
-                            <input type="text" name="machine_name">
-                        </div>
-                        <div class="inputs">
-                            <label>Machine Type</label>
-                            <br>
-                            <select name="machine_type"class="types">
-                                <option>Piso-Wifi</option>
-                                <option>Vending Machines</option>
-                                <option>Piso-Net</option>
-                                <option>Others</option>
-                            </select>
-                        </div>
-                        <div class="submit">
-                            <div class="design"></div>
-                            <input type="submit" name="submit" value="Add Machine">
-                        </div>
-                    </form>
-                </div>
-            </div>
             <!-- Side Bar -->
             <div class="side-bar col-lg-2 g-0 d-flex flex-column">
                 <?php include 'includes/side-bar.php' ?>
@@ -53,6 +27,32 @@
                     </div>
                 </div>
                 <!-- Content -->
+                <div class="machine_back">
+                    <div class="add_machineModal">
+                        <label class="close_btn">&times;</label>
+                        <div class="title">Add Your Machine</div>
+                        <form method="POST" action="includes/add-machine.php">
+                            <div class="inputs">
+                                <label>Machine Name</label>
+                                <input type="text" name="machine_name">
+                            </div>
+                            <div class="inputs">
+                                <label>Machine Type</label>
+                                <br>
+                                <select name="machine_type"class="types">
+                                    <option>Piso-Wifi</option>
+                                    <option>Vending Machines</option>
+                                    <option>Piso-Net</option>
+                                    <option>Others</option>
+                                </select>
+                            </div>
+                            <div class="submit">
+                                <div class="design"></div>
+                                <input type="submit" name="submit" value="Add Machine">
+                            </div>
+                        </form>
+                    </div>
+                </div>
                 <div class="content">
                     <div class="machine" id="daily">
                         <div class="search_label d-flex justify-content-between">
@@ -95,23 +95,29 @@
                                     $result= $con->query($query);
                                     while($rows= $result-> fetch_assoc())
                                     {
-                                ?>
+                                        // $id = array();
+                                        // $machine = $rows['machine_id'];
+                                        // array_push($id, $machine);
+
+                                    ?>
                                 <tr>
-                                            <th scope="col"><?php echo $x ?></th>
-                                            <th scope="col"><?php echo $rows['machine_name']; ?></th>
-                                            <th scope="col"><?php echo $rows['machine_type']; ?></th>
-                                            <th scope="col"><?php echo $rows['income']; ?></th>
-                                            <th scope="col"><?php echo $rows['date_created']; ?></th>
-                                            <th scope="col"style="text-align: center;">
-                                                <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white; width:4em;">Info</button></span>
-                                                <a class="badge bg-primary rounded-pill" href="includes/reset-machine.php?machine_id=<?php echo $rows['machine_id']; ?>"><button style="background: None; border: None; color: white; width:4em;">Reset</button></a>
-                                            </th>
+                                    <th scope="col"><?php echo $x ?></th>
+                                    <th scope="col"><?php echo $rows['machine_name']; ?></th>
+                                    <th scope="col"><?php echo $rows['machine_type']; ?></th>
+                                    <th scope="col"><?php echo $rows['income']; ?></th>
+                                    <th scope="col"><?php echo $rows['date_created']; ?></th>
+                                    <th scope="col"style="text-align: center;">
+                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white; width:4em;">Info</button></span>
+                                        <span class="badge bg-primary rounded-pill"><button onclick="dialog(<?php echo $rows['machine_id'];?>)" style="background: None; border: None; color: white; width:4em;">Reset</button></span>
+                                       
+                                                          
+                                        <?php echo $rows['machine_id']; ?>              
+                                    </th>
                                 </tr>
-                                <?php
                                 
+                                <?php
                                         $x+=1;
                                     }
-                                    $con-> close();
                                 ?>
                             </tbody>
                         </table>
@@ -120,7 +126,54 @@
             </div>
         </div>
         
+        <!-- Dialog Box Reset -->
+        <div class="dialog_bg <?php echo $rows['machine_id'];?>">
+            <div class="dialog_box">
+                <div class="dialog">
+                    <div class="title">
+                        <img src="resources/images/R.png" style="width: 25px;"/>
+                        <div style="margin-top: 0.3em; margin-left: 0.3em;">Machine Income Reset</div>
+                    </div>
+                    <div class="dialog_content">
+                        <h2 style="margin-bottom: 0; text-align: center;">Are you sure?</h2>
+                        <hr>
+                        <div style="text-align: center; padding: 1em;">Selecting yes will reset your machine's income and will be saved in history, this action is cannot be change.</div>
+                        
+                        <div class="dialog_choice">
+                            <button class="cancel">Cancel</button>
+                            <a href="includes/reset-machine.php?machine_id=" id = "reset_button"><button>Continue</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+<script type="text/javascript">
+    function dialog(button) {
+        var modalBg = document.querySelector('.dialog_bg');
+        var modalClose = document.querySelector('.cancel');
+        var reset_button = document.getElementById('reset_button');
+
+        console.log(modalBtn);
+        modalBg.classList.add('db-active');
+
+        modalClose.addEventListener('click', function () {
+            modalBg.classList.remove('db-active');
+        });
+
+        
+        $.ajax({
+            url: "includes/get-id.php",
+            method: "POST",
+            data: {"machine_id": button},
+            success: function(response){
+                console.log(response);
+                var href1 = document.getElementById("reset_button").getAttribute("href")+response;
+                console.log(href1);
+                reset_button.setAttribute("href", href1);
+            }
+        });
+    }
+</script>
 <!-- Footer -->
 <?php
     include 'includes/footer-inside.php';
