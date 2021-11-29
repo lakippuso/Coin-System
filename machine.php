@@ -33,6 +33,10 @@
                         <div class="title">Add Your Machine</div>
                         <form method="POST" action="includes/add-machine.php">
                             <div class="inputs">
+                                <label>Machine ID Number</label>
+                                <input type="text" name="machine_id">
+                            </div>
+                            <div class="inputs">
                                 <label>Machine Name</label>
                                 <input type="text" name="machine_name">
                             </div>
@@ -108,10 +112,7 @@
                                     <th scope="col"><?php echo $rows['date_created']; ?></th>
                                     <th scope="col"style="text-align: center;">
                                         <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white; width:4em;">Info</button></span>
-                                        <span class="badge bg-primary rounded-pill"><button onclick="dialog(<?php echo $rows['machine_id'];?>)" style="background: None; border: None; color: white; width:4em;">Reset</button></span>
-                                       
-                                                          
-                                        <?php echo $rows['machine_id']; ?>              
+                                        <span class="badge bg-primary rounded-pill"><button onclick="dialog(<?php echo $rows['machine_id'];?>)" style="background: None; border: None; color: white; width:4em;">Reset</button></span>            
                                     </th>
                                 </tr>
                                 

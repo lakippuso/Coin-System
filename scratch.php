@@ -1,8 +1,13 @@
 <?php
-    $arr = array( "A",  "B",  "D",  "E",  "C");
-    echo implode(",",$arr);
+    if(isset($_POST['check'])){
+        $arr =  $_POST['check'];
+        foreach($arr as $x){
+            echo $x;
+        }
+    }
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,12 +17,10 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="scratch.php" method="GET">
-        <input type="radio" name="radio" value="1">
-        <input type="radio" name="radio" value="2">
-        <input type="radio" name="radio" value="3">
-        <input type="radio" name="radio" value="4">
-        <input type="submit" value="Submit">
+    <form action="scratch.php" method="POST">
+        <input type="checkbox" name="check[]" value="1">
+        <input type="checkbox" name="check[]" value="2">
+        <input type="submit" value="submit">
     </form>
 </body>
 </html>

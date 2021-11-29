@@ -10,15 +10,12 @@
 
 function getSelectedValue () {
     var selectValue = document.getElementById("income_list").value;
-    if(selectValue == "daily")
+    if(selectValue == "weekly")
     {
-        document.getElementById("income_type").innerHTML = "Daily Income";
+        document.getElementById("income_type").innerHTML = "Weekly Income";
     }
     else if(selectValue == "monthly") {
         document.getElementById("income_type").innerHTML = "Monthly Income";
-    }
-    else if(selectValue == "biweekly") {
-        document.getElementById("income_type").innerHTML = "Biweekly Income";
     }
     else{
         document.getElementById("income_type").innerHTML = "Annually Income";

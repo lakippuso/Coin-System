@@ -71,7 +71,9 @@ body{
 /* Daily Report USER */
 
 .generate {
+	margin-top: auto;
     color: #FEFFFF; 
+	height: 2.3em;
     width: 12em; 
     background: #2B7A78; 
     border: none; 
@@ -86,11 +88,12 @@ body{
     margin-top: 10px;
     margin-left: 10px;
     margin-right: 10px;
-    height: 71vh;
+    height: 70vh;
 }
 
 .dropdown {
-    margin-top: 0.75vh;
+	margin-top: 0.3em;
+	margin-right: 0.5em;
 }
 .dropdown select{
     width: 8.5em;
@@ -106,6 +109,35 @@ body{
 }
 
 
+.radio__bg {
+	display: inline-flex;
+	overflow: hidden;
+	border-radius: 5px;
+}
+
+.radio__bg .radio__button {
+	display: none;
+}
+
+.radio__bg .radio__label {
+	font-family: 'Arvo', serif;
+	padding: 8px 14px;
+	font-size: 14px;
+    color: #FEFFFF; 
+    background: #2B7A78; 
+	cursor: pointer;
+}
+
+.radio__bg .radio__label:last-of-type {
+	border-right: 1px solid #FEFFFF;
+}
+
+.radio__bg .radio__button:checked + .radio__label{
+    background: #4dc0ba;
+}
+
+
+
 
 
 /* History USER */
@@ -113,6 +145,20 @@ body{
     margin-top: 10px;
     margin-left: 10px;
     margin-right: 25px;
+}
+
+
+.delete {
+    color: #FEFFFF; 
+    width: 8em; 
+	height: 2em;
+    background: #2B7A78; 
+    border: none; 
+    border-radius: 5px;
+}
+
+.delete:hover {
+	background-color: #4dc0ba;
 }
 
 /* Admin Dashboard */

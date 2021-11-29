@@ -82,21 +82,18 @@ $(document).ready(function(){
                                 <div>
                                     <div class="dropdown_graph">
                                         <select id="income_list" onchange="getSelectedValue();">
-                                                <option value="daily">Daily</option> 
-                                                <option value="biweekly">Biweekly</option> 
+                                                <option value="weekly">Weekly</option> 
                                                 <option value="monthly">Monthly</option>
                                                 <option value="annually">Annually</option> 
                                         </select>
-                                        <input type="text" name="search" placeholder="Search">
-                                        <button><img src="resources/images/search.png" style="width: 20px;"/></button>
                                     </div>
                                     <script type="text/javascript" src="resources/js/card.js"></script>
                                 </div>
                             </div>
                             <div class="graphs">
-                                <div class="daily graph">
+                                <div class="weekly graph">
                                     <canvas id="graph1" style="width:100%;width:500px;height:245px;"></canvas>
-                                    <script src="resources/js/daily.js"></script>
+                                    <script src="resources/js/weekly.js"></script>
                                 </div>
 
 
@@ -105,13 +102,8 @@ $(document).ready(function(){
                                     <script src="resources/js/monthly.js"></script>
                                 </div>
 
-                                <div class="biweekly graph">
-                                    <canvas id="graph3" style="width:100%;width:500px;height:245px;"></canvas>
-                                    <script src="resources/js/biweekly.js"></script>
-                                </div>
-
                                 <div class="annually graph">
-                                    <canvas id="graph4" style="width:100%;width:500px;height:245px;"></canvas>
+                                    <canvas id="graph3" style="width:100%;width:500px;height:245px;"></canvas>
                                     <script src="resources/js/annually.js"></script>
                                 </div>
                             </div>

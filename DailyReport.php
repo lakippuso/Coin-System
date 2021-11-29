@@ -4,7 +4,7 @@
 ?>
 <script type="text/javascript">
     $(document).ready(function(){
-        var radioValue = $("input[name=$_POST['period']]:checked").val();
+        var radioValue = $("input[name='period']:checked").val();
         if(radioValue == "Daily") {
             document.getElementById('end').style.display="none";
         }
@@ -37,52 +37,55 @@
                 </div>
                 <!-- Content -->
                 <div class="content">
-                    <div class="d-flex justify-content-evenly" id="incomePeriod" style="margin-top: 1em;">
-                    </div>
                     <div class="dailyReport" id="daily">
                         <div class="m-4 d-flex justify-content-around">
-                            <form method="POST" action="dailyreport.php" class="calendar d-flex justify-content-between">
-                                
-                                <div>
-                                    <input type="radio" id="daily_report" name="period" value="Daily" <?php echo (isset($_POST['period'])) ? ($_POST['period']=='Daily')? 'checked':'':'';?> onclick="document.getElementById('end').style.display='none'" checked>
-                                    <label for="Daily">Daily</label><br>
+                            <form method="POST" action="dailyreport.php" class="calendar d-flex flex-column">
+
+                                <div class="radio__bg d-flex justify-content-evenly" id="incomePeriod" style="margin-bottom: 1em; margin-right: auto; margin-left: auto;">
+                                    <div>
+                                        <input class="radio__button" type="radio" id="daily_report" name="period" value="Daily" <?php echo (isset($_POST['period'])) ? ($_POST['period']=='Daily')? 'checked':'':'';?> onclick="document.getElementById('end').style.display='none'" checked>
+                                        <label class="radio__label" for="daily_report">Daily</label><br>
+                                    </div>
+                                    <div>
+                                        <input class="radio__button" type="radio" id="weekly_report" name="period" value="Weekly" <?php echo (isset($_POST['period'])) ? ($_POST['period']=='Weekly')? 'checked':'':'';?> onclick="document.getElementById('end').style.display='none'">
+                                        <label class="radio__label" for="weekly_report">Weekly</label><br>
+                                    </div>
+                                    <div>
+                                        <input class="radio__button" type="radio" id="monthly_report" name="period" value="Monthly" <?php echo (isset($_POST['period'])) ? ($_POST['period']=='Monthly')? 'checked':'':'';?> onclick="document.getElementById('end').style.display='none'">
+                                        <label class="radio__label" for="monthly_report">Monthly</label>
+                                    </div>
+                                    <div>
+                                        <input class="radio__button" type="radio" id="annually" name="period" value="Annually" <?php echo (isset($_POST['period'])) ? ($_POST['period']=='Annually')? 'checked':'':'';?> onclick="document.getElementById('end').style.display='none'">
+                                        <label class="radio__label" for="annually">Annually</label>
+                                    </div>
+                                    <div>
+                                        <input class="radio__button" type="radio" id="custom" name="period" value="Custom" <?php echo (isset($_POST['period'])) ? ($_POST['period']=='Custom')? 'checked':'':'';?> onclick="document.getElementById('end').style.display='block'">
+                                        <label class="radio__label" for="custom">Custom</label>
+                                    </div>
                                 </div>
-                                <div>
-                                    <input type="radio" id="biweekly_report" name="period" value="Biweekly" <?php echo (isset($_POST['period'])) ? ($_POST['period']=='Biweekly')? 'checked':'':'';?> onclick="document.getElementById('end').style.display='none'">
-                                    <label for="Biweekly">Biweekly</label><br>
-                                </div>
-                                <div>
-                                    <input type="radio" id="monthly_report" name="period" value="Monthly" <?php echo (isset($_POST['period'])) ? ($_POST['period']=='Monthly')? 'checked':'':'';?> onclick="document.getElementById('end').style.display='none'">
-                                    <label for="Monthly">Monthly</label>
-                                </div>
-                                <div>
-                                    <input type="radio" id="annually" name="period" value="Annually" <?php echo (isset($_POST['period'])) ? ($_POST['period']=='Annually')? 'checked':'':'';?> onclick="document.getElementById('end').style.display='none'">
-                                    <label for="Annually">Annually</label>
-                                </div>
-                                <div>
-                                    <input type="radio" id="custom" name="period" value="Custom" <?php echo (isset($_POST['period'])) ? ($_POST['period']=='Custom')? 'checked':'':'';?> onclick="document.getElementById('end').style.display='block'">
-                                    <label for="Custom">Custom</label>
+
+                                <div class="d-flex justify-content-evenly" style="margin-top: auto; margin-right: auto; margin-left: 8px;">
+                                    <div class="dropdown">
+                                        <select name="search_id[]" id="list" multiple="multiple" class="machine active">
+                                            <?php
+                                                require 'includes/config.php';
+                                                $query="SELECT machine_id FROM machine_info ";
+                                                $result= $con->query($query);
+                                                while($rows= $result-> fetch_assoc())
+                                                {
+                                            ?>
+                                                <option value="<?php echo $rows['machine_id']; ?>"><?php echo $rows['machine_id']; ?></option>   
+                                            <?php
+                                                }
+                                                $con-> close();
+                                            ?>
+                                        </select>
+                                    </div>
+                                    <div><input type="text" name="start_date" id="start" value="<?php if(isset($_POST['start_date'])) echo $_POST['start_date']?>"style="border-radius: 5px; padding: 3px;" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Start Date"></div>
+                                    <div><input type="text" name="end_date" id="end" value="<?php if(isset($_POST['end_date'])) echo $_POST['end_date']?>"style="border-radius: 5px; padding: 3px;" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="End Date"></div>
+                                    <div><button type="submit" id="start" style="margin-top: 3px; padding: 4px; width: 40px; border: none; background: none;"><img src="resources/images/search.png" style="width: 30px;"/></button></div>
                                 </div> 
-                                <div class="dropdown">
-                                    <select name="search_id[]" id="list" multiple="multiple" class="machine active">
-                                        <?php
-                                            require 'includes/config.php';
-                                            $query="SELECT machine_id FROM machine_info ";
-                                            $result= $con->query($query);
-                                            while($rows= $result-> fetch_assoc())
-                                            {
-                                        ?>
-                                            <option value="<?php echo $rows['machine_id']; ?>"><?php echo $rows['machine_id']; ?></option>   
-                                        <?php
-                                            }
-                                            $con-> close();
-                                        ?>
-                                    </select>
-                                    
-                                </div>
-                                <div><input type="text" name="start_date" id="start" value="<?php if(isset($_POST['start_date'])) echo $_POST['start_date']?>"style="border-radius: 5px; padding: 3px;" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Start Date"></div>
-                                <div><input type="text" name="end_date" id="end" value="<?php if(isset($_POST['end_date'])) echo $_POST['end_date']?>"style="border-radius: 5px; padding: 3px;" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="End Date"></div>
-                                <div><button type="submit" id="start" style="margin-top: 3px; padding: 4px; width: 40px; border: none; background: none; border-radius: 4px; font-size: 18px;"><img src="resources/images/search.png" style="width: 30px;"/></button></div>
+
                             </form>
                             <input class="generate" type="button" name="generate" value="Generate Report">
                         </div>
@@ -96,7 +99,7 @@
                                     <th class="col">No.</th>
                                     <th class="col-lg-4">Machine Name</th>
                                     <th class="col-lg-4">Date</th>
-                                    <th class="col-lg-4">Monthly Income</th>
+                                    <th class="col-lg-4">Total Income</th>
                                 </tr>
                             </thead>
                             <tbody>

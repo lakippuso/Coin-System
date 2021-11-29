@@ -1,4 +1,6 @@
 <!-- Header -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> 
 <?php
     include 'includes/header-inside.php';
 ?>
@@ -16,79 +18,79 @@
                     <div class="col-1">
                         <span class="row">
                             <?php 
-                                echo printDate();
+                                echo printDate()
                             ?>
                         </span>
                         <span class="row">
                             <?php 
-                                echo printTime();
+                                echo printTime()
                             ?>
                         </span>
                     </div>
                 </div>
                 <!-- Content -->
-                            <form action="">
-                <div class="content">
-                    <div class="dailyReport" id="daily">
-                        <div class="search_label d-flex justify-content-between">
-                            <div>
-                                <form method = "POST" action="history.php"  class="dropdown_graph">
-                                    <input type="text" name="search" placeholder="Search">
+                <form action="includes/delete-machine.php" method="POST">
+                    <div class="content">
+                        <div class="dailyReport" id="daily">
+                            <div class="search_label d-flex justify-content-between">
+                                <div>
+                                    <input type="text" name="search" id="search_history" placeholder="Search">
                                     <button type="submit"><img src="resources/images/search.png" style="width: 20px;"/></button>
-                                </form>
-                                <button>Delete</button>
-                                
+                                    <script>
+                                    </script>
+                                </div>
+                                <div>
+                                    <input class="delete" type="submit" name="delete" value="Delete">
+                                </div>
                             </div>
                         </div>
                     </div>
-                <div class="content">
-                    <div class="overflow-scroll" id="history_table" style="height: 77vh;">
-                        <table class="table table-striped table-hover table-bordered">
-                            <thead>
-                                <tr>
-                                    <th><input type="checkbox" name="delete"></th>
-                                    <th class="col-lg-2">History ID </th>
-                                    <th class="col-lg-3">Machine Name</th>
-                                    <th class="col-lg-3">Total Income</th>
-                                    <th class="col-lg-3">Date</th>
-                                    <th class="col-lg-1" style="text-align: center;">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                    <?php 
-                                        require 'includes/config.php';
-                                        $username = $_SESSION['session_username'];
-                                        $sql="SELECT * FROM history where username = '$username'";
-                                        if(isset($_POST['search'])){
-                                            $search_id = $_POST['search'];
-                                            if(!empty($search_id)){
-                                                $sql = $sql."AND machine_id = '$search_id'";
+                    <div class="content">
+                        <div class="overflow-scroll" id="history_table" style="height: 77vh;">
+                            <table class="table table-striped table-hover table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th><input type="checkbox" class="select_all_items"></th>
+                                        <th class="col-lg-2">History ID </th>
+                                        <th class="col-lg-4">Machine Name</th>
+                                        <th class="col-lg-3">Total Income</th>
+                                        <th class="col-lg-4">Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                        <?php 
+                                            require 'includes/config.php';
+                                            $username = $_SESSION['session_username'];
+                                            $sql="SELECT * FROM history where username = '$username'";
+                                            if(isset($_POST['search'])){
+                                                $search_id = $_POST['search'];
+                                                if(!empty($search_id)){
+                                                    $sql = $sql."AND machine_id = '$search_id'";
+                                                }
                                             }
-                                        }
-                                        $result = mysqli_query($con,$sql);
-                                        while($rows = mysqli_fetch_assoc($result)){
-                                    ?>
-                                <tr>
-                                            <th><input type="checkbox" name="delete"></th>
-                                            <th scope="col"><?php echo $rows['history_id'];?></th>
-                                            <th scope="col"><?php echo $rows['machine_id'];?></th>
-                                            <th scope="col"><?php echo $rows['total_income'];?></th>
-                                            <th scope="col"><?php echo $rows['reset_date'];?></th>
-                                            <th scope="col"style="text-align: center;">
-                                            <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white; width:4em;">Delete</button></span>
-                                            </th>
-                                </tr>
-                                                
-                                <?php  }?>
-                            </tbody>
-                        </table>
+                                            $result = mysqli_query($con,$sql);
+                                            while($rows = mysqli_fetch_assoc($result)){
+                                        ?>
+                                    <tr>
+                                                <th><input type="checkbox" class="cb_item" name="selected[]" value="<?php echo $rows['history_id'];?>"></th>
+                                                <th scope="col"><?php echo $rows['history_id'];?></th>
+                                                <th scope="col"><?php echo $rows['machine_id'];?></th>
+                                                <th scope="col"><?php echo $rows['total_income'];?></th>
+                                                <th scope="col"><?php echo $rows['reset_date'];?></th>
+                                    </tr>
+                                                    
+                                    <?php  }?>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                </div>
-                                        </form>
+                </form>
             </div>
         </div>
         </div>
+        
 <!-- Footer -->
+
 <?php
     include 'includes/footer-inside.php';
 ?>
