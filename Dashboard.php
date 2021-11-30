@@ -73,8 +73,6 @@ $(document).ready(function(){
                             </div>
                         </div>
                     </div>
-
-                    <!-- Add Users -->
                     <div class="context m-3 d-flex justify-content-around">
                         <div class="user_info">
                             <div class="d-flex justify-content-between">
@@ -110,7 +108,7 @@ $(document).ready(function(){
                         </div>
                     </div>
                 </div>
-            </div>
+                </div>
         </div>
 <!-- Footer -->
 <?php
