@@ -148,15 +148,15 @@
 <script type="text/javascript" src="resources/js/add_machine.js"></script>
 <script type="text/javascript">
     function dialog(button) {
-        var modalBg = document.querySelector('.dialog_bg');
-        var modalClose = document.querySelector('.cancel');
+        var reset_bg = document.querySelector('.dialog_bg');
+        var reset_close = document.querySelector('.cancel');
         var reset_button = document.getElementById('reset_button');
 
-        console.log(modalBtn);
-        modalBg.classList.add('db-active');
+        console.log();
+        reset_bg.classList.add('db-active');
 
-        modalClose.addEventListener('click', function () {
-            modalBg.classList.remove('db-active');
+        reset_close.addEventListener('click', function () {
+            reset_bg.classList.remove('db-active');
         });
 
         

@@ -1,12 +1,12 @@
-var modalBtn = document.querySelector('#open_add');
-var modalBg = document.querySelector('.machine_back');
-var modalClose = document.querySelector('.close_btn');
+var addBtn = document.querySelector('#open_add');
+var addBg = document.querySelector('.machine_back');
+var addClose = document.querySelector('.close_btn');
 
 
-modalBtn.addEventListener('click', function () {
-    modalBg.classList.add('back-active');
+addBtn.addEventListener('click', function () {
+    addBg.classList.add('back-active');
 });
 
-modalClose.addEventListener('click', function () {
-    modalBg.classList.remove('back-active');
+addClose.addEventListener('click', function () {
+    addBg.classList.remove('back-active');
 });
