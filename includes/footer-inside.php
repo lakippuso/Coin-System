@@ -3,7 +3,41 @@
     
     
     <script type="text/javascript">
-        $(document).ready(function($) {
+        
+        function getSelectedValue () {
+                var selectValue = document.getElementById("income_list").value;
+                if(selectValue == "weekly")
+                {
+                    document.getElementById("income_type").innerHTML = "Weekly Income";
+                    document.getElementById("income_this").innerHTML = "This Week's Income:";
+                    document.getElementById("income_last").innerHTML = "Last Week's Income:";
+                }
+                else if(selectValue == "monthly") {
+                    document.getElementById("income_type").innerHTML = "Monthly Income";
+                    document.getElementById("income_this").innerHTML = "This Month's Income:";
+                    document.getElementById("income_last").innerHTML = "Last Month's Income:";
+                }
+                else{
+                    document.getElementById("income_type").innerHTML = "Annually Income";
+                    document.getElementById("income_this").innerHTML = "This Year's Income:";
+                    document.getElementById("income_last").innerHTML = "Last Year's Income:";
+                }
+        }
+        $(document).ready(function() {
+            //Dashboard Page
+            $("select").change(function(){
+                $(this).find("option:selected").each(function(){
+                    var optionValue = $(this).attr("value");
+                    if(optionValue){
+                        $(".graph").not("." + optionValue).hide();
+                        $("." + optionValue).show();
+                    }
+                    else {
+                        $(".graph").hide();
+                    }
+                });
+            }).change();
+            
             //HISTORY Page
             //Select all values
             function select_unselect_checkbox (this_el, select_el) 
@@ -39,6 +73,7 @@
                 selectAll: true
             });
         });
+
 	</script>
 
     <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" />

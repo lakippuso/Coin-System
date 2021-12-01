@@ -9,7 +9,6 @@ function makeChart() {
             var ctx = document.getElementById("graph1");
             console.log(data);
             var values = JSON.parse(data);
-            console.log(values['data']);
             var myChart = new Chart(ctx, {
                 type: 'bar',
                 data: {

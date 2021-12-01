@@ -148,6 +148,7 @@
                 </div>
             </div>
         </div>
+        
 <script type="text/javascript">
     function dialog(button) {
         var modalBg = document.querySelector('.dialog_bg');

@@ -2,23 +2,6 @@
 <?php
     include 'includes/header-inside.php';
 ?>
-<script type="text/javascript">
-$(document).ready(function(){
-    $("select").change(function(){
-        $(this).find("option:selected").each(function(){
-            var optionValue = $(this).attr("value");
-            if(optionValue){
-                $(".graph").not("." + optionValue).hide();
-                $("." + optionValue).show();
-            }
-            else {
-                $(".graph").hide();
-            }
-        });
-    }).change();
-});
-</script>
-
 <!-- Body -->
         <div class="main mx-auto row g-0">
             <!-- Side Bar -->
@@ -64,11 +47,11 @@ $(document).ready(function(){
                             </div>
                             <div class="cards analytic-cards card col-lg-3">
                                 <div class="card-body">
-                                    <h4 id="income_type">Daily Income</h4>
+                                    <h4 id="income_type"></h4>
                                     <hr>
-                                    <label for="">Total Current Income: <?php echo getIncomeThisMonth($_SESSION['session_username'])?></label>
+                                    <span id="income_this"></span>
                                     <br>
-                                    <label for="">Total Previous Income: <?php echo getIncomeLastMonth($_SESSION['session_username'])?></label>
+                                    <span id="income_last"></span>
                                 </div>
                             </div>
                         </div>
@@ -79,13 +62,12 @@ $(document).ready(function(){
                                 <label>Income Chart</label>
                                 <div>
                                     <div class="dropdown_graph">
-                                        <select id="income_list" onchange="getSelectedValue();">
+                                        <select id="income_list" onchange="getSelectedValue()">
                                                 <option value="weekly">Weekly</option> 
                                                 <option value="monthly">Monthly</option>
                                                 <option value="annually">Annually</option> 
                                         </select>
                                     </div>
-                                    <script type="text/javascript" src="resources/js/card.js"></script>
                                 </div>
                             </div>
                             <div class="graphs">
