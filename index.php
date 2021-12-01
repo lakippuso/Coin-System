@@ -61,9 +61,9 @@
             </div>
         </div>
 
-
         <section class="section1" id="gallery"> 
         <div class="container pt-md-5">
+        <h1>About Us</h1>
             <div class="row">
                 <div class="col-md-4">
                     <div class="card cardcon mt-3 mb-3">
@@ -81,7 +81,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="col-md-4">
                     <div class="card cardcon mt-5 mb-5">
                         <h3>Coin Counter Website</h3>
@@ -121,7 +120,7 @@
 
     <section class="section2">
         <div class="container">
-            <h2 class="title-content text-center">coin Counter Machine</h2>
+            <h2 class="title-content text-center">Services</h2>
             <hr/>
             <div class="row content-name text-center text-md-start">
                 <div class="col-md-2">
@@ -147,10 +146,35 @@
             </div>
         </div>
     </section>
-    <!-- Footer -->
-    <?php 
-        include 'includes/footer-index.php';
-    ?>
+    <h1>Picture natin</h1>
+    <section class="section2">
+        <div class="container">
+            <h2 class="title-content text-center">Developers</h2>
+            <hr/>
+            <div class="row content-name text-center text-md-start">
+                <div class="col-md-2">
+                    <img src="resources/images/con1.gif" class="img-fluid">
+                </div>
+                <div class="col content-detail">
+                    <h5 class="content-name-2 p-2 p-md-0 pt-md-2">INFO</h5>
+                    <p class="Con-p p-2 p-md-0 pt-md-2">
+                        Coin Counter machine(CCM) is a embedded coin sorting machine that sort and counts coins. This machine has a web interface which display income that machine process throughtout its process. This invention was meant for small business which uses coin operated system such as vending machine, piso-net, Wi-Fi etc.
+                    </p>
+                </div>
+
+                <div class="row content-name text-center text-md-start">
+                    <div class="col-md-2">
+                        <img src="resources/images/con2.gif" class="img-fluid">
+                    </div>
+                    <div class="col content-detail">
+                        <h5 class="content-name-2 p-2 p-md-0 pt-md-2">INFO</h5>
+                        <p class="Con-p p-2 p-md-0 pt-md-2">
+                            Coin Counter Machine(CCM) aims to provide a better solution in manual counting of income for these types of businesses since having a coin operated business takes a lot of effort to be able to count or sort coins. Having this type of innovation will make users work to be lessen.
+                        </p>
+                    </div>
+            </div>
+        </div>
+    </section>
 
     <script src="resources/js/login.js"></script>
 

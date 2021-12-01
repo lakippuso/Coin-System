@@ -2,6 +2,29 @@
     <img src="resources/images/Logo1.png" alt="LOGO" id="logo">
 </a>
 <hr class="m-1">
+
+<!-- Logout Dialog Box -->
+<div class="logout_bg">
+    <div class="logout_box">
+        <div class="logout_btn">
+            <div class="lg_title">
+                <img src="resources/images/logout.png" style="width: 30px;"/>
+                <div style="margin-top: 0.3em; margin-left: 0.3em;">Account Logout</div>
+            </div>
+            <div class="logout_content">
+                <br>
+                
+                <h2 style="margin-bottom: 0; text-align: center; font-size: 18px"><img src="resources/images/qm.png" style="width: 50px;"></img>&nbsp;&nbsp;&nbsp;&nbsp;Are you sure you want to Logout?</h2>
+                <hr>
+                <div class="logout_choice">
+                    <button class="lg_cancel">Cancel</button>
+                    <a href="includes/logout.php" id = "logout_button"><button class="ok">Ok</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Navigation Buttons -->
 <ul id="side-menu">
     <li class="nav-item">
@@ -17,9 +40,12 @@
         <a class="link nav-link" href="history.php">History</a>
     </li>
     <li class="nav-item">
-        <a class="link nav-link" href="includes/logout.php">Logout</a>
+        <button class="logout link nav-link" id="log-out">Logout</button>
+        <script type="text/javascript" src="resources/js/logout.js"></script>
     </li>
 </ul>
+
+
 <!-- Profile Section -->
 <div class="profile row align-items-end">
     <a href="#" id="profile-link">

@@ -20,7 +20,7 @@
             <div class="dashboard col-lg-10">
                 <!-- Header -->
                 <div class="header d-flex justify-content-between">
-                    <h4 class="col-auto">Reports</h1>
+                    <h4 class="col-auto"><img src="resources/images/reports.png" style="width: 2em"></img>&nbsp;REPORTS</h1>
                     <!-- Date and Time -->
                     <div class="col-1">
                         <span class="row">

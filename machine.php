@@ -11,7 +11,7 @@
             <div class="dashboard col-lg-10">
                 <!-- Header -->
                 <div class="header d-flex justify-content-between">
-                    <h4 class="col-auto">Machine</h1>
+                    <h4 class="col-auto"><img src="resources/images/machines.png" style="width: 2em"></img>&nbsp;MACHINE</h1>
                     <!-- Date and Time -->
                     <div class="col-1">
                         <span class="row">
@@ -29,7 +29,7 @@
                 <!-- Content -->
                 <div class="machine_back">
                     <div class="add_machineModal">
-                        <label class="close_btn">&times;</label>
+                        <label class="close_btn">&times;</label><br>
                         <div class="title">Add Your Machine</div>
                         <form method="POST" action="includes/add-machine.php">
                             <div class="inputs">
@@ -63,11 +63,10 @@
                             <label class="machine_label">Machine List</label>
                             <div class="d-flex justfiy-content-between">
                                 <button class="add_machine" id="open_add">Add Machine</button>
-                                <script type="text/javascript" src="resources/js/add_machine.js"></script>
                                 <form method = "POST" action="machine.php" class="dropdown_graph">
                                     
                                     <input type="text" name="search" placeholder="Search">
-                                    <button type="submit"><img src="resources/images/search.png" style="width: 20px;"/></button>
+                                    <button type="submit" style="border: none; background: none; padding: 4px;"><img src="resources/images/search.png" style="width: 30px;"/></button>
                                 </form>
                             </div>
                         </div>
@@ -111,7 +110,7 @@
                                     <th scope="col"><?php echo $rows['income']; ?></th>
                                     <th scope="col"><?php echo $rows['date_created']; ?></th>
                                     <th scope="col"style="text-align: center;">
-                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white; width:4em;">Info</button></span>
+                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white; width:4em;">Config</button></span>
                                         <span class="badge bg-primary rounded-pill"><button onclick="dialog(<?php echo $rows['machine_id'];?>)" style="background: None; border: None; color: white; width:4em;">Reset</button></span>            
                                     </th>
                                 </tr>
@@ -132,23 +131,21 @@
             <div class="dialog_box">
                 <div class="dialog">
                     <div class="title">
-                        <img src="resources/images/R.png" style="width: 25px;"/>
+                        <img src="resources/images/R.png" style="width: 30px;"/>
                         <div style="margin-top: 0.3em; margin-left: 0.3em;">Machine Income Reset</div>
                     </div>
-                    <div class="dialog_content">
-                        <h2 style="margin-bottom: 0; text-align: center;">Are you sure?</h2>
-                        <hr>
+                    <div class="dialog_content"><br>
+                        <h2 style="margin-bottom: 0; text-align: center; font-size: 20px;"><img src="resources/images/qm.png" style="width: 50px; margin-left: -10px; margin-right: 20px"></img>Are you sure?</h2><hr>
                         <div style="text-align: center; padding: 1em;">Selecting yes will reset your machine's income and will be saved in history, this action is cannot be change.</div>
-                        
                         <div class="dialog_choice">
                             <button class="cancel">Cancel</button>
-                            <a href="includes/reset-machine.php?machine_id=" id = "reset_button"><button>Continue</button></a>
+                            <a href="includes/reset-machine.php?machine_id=" id = "reset_button"><button class="continue">Continue</button></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
+<script type="text/javascript" src="resources/js/add_machine.js"></script>
 <script type="text/javascript">
     function dialog(button) {
         var modalBg = document.querySelector('.dialog_bg');

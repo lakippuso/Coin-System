@@ -1,0 +1,80 @@
+*{
+    font-family: 'Karma', serif;
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    color: black;
+}
+
+.login-body {
+    width: 100vw;
+    height: 92vh;
+    background-color:rgba(0, 0, 0, 0.1);
+    padding-top: 12vh;
+}
+
+.login-body .login-row {
+    padding: 3em;
+    width: 80vw;
+    height: 70vh;
+    background-color: #2B7A78;
+    border-radius: 20px;
+    box-shadow: 0px 10px 10px 0px black;
+}
+
+#username_error, #password_error {
+    color: #e30022;
+}
+
+
+.form-col .inputs {
+    margin-bottom: 1rem;
+}
+
+.form-col .form-btn button{
+    margin-right: 1em;
+    width: 8em;
+    height: 2.5em;
+    font-weight: 800;
+    color: white;
+    padding: 10px;
+    border: none;
+}
+
+.form-col .form-btn .btn-signin {
+    background-color: #4dc0ba;
+    border-radius: 10px;
+}
+
+.form-col .form-btn .btn-signin:hover {
+    background-color: white;
+    color: black;
+}
+
+.form-col .form-btn .btn-create {
+    background: none;
+    color: #33ccff  ;
+}
+
+.form-col .form-btn .btn-create:hover {
+    color: white;
+}
+
+
+/* Footer */
+
+footer{
+    padding: 1em;
+    color: #fff;
+    padding-left: 15em;
+    padding-right: 15em;
+    height: 8vh;
+    background-color: #1c1c1c;
+}
+.footer-text{
+    color: #fff;
+}
+#line{
+    text-decoration: none;
+    color: #fff;
+}
