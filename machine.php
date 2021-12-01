@@ -31,14 +31,14 @@
                     <div class="add_machineModal">
                         <label class="close_btn">&times;</label><br>
                         <div class="title">Add Your Machine</div>
-                        <form method="POST" action="includes/add-machine.php">
+                        <form id="add_machine_form" method="POST" action="includes/add-machine.php">
                             <div class="inputs">
                                 <label>Machine ID Number</label>
-                                <input type="text" name="machine_id">
+                                <input class="" type="text" name="machine_id" id="machine_id_input">
                             </div>
                             <div class="inputs">
                                 <label>Machine Name</label>
-                                <input type="text" name="machine_name">
+                                <input type="text" name="machine_name" id="machine_name_input">
                             </div>
                             <div class="inputs">
                                 <label>Machine Type</label>

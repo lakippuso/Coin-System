@@ -41,7 +41,6 @@
     </li>
     <li class="nav-item">
         <button class="logout link nav-link" id="log-out">Logout</button>
-        <script type="text/javascript" src="resources/js/logout.js"></script>
     </li>
 </ul>
 
