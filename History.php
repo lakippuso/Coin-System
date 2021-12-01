@@ -13,40 +13,39 @@
             <div class="dashboard col-lg-10">
                 <!-- Header -->
                 <div class="header d-flex justify-content-between">
-                    <h4 class="col-auto">History</h1>
+                    <h4 class="col-auto"><img src="resources/images/history.png" style="width: 2em"></img>&nbsp;HISTORY</h1>
                     <!-- Date and Time -->
                     <div class="col-1">
                         <span class="row">
                             <?php 
-                                echo printDate()
+                                echo printDate();
                             ?>
                         </span>
                         <span class="row">
                             <?php 
-                                echo printTime()
+                                echo printTime();
                             ?>
                         </span>
                     </div>
                 </div>
                 <!-- Content -->
-                <form action="includes/delete-machine.php" method="POST">
+                <form action="">
                     <div class="content">
                         <div class="dailyReport" id="daily">
                             <div class="search_label d-flex justify-content-between">
                                 <div>
-                                    <input type="text" name="search" id="search_history" placeholder="Search">
-                                    <button type="submit"><img src="resources/images/search.png" style="width: 20px;"/></button>
-                                    <script>
-                                    </script>
+                                    <form method = "POST" action="history.php"  class="dropdown_graph">
+                                        <input type="text" name="search" placeholder="Search">
+                                        <button type="submit" style="border: none; background: none; padding: 4px;"><img src="resources/images/search.png" style="width: 30px;"/></button>
+                                    </form>
                                 </div>
                                 <div>
-                                    <input class="delete" type="submit" name="delete" value="Delete">
+                                    <input class="delete" type="button" name="delete" value="Delete">
                                 </div>
                             </div>
                         </div>
-                    </div>
                     <div class="content">
-                        <div class="overflow-scroll" id="history_table" style="height: 77vh;">
+                        <div class="overflow-scroll" id="history_table" style="height: 76vh;">
                             <table class="table table-striped table-hover table-bordered">
                                 <thead>
                                     <tr>
@@ -72,7 +71,7 @@
                                             while($rows = mysqli_fetch_assoc($result)){
                                         ?>
                                     <tr>
-                                                <th><input type="checkbox" class="cb_item" name="selected[]" value="<?php echo $rows['history_id'];?>"></th>
+                                                <th><input type="checkbox" class="cb_item"></th>
                                                 <th scope="col"><?php echo $rows['history_id'];?></th>
                                                 <th scope="col"><?php echo $rows['machine_id'];?></th>
                                                 <th scope="col"><?php echo $rows['total_income'];?></th>
@@ -88,7 +87,6 @@
             </div>
         </div>
         </div>
-        
 <!-- Footer -->
 
 <?php
