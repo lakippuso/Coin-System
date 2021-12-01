@@ -32,4 +32,4 @@ Columns:
 [date] date,
 [day_income] int(10) NOT NULL,
 
-
+Update
