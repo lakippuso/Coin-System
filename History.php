@@ -18,13 +18,13 @@
                     <!-- Date and Time -->
                 </div>
                 <!-- Content -->
-                <form action="includes/delete-machine.php" method="POST">
+                <form action="includes/history-functions.php" method="POST">
                     <div class="content">
                         <div class="dailyReport" id="daily">
                             <div class="search_label d-flex justify-content-between">
                                 <div>
-                                    <input type="text" name="search" id="search_history" placeholder="Search">
-                                    <button type="submit" style="border: none; background: none; padding: 4px;"><img src="resources/images/search.png" style="width: 30px;"/></button>
+                                    <input type="text" name="search_id" id="search_history" placeholder="Search">
+                                    <input type="submit" name="search" style="border: none; background: none; padding: 4px;"><img src="resources/images/search.png" style="width: 30px;"/></input>
                                 </div>
                                 <div>
                                     <input class="delete" type="submit" name="delete" value="Delete">
@@ -49,8 +49,8 @@
                                             require 'includes/config.php';
                                             $username = $_SESSION['session_username'];
                                             $sql="SELECT * FROM history where username = '$username'";
-                                            if(isset($_POST['search'])){
-                                                $search_id = $_POST['search'];
+                                            if(isset($_GET['search_id'])){
+                                                $search_id = $_GET['search_id'];
                                                 if(!empty($search_id)){
                                                     $sql = $sql."AND machine_id = '$search_id'";
                                                 }
