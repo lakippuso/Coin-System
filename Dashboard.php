@@ -15,7 +15,7 @@
             <div class="dashboard col-lg-10">
                 <!-- Header -->
                 <div class="header d-flex justify-content-between">
-                    <h4 class="col-auto">Dashboard</h1>
+                    <h4 class="col-auto"><img src="resources/images/history.png" style="width: 2em"></img>&nbsp;Dashboard</h1>
                     <!-- Date and Time -->
                 </div>
                 <!-- Content -->

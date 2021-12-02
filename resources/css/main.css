@@ -506,3 +506,108 @@ body{
 	letter-spacing: 1px;
 	cursor: pointer;
 }
+/* Profile */
+
+.nav-bars {
+	margin: 2em;
+}
+
+.profile, .manage-password{
+	margin: 2em;
+}
+.profile .my-profile {
+	margin: 2em;
+}
+
+.manage-password .m-pass {
+	margin: 2em;
+}
+
+.profile .my-profile .avatar label, .profile-pic, input{
+	margin-right: 4em;
+	margin-bottom: 1em;
+}
+
+.profile .my-profile .name label{
+	margin-right: 4em;
+	margin-bottom: 1em;
+}
+.profile .my-profile .name input{
+	margin-right: 0;
+}
+.profile .my-profile .name #suffix {
+	width: 3.5em;
+}
+
+.profile .my-profile .email label{
+	margin-right: 4em;
+	margin-bottom: 1em;
+}
+.profile .my-profile .email input {
+	width: 18em;
+}
+
+.profile .my-profile .phone label{
+	margin-right: 3.8em;
+	margin-bottom: 1em;
+}
+
+.no-arrow {
+	-moz-appearance: textfield;
+  }
+.no-arrow::-webkit-inner-spin-button {
+display: none;
+}
+.no-arrow::-webkit-outer-spin-button,
+.no-arrow::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+
+.profile .my-profile .b-name label{
+	margin-right: 4em;
+	margin-bottom: 1em;
+	margin-top: 1em;
+}
+
+.profile .my-profile .b-add label{
+	margin-right: 3em;
+	margin-bottom: 1em;
+	margin-top: 1em;
+}
+
+.profile .my-profile .b-add input {
+	width: 30em;
+}
+
+.profile .my-profile .save_change input{
+    color: #FEFFFF; 
+	height: 2.3em;
+    width: 12em; 
+    background: #2B7A78; 
+    border: none; 
+    border-radius: 5px;
+}
+.manage-password .m-pass .save_change input{
+    color: #FEFFFF; 
+	height: 2.3em;
+    width: 12em; 
+    background: #2B7A78; 
+    border: none; 
+    border-radius: 5px;
+}
+
+.manage-password .m-pass .current label {
+	margin-right: 6em;
+	margin-bottom: 1em;
+}
+
+.manage-password .m-pass .new label {
+	margin-right: 3em;
+	margin-bottom: 1em;
+}
+
+.manage-password .m-pass .retype label {
+	margin-right: 1.8em;
+	margin-bottom: 1em;
+}

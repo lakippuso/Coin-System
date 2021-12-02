@@ -1,14 +1,14 @@
 <?php
     session_start();
     if(isset($_SESSION['session_id'])){
-        // if($_SESSION['session_category']=='admin'){
-        //     header("Location: admin-dashboard.php");
-        //     exit();
-        // }
-        // else{
-        // }
-        header("Location: dashboard.php");
-        exit();
+        if($_SESSION['session_category']=='admin'){
+            header("Location: admin-dashboard.php");
+            exit();
+        }
+        else{
+            header("Location: dashboard.php");
+            exit();
+        }
     }
 ?>
 <!DOCTYPE html>
