@@ -65,6 +65,10 @@ $(document).ready(function() {
 
         select_unselect_checkbox($(this), ele); 
     });
+    var radioValue = $("input[name='period']:checked").val();
+    if(radioValue == "Daily") {
+        document.getElementById('end').style.display="none";
+    }
 });
 //Multiple Select in Daily Report
 $(function () {

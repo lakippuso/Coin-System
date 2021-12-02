@@ -4,10 +4,7 @@
 ?>
 <script type="text/javascript">
     $(document).ready(function(){
-        var radioValue = $("input[name='period']:checked").val();
-        if(radioValue == "Daily") {
-            document.getElementById('end').style.display="none";
-        }
+        
     });
 </script>
 <!-- Body -->
@@ -29,7 +26,7 @@
                 <div class="content">
                     <div class="dailyReport" id="daily">
                         <div class="m-4 d-flex justify-content-around">
-                            <form method="POST" action="dailyreport.php" class="calendar d-flex flex-column">
+                            <form method="POST" action="includes/generate-report.php" class="calendar d-flex flex-column">
 
                                 <div class="radio__bg d-flex justify-content-evenly" id="incomePeriod" style="margin-bottom: 1em; margin-right: auto; margin-left: auto;">
                                     <div>
@@ -73,11 +70,10 @@
                                     </div>
                                     <div><input type="text" name="start_date" id="start" value="<?php if(isset($_POST['start_date'])) echo $_POST['start_date']?>"style="border-radius: 5px; padding: 3px;" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Start Date"></div>
                                     <div><input type="text" name="end_date" id="end" value="<?php if(isset($_POST['end_date'])) echo $_POST['end_date']?>"style="border-radius: 5px; padding: 3px;" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="End Date"></div>
-                                    <div><button type="submit" id="start" style="margin-top: 3px; padding: 4px; width: 40px; border: none; background: none;"><img src="resources/images/search.png" style="width: 30px;"/></button></div>
+                                    <div><button type="submit" name="filter" id="start" style="margin-top: 3px; padding: 4px; width: 40px; border: none; background: none;"><img src="resources/images/search.png" style="width: 30px;"/></button></div>
                                 </div> 
-
+                                <input class="generate" type="submit" name="generate" value="Generate Report">
                             </form>
-                            <input class="generate" type="button" name="generate" value="Generate Report">
                         </div>
 
                     
@@ -98,19 +94,17 @@
                                     $i = 1;
                                     $username = $_SESSION['session_username'];
                                     $query="SELECT * FROM daily_report where username = '$username'";
-                                    if(isset($_POST['search_id'])){
-                                        $search_id = $_POST['search_id'];
-                                        $search_id_query = implode(",",$search_id);
-                                        echo $search_id_query;
+                                    if(isset($_GET['search_id'])){
+                                        $search_id = $_GET['search_id'];
                                         if(!empty($search_id)){
                                             if($search_id != "All Machines"){
-                                                $query = $query."AND machine_id IN ($search_id_query)";
+                                                $query = $query."AND machine_id IN ($search_id)";
                                             }
                                         }
                                     }
-                                    if(isset($_POST['start_date']) && isset($_POST['end_date'])){
-                                        $start_date = $_POST['start_date'];
-                                        $end_date = $_POST['end_date'];
+                                    if(isset($_GET['start_date']) && isset($_GET['end_date'])){
+                                        $start_date = $_GET['start_date'];
+                                        $end_date = $_GET['end_date'];
                                         if(!empty($start_date) && !empty($end_date)){
                                             // echo "Start Date: ".$start_date."<br>";
                                             // echo "End Date: ".$end_date."<br>";
@@ -119,7 +113,6 @@
                                         else if(!empty($start_date)){
                                             $query = $query."AND date = '$start_date'";
                                         }
-
                                     }
                                     $query = $query."ORDER BY date DESC";
                                     $result= $con->query($query);
@@ -136,7 +129,6 @@
                                 
                                         $i+=1;
                                     }
-                                    $con-> close();
                                 ?>
                             </tbody>
                         </table>

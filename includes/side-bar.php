@@ -28,7 +28,6 @@
             </div>
             <div class="logout_content">
                 <br>
-                
                 <h2 style="margin-bottom: 0; text-align: center; font-size: 18px"><img src="resources/images/qm.png" style="width: 50px;"></img>&nbsp;&nbsp;&nbsp;&nbsp;Are you sure you want to Logout?</h2>
                 <hr>
                 <div class="logout_choice">
