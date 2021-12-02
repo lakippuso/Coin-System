@@ -1,10 +1,11 @@
 <!-- Header -->
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> 
 <?php
     include 'includes/header-inside.php';
 ?>
-        <div class="main mx-auto row g-0">
+        <div class="main row g-0 mx-auto ">
+            <!-- Navigation Bar -->
+            <?php include 'includes/nav-bar.php'?>
             <!-- Side Bar -->
             <div class="side-bar col-lg-2 g-0 d-flex flex-column">
                 <?php include 'includes/side-bar.php' ?>
@@ -15,18 +16,6 @@
                 <div class="header d-flex justify-content-between">
                     <h4 class="col-auto"><img src="resources/images/history.png" style="width: 2em"></img>&nbsp;HISTORY</h1>
                     <!-- Date and Time -->
-                    <div class="col-1">
-                        <span class="row">
-                            <?php 
-                                echo printDate()
-                            ?>
-                        </span>
-                        <span class="row">
-                            <?php 
-                                echo printTime()
-                            ?>
-                        </span>
-                    </div>
                 </div>
                 <!-- Content -->
                 <form action="includes/delete-machine.php" method="POST">
@@ -44,7 +33,7 @@
                         </div>
                     </div>
                     <div class="content">
-                        <div class="overflow-scroll" id="history_table" style="height: 77vh;">
+                        <div class="overflow-scroll" id="history_table" style="height: 70vh;">
                             <table class="table table-striped table-hover table-bordered">
                                 <thead>
                                     <tr>

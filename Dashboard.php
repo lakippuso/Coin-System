@@ -3,7 +3,10 @@
     include 'includes/header-inside.php';
 ?>
 <!-- Body -->
-        <div class="main mx-auto row g-0">
+        <div class="main row g-0 mx-auto">
+            <!-- Navigation Bar -->
+            <?php include 'includes/nav-bar.php'?>
+
             <!-- Side Bar -->
             <div class="side-bar col-lg-2 g-0 d-flex flex-column">
                 <?php include 'includes/side-bar.php' ?>
@@ -14,38 +17,26 @@
                 <div class="header d-flex justify-content-between">
                     <h4 class="col-auto">Dashboard</h1>
                     <!-- Date and Time -->
-                    <div class="col-1">
-                        <span class="row">
-                            <?php 
-                                echo printDate();
-                            ?>
-                        </span>
-                        <span class="row">
-                            <?php 
-                                echo printTime();
-                            ?>
-                        </span>
-                    </div>
                 </div>
                 <!-- Content -->
                 <div class="content">
-                    <div class="dashboard">
+                    <div class="content1">
                         <div class="dashboard-box row my-4 g-0 d-flex justify-content-around">
-                            <div class="analytic-cards card col-lg-3">
+                            <div class="analytic-cards card col-sm-3 col-md-3 col-lg-3">
                                 <div class="card-body">
                                     <h4>Total Machines </h4>
                                     <hr>
                                     <label for="">Registered Machines: <strong><?php echo getNumMachines($_SESSION['session_username']);?></strong></label>
                                 </div>
                             </div>
-                            <div class="analytic-cards card col-lg-3">
+                            <div class="analytic-cards card col-sm-3 col-md-3 col-lg-3">
                                 <div class="card-body">
                                     <h4>Daily Income</h4>
                                     <hr>
                                     <label for="">Today's Income: <?php echo getIncomeToday($_SESSION['session_username'])?></label>
                                 </div>
                             </div>
-                            <div class="cards analytic-cards card col-lg-3">
+                            <div class="cards analytic-cards card col-sm-3 col-md-3 col-lg-3">
                                 <div class="card-body">
                                     <h4 id="income_type"></h4>
                                     <hr>
@@ -90,7 +81,7 @@
                         </div>
                     </div>
                 </div>
-                </div>
+            </div>
         </div>
 <!-- Footer -->
 <?php

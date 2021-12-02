@@ -12,6 +12,8 @@
 </script>
 <!-- Body -->
         <div class="main mx-auto row g-0">
+            <!-- Navigation Bar -->
+            <?php include 'includes/nav-bar.php'?>
             <!-- Side Bar -->
             <div class="side-bar col-lg-2 g-0 d-flex flex-column">
                 <?php include 'includes/side-bar.php' ?>
@@ -22,18 +24,6 @@
                 <div class="header d-flex justify-content-between">
                     <h4 class="col-auto"><img src="resources/images/reports.png" style="width: 2em"></img>&nbsp;REPORTS</h1>
                     <!-- Date and Time -->
-                    <div class="col-1">
-                        <span class="row">
-                            <?php 
-                                echo printDate()
-                            ?>
-                        </span>
-                        <span class="row">
-                            <?php 
-                                echo printTime()
-                            ?>
-                        </span>
-                    </div>
                 </div>
                 <!-- Content -->
                 <div class="content">
@@ -92,7 +82,7 @@
 
                     
 
-                    <div class="overflow-scroll" id="scroll">
+                    <div class="overflow-scroll" id="scroll" style="height: 65vh;">
                         <table class="table table-striped table-hover table-bordered">
                             <thead>
                                 <tr>

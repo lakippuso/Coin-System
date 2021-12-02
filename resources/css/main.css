@@ -7,6 +7,16 @@ body{
     height: 100vh;
     width: 100vw;
 }
+/*Nav*/
+.top-nav{
+	background-color: #2b7e7a;
+    box-shadow: 0 2px 10px black;
+	color: white;
+	width: 100%;
+}
+.nav-container a{
+	width: 12em;
+}
 .brand{
     text-align: center;
 }
@@ -47,6 +57,9 @@ body{
     color: white;
     margin-bottom: 2vh;
 }
+.dashboard{
+	padding: 1em 1em 0 1em;
+}
 .header{
     background-color: #4dc0ba;
     color: white;
@@ -76,7 +89,6 @@ body{
 }
 
 /* Dashboard User */
-
 .dropdown_graph {
     margin-top: 0.5vh;
 }

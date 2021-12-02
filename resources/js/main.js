@@ -1,5 +1,3 @@
-
-
 function logout(){
     var modalBtn = document.querySelector('#log-out');
     var modalBg = document.querySelector('.logout_bg');
