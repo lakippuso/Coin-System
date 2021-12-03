@@ -14,19 +14,6 @@
                 <!-- Header -->
                 <div class="header d-flex justify-content-between">
                     <h4 class="col-auto">Profile</h1>
-                    <!-- Date and Time -->
-                    <div class="col-1">
-                        <span class="row">
-                            <?php 
-                                echo printDate()
-                            ?>
-                        </span>
-                        <span class="row">
-                            <?php 
-                                echo printTime()
-                            ?>
-                        </span>
-                    </div>
                 </div>
                 <!-- Content -->
                 <div class="nav-bars">
@@ -41,9 +28,16 @@
                 </div>
                 
                 <div class="tab-content" id="myTabContent">
+                    <?php
+                        include 'includes/config.php';
+                        $username = $_SESSION['session_username'];
+                        $sql = "SELECT * from users WHERE username = '$username'";
+                        $result = mysqli_query($con, $sql);
+                        while($row = mysqli_fetch_assoc($result)){
+                    ?>
                     <!--Profile-->
                     <div class="profile tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                        <form class="my-profile" action="" method="">
+                        <form class="my-profile" action="#" method="POST">
                             <div class="avatar">
                                 <label>Avatar</label>
                                 <img src="resources/images/profile.png" style="width: 10em;" class="profile-pic"></img>
@@ -51,18 +45,18 @@
                             </div>
                             <div class="name">
                                 <label>Name</label>
-                                <input type="text" name="first_name" id="first" placeholder="First Name">
-                                <input type="text" name="middle_name" id="middle" placeholder="Middle Name">
-                                <input type="text" name="last_name" id="last" placeholder="Last Name">
-                                <input type="text" name="name_suffix" id="suffix" placeholder="Suffix">
+                                <input type="text" name="first_name" id="first" placeholder="First Name" value="<?php echo $row['first_name'];?>">
+                                <input type="text" name="middle_name" id="middle" placeholder="Middle Name" value="<?php ?>">
+                                <input type="text" name="last_name" id="last" placeholder="Last Name" value="<?php echo $row['last_name'];?>">
+                                <input type="text" name="name_suffix" id="suffix" placeholder="Suffix" value="<?php  ?>">
                             </div>
                             <div class="email">
                                 <label>Email</label>
-                                <input type="email" name="email">
+                                <input type="email" name="email" value="<?php echo $row['email'];?>">
                             </div>
                             <div class="phone">
                                 <label>Phone</label>
-                                <input id="phone" name="phone" class="no-arrow" type="number">
+                                <input id="phone" name="phone" class="no-arrow" type="number" value="<?php ?>">
                             </div>
                             <hr>
                             <label style="margin-top: 0.5em;">Business Information</label>
@@ -79,6 +73,9 @@
                             </div>
                         </form>
                     </div>
+                    <?php 
+                        }
+                    ?>
                     
                     <!--Password-->
                     <div class="manage-password tab-pane fade" id="password" role="tabpanel" aria-labelledby="password-tab">

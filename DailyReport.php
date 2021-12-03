@@ -2,11 +2,6 @@
 <?php
     include 'includes/header-inside.php';
 ?>
-<script type="text/javascript">
-    $(document).ready(function(){
-        
-    });
-</script>
 <!-- Body -->
         <div class="main mx-auto row g-0">
             <!-- Navigation Bar -->
