@@ -24,7 +24,7 @@
                             <div class="search_label d-flex justify-content-between">
                                 <div>
                                     <input type="text" name="search_id" id="search_history" placeholder="Search">
-                                    <input type="submit" name="search" style="border: none; background: none; padding: 4px;"><img src="resources/images/search.png" style="width: 30px;"/></input>
+                                    <button type="submit" name="search" style="border: none; background: none; padding: 4px;"><img src="resources/images/search.png" style="width: 30px;"/></button>
                                 </div>
                                 <div>
                                     <input class="delete" type="submit" name="delete" value="Delete">

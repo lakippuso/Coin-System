@@ -68,7 +68,7 @@
                 <div class="col-md-4">
                     <div class="card cardcon mt-3 mb-3">
                         <h3>Website Features</h3>
-                        <img src="resources/images/pic3.gif" class="card-img-top" alt="">
+                        <img src="resources/images/website.gif" class="card-img-top" alt="">
                         <h4>Coin Counter Machine</h4>            
                         <div class="card-body">
                         <p class="card-text mt-3">
@@ -100,7 +100,7 @@
                 <div class="col-md-4">
                     <div class="card cardcon mt-3 mb-3">
                         <h3>Machine Features</h3>
-                        <img src="resources/images/pic4.gif" class="card-img-top" alt="">
+                        <img src="resources/images/machine.gif" class="card-img-top" alt="">
                         <h4>Coin Counter Machine</h4>            
                         <div class="card-body">
                         <p class="card-text mt-3">
@@ -118,7 +118,7 @@
         </div>
     </section>
 
-    <section class="section2">
+    <section class="section2" id="services-section">
         <div class="container">
             <h2 class="title-content text-center">Services</h2>
             <hr/>
@@ -147,7 +147,7 @@
         </div>
     </section>
     <h1>Picture natin</h1>
-    <section class="section2">
+    <section class="section2" id="developer-section">
         <div class="container">
             <h2 class="title-content text-center">Developers</h2>
             <hr/>
