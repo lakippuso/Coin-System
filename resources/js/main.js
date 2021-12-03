@@ -11,6 +11,16 @@ function logout(){
         modalBg.classList.remove('lg-active');
     });
 }
+function configuration(){
+    var configBg = document.querySelector('.config_bg');
+    var configCancel = document.querySelector('.config-cancel');
+
+    configBg.classList.add('config-active');
+
+    configCancel.addEventListener('click', function () {
+        configBg.classList.remove('config-active');
+    });
+}
 function getSelectedValue () {
         var selectValue = document.getElementById("income_list").value;
         if(selectValue == "weekly")

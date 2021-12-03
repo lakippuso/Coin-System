@@ -16,7 +16,8 @@
                     <h4 class="col-auto"><img src="resources/images/machines.png" style="width: 2em"></img>&nbsp;MACHINE</h1>
                     <!-- Date and Time -->
                 </div>
-                <!-- Content -->
+
+                <!-- Add Machine Modal -->
                 <div class="machine_back">
                     <div class="add_machineModal">
                         <label class="close_btn">&times;</label><br>
@@ -47,6 +48,54 @@
                         </form>
                     </div>
                 </div>
+
+                <!-- Configuration Modal -->
+                <div class="config_bg">
+                    <div class="config_box">
+                        <form class="config">
+                            <div class="config_title d-flex justify-content-start">
+                                <img src="resources/images/setting.png" style="width: 30px;"/>&nbsp;
+                                <div style="margin-top: 0.3em; margin-left: 0.3em;">Machine Configuration</div>
+                            </div>
+                            <div class="config-title d-flex justify-content-between">
+                                <label style="font-weight: 600; margin-left: 1em;">Machine Information</label>
+                                <button class="delete">Delete</button>
+                            </div>
+                            <hr style="margin-left: 2em; margin-right: 2em;">
+
+                            <div class="config-machine d-flex justify-content-evenly">
+                                <div class="machine-section d-flex flex-column">
+                                    <label>Machine ID</label>
+                                    <input type="text" disabled>
+                                    <label>Machine Name</label>
+                                    <input type="text">
+                                    <label>Machine Type</label>
+                                    <input type="text" disabled>
+                                </div>
+                                <span class="vertical-line"></span>
+                                <div class="wifi-section d-flex flex-column">
+                                    <label style="margin-bottom: 1em; font-weight: 600;">Wifi Setup</label>
+                                    <div class="d-flex justify-content-evenly" style="margin-bottom: 1em;">
+                                        <button class="wifi-default" style="border: none; background: none;">Default</button>
+                                        <span class="vertical-line2"></span>
+                                        <button class="wifi-custom" style="border: none; background: none;">Custom</button>
+                                    </div>
+                                    <label>Wifi Name</label>
+                                    <input type="text">
+                                    <label>Wifi Password</label>
+                                    <input type="password">
+                                </div>
+                            </div>
+                            <div class="save-btn d-flex justify-content-end">
+                                <button class="config-save">Save Changes</button>
+                                <button class="config-cancel">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+                <!-- Content -->
                 <div class="content">
                     <div class="machine" id="daily">
                         <div class="search_label d-flex justify-content-between">
@@ -54,7 +103,6 @@
                             <div class="d-flex justfiy-content-between">
                                 <button class="add_machine" id="open_add">Add Machine</button>
                                 <form method = "POST" action="machine.php" class="dropdown_graph">
-                                    
                                     <input type="text" name="search" placeholder="Search">
                                     <button type="submit" style="border: none; background: none; padding: 4px;"><img src="resources/images/search.png" style="width: 30px;"/></button>
                                 </form>
@@ -100,7 +148,7 @@
                                     <th scope="col"><?php echo $rows['income']; ?></th>
                                     <th scope="col"><?php echo $rows['date_created']; ?></th>
                                     <th scope="col"style="text-align: center;">
-                                        <span class="badge bg-primary rounded-pill"><button style="background: None; border: None; color: white; width:4em;">Config</button></span>
+                                        <span class="badge bg-primary rounded-pill"><button onclick="configuration();" style="background: None; border: None; color: white; width:4em;">Config</button></span>
                                         <span class="badge bg-primary rounded-pill"><button onclick="dialog(<?php echo $rows['machine_id'];?>)" style="background: None; border: None; color: white; width:4em;">Reset</button></span>            
                                     </th>
                                 </tr>

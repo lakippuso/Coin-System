@@ -523,7 +523,7 @@ body{
 	margin: 2em;
 }
 
-.profile .my-profile .avatar label, .profile-pic, input{
+.profile .my-profile .avatar label, .profile-pic, .choose_file{
 	margin-right: 4em;
 	margin-bottom: 1em;
 }
@@ -611,3 +611,122 @@ margin: 0;
 	margin-right: 1.8em;
 	margin-bottom: 1em;
 }
+
+
+/* config */
+
+.config_bg {
+    z-index: 1;
+	position:fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgba(0,0,0,0.7);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor:default;
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0s, opacity 0.5s;
+	
+}
+
+.config-active {
+	visibility: visible;
+	opacity: 1;
+}
+
+.config_box {
+	width: 50em;
+	background-color: white;
+	border-radius: 15px;
+}
+
+.config_box .config-title .delete {
+	margin-right: 1em;
+	height: 2em;
+	width: 5em;
+	color: white;
+	border: none;
+    background-color: #2B7A78;
+    border-radius: 10px;
+}
+.config_box .config-title .delete:hover {
+	background-color: #4dc0ba;
+
+}
+
+.config_box .config-title, .config_content {
+	padding: 1em;
+	padding-bottom: 0;
+}
+.vertical-line{
+	display: inline-block;
+	border-left: 2px solid #ccc;
+	margin: 2em;
+	margin-top: 0;
+	height: 15em;
+}
+.vertical-line2{
+	display: inline-block;
+	border-left: 2px solid #ccc;
+	height: 2em;
+}
+
+.config_box .config_title {
+	border-radius: 15px 15px 0 0;
+	padding: 0.5em;
+	background-color: lightseagreen;
+	margin-bottom: 10px;
+	font-weight: 600;
+}
+
+.config .config-machine .machine-section, .wifi-section {
+	width: 15em;
+}
+
+.config .config-machine .machine-section input, label {
+	margin-bottom: 0.5em;
+}
+.config .config-machine .wifi-section {
+	width: 20em;
+}
+.config .config-machine .wifi-section input {
+	width: 12em;
+}
+
+.config .config-machine .wifi-section input,label {
+	margin-bottom: 0.5em;
+}
+
+.config .config-machine .wifi-section {
+	margin-left: 0;
+}
+.config .save-btn {
+	margin-right: 3em;
+	margin-bottom: 1.5em;
+}
+
+.config .save-btn .config-cancel {
+	height: 2em;
+	width: 5em;
+	color: white;
+	border: none;
+    background-color: #2B7A78;
+    border-radius: 10px;
+}
+.config .save-btn .config-save {
+	margin-right: 1em;
+	height: 2em;
+	width: 10em;
+	color: white;
+	border: none;
+    background-color: #2B7A78;
+    border-radius: 10px;
+}
+.config .save-btn button:hover {
+	background-color: #4dc0ba;
+}
+

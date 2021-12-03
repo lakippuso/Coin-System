@@ -50,10 +50,8 @@
                     </div>
 
                     <div class="checkbox1 mb-3 d-flex justify-content-between">
-                        <label>
-                            <input type="checkbox" value="remember-me"> Remember me
-                        </label>
-                            <a href="?"><label>Forgot Password?</label></a>
+                        <label><input type="checkbox" value="remember-me"> Remember me</label>
+                        <a href="forgot-email.php"><label class="a_forgot">Forgot Password?</label></a>
                     </div>
                     
                     <div class="form-btn d-flex justify-content-start">
