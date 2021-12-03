@@ -18,7 +18,7 @@
                     <!-- Date and Time -->
                 </div>
                 <!-- Content -->
-                <form action="includes/history-functions.php" method="POST">
+                <form action="includes/history-include.php" method="POST">
                     <div class="content">
                         <div class="dailyReport" id="daily">
                             <div class="search_label d-flex justify-content-between">

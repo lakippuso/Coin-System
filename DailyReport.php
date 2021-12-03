@@ -21,7 +21,7 @@
                 <div class="content">
                     <div class="dailyReport" id="daily">
                         <div class="m-4 d-flex justify-content-around">
-                            <form method="POST" action="includes/generate-report.php" class="calendar d-flex flex-column">
+                            <form method="POST" action="includes/report-include.php" class="calendar d-flex flex-column">
 
                                 <div class="radio__bg d-flex justify-content-evenly" id="incomePeriod" style="margin-bottom: 1em; margin-right: auto; margin-left: auto;">
                                     <div>
