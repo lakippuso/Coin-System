@@ -34,15 +34,14 @@
         $query = $query."ORDER BY date DESC";
         $result= $con->query($query);
         
-        // $obj_pdf->AddPage();  
         $content = '';  
         $content .= '  
         <h4 align="center">Coin Counter Report</h4><br /> 
-        <table border="1" cellspacing="0" cellpadding="3">  
+        <table align="center" border="1" cellspacing="0" cellpadding="3">  
             <tr>  
                 <th width="30%">Date</th>  
-                <th width="5%">Machine_id</th>  
-                <th width="15%">Income</th>  
+                <th width="50%">Machine_id</th>  
+                <th width="20%">Income</th>  
             </tr>  
         ';  
         while($rows= $result-> fetch_assoc())  
