@@ -41,8 +41,7 @@
                                     <h4 id="income_type"></h4>
                                     <hr>
                                     <span id="income_this"></span>
-                                    <br>
-                                    <span id="income_last"></span>
+                                    <span id="income_data"></span>
                                 </div>
                             </div>
                         </div>

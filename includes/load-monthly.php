@@ -4,6 +4,7 @@
     date_default_timezone_set("Asia/Singapore");
     $username = $_SESSION['session_username'];
     $arr = array("data" => array(), 
+                "sum" => 0, 
                 "label" => array('January','February','March','April','May','June','July','August','September','October','November','December') );
     
     $y = 1;
@@ -16,6 +17,9 @@
         }
         else{
             array_push($arr['data'], 0);
+        }
+        if($y==date('m')){
+            $arr['sum'] = $row['income'];
         }
         $y+=1;
     }

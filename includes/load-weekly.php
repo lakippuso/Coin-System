@@ -4,6 +4,7 @@
     date_default_timezone_set("Asia/Singapore");
     $username = $_SESSION['session_username'];
     $arr = array("data" => array(), 
+                "sum" => array(), 
                 "label" => array('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturnday') );
     
     $now = date("D", strtotime("today"));
@@ -35,4 +36,5 @@
             array_push($arr['data'], 0);
         }
     }
+    $arr['sum'] = array_sum($arr['data']);
     echo json_encode($arr);

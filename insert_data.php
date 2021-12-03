@@ -60,7 +60,7 @@
             }
         }
         else{
-            $sql =  "INSERT INTO daily_report (machine_id, username, date, day_income) VALUES (?,?,?,1)";
+            $sql =  "INSERT INTO daily_report (machine_id, username, date, day_income) VALUES (?,?,?,$input)";
             $stmt = mysqli_stmt_init($con);
             if(!mysqli_stmt_prepare($stmt, $sql)){
                 echo 'INSERT error New Report!';

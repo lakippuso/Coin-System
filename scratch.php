@@ -1,6 +1,8 @@
 <?php
-    $arr = array( "A",  "B",  "D",  "E",  "C");
-    echo implode(",",$arr);
+    date_default_timezone_set("Asia/Singapore");
+    if(2021==date('Y')){
+        echo 69;
+    }
 
 ?>
 <!DOCTYPE html>

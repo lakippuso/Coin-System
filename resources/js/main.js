@@ -17,17 +17,47 @@ function getSelectedValue () {
         {
             document.getElementById("income_type").innerHTML = "Weekly Income";
             document.getElementById("income_this").innerHTML = "This Week's Income:";
-            document.getElementById("income_last").innerHTML = "Last Week's Income:";
+            $.ajax({
+                url: "includes/load-weekly.php",
+                method: "POST",
+                data:{action:"fetch"},
+                success: function(data){
+                    console.log(data);
+                    var values = JSON.parse(data);
+                    console.log(values['sum']);
+                    document.getElementById("income_data").innerHTML = values['sum'];
+                }
+            })
         }
         else if(selectValue == "monthly") {
             document.getElementById("income_type").innerHTML = "Monthly Income";
             document.getElementById("income_this").innerHTML = "This Month's Income:";
-            document.getElementById("income_last").innerHTML = "Last Month's Income:";
+            $.ajax({
+                url: "includes/load-monthly.php",
+                method: "POST",
+                data:{action:"fetch"},
+                success: function(data){
+                    console.log(data);
+                    var values = JSON.parse(data);
+                    console.log(values['sum']);
+                    document.getElementById("income_data").innerHTML = values['sum'];
+                }
+            })
         }
         else{
             document.getElementById("income_type").innerHTML = "Annually Income";
             document.getElementById("income_this").innerHTML = "This Year's Income:";
-            document.getElementById("income_last").innerHTML = "Last Year's Income:";
+            $.ajax({
+                url: "includes/load-yearly.php",
+                method: "POST",
+                data:{action:"fetch"},
+                success: function(data){
+                    console.log(data);
+                    var values = JSON.parse(data);
+                    console.log(values['sum']);
+                    document.getElementById("income_data").innerHTML = values['sum'];
+                }
+            })
         }
 }
 $(document).ready(function() {

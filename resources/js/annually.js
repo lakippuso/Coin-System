@@ -7,7 +7,6 @@ function makeChart() {
         data:{action:"fetch"},
         success: function(data){
             var ctx = document.getElementById("graph3");
-            console.log(data);
             var values = JSON.parse(data);
             var myChart = new Chart(ctx, {
                 type: 'bar',
