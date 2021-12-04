@@ -177,7 +177,7 @@
                         <div style="text-align: center; padding: 1em;">Selecting yes will reset your machine's income and will be saved in history, this action is cannot be change.</div>
                         <div class="dialog_choice">
                             <button class="cancel">Cancel</button>
-                            <a href="includes/reset-machine.php?machine_id=" id = "reset_button"><button class="continue">Continue</button></a>
+                            <button class="continue">Continue</button>
                         </div>
                     </div>
                 </div>
@@ -197,18 +197,25 @@
             reset_bg.classList.remove('db-active');
         });
 
-        
-        $.ajax({
-            url: "includes/get-id.php",
-            method: "POST",
-            data: {"machine_id": button},
-            success: function(response){
-                console.log(response);
-                var href1 = document.getElementById("reset_button").getAttribute("href")+response;
-                console.log(href1);
-                reset_button.setAttribute("href", href1);
-            }
+        $(".continue").click(function(){
+            $.ajax({
+                url: "includes/reset-machine.php",
+                method: "GET",
+                data: {"machine_id": button},
+                success: function(response){
+                    console.log(response);
+                    reset_bg.classList.remove('db-active');
+                }
+            });
         });
+        // $.ajax({
+        //     url: "includes/reset-machine.php",
+        //     method: "GET",
+        //     data: {"machine_id": button},
+        //     success: function(response){
+        //         console.log(response);
+        //     }
+        // });
     }
 </script>
 <!-- Footer -->
