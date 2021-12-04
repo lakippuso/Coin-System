@@ -5,11 +5,12 @@
     font-size: 1em;
     color: black;
 }
-
+/* Index Page */
 .login-body {
     width: 100%;
     background-color:rgba(0, 0, 0, 0.1);
     padding: 12vh;
+    min-height: 90vh;
 }
 
 .login-body .login-row {
@@ -23,7 +24,6 @@
 #username_error, #password_error {
     color: rgb(255, 128, 149);
 }
-
 
 .form-col .inputs {
     margin-bottom: 1rem;
@@ -66,6 +66,7 @@
 /* Footer */
 
 footer{
+    min-height: 10vh;
     padding-top: 1em;
     padding-right: 8em;
     padding-left: 8em;
@@ -187,4 +188,11 @@ footer{
 .change-col .change-btn .btn-submit:hover {
     background-color: white;
     color: black;
+}
+
+/* Mobile */
+@media (min-width: 576px) {
+    .img-col{
+        display: none;
+    }
 }

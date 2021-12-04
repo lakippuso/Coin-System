@@ -32,18 +32,19 @@
 
     <body>
         <div class="login-body g-0 container-fluid">
-            <div class="login-row col-sm-10 col-md-10 col-lg-7 d-flex justify-content-around mx-auto">
-                <img src="resources/images/index.png" class="image-col d-sm-none d-lg-block col-md-12 col-lg-6"></img>
-                
-                <form class="form-col col-sm-10 col-md-6 col-lg-4 mx-auto" method="POST" action="includes/login-include.php">
-                    <img class="logo-ccm mb-4" src="resources/images/Logo1.png" alt="Coin Counter" width="150" height="63">
+            <div class="login-row col-sm-12 col-md-10 col-lg-7 d-flex justify-content-around mx-auto">
+                <div class="image-col col-sm-0 col-lg-6 d-none d-lg-block">
+                    <img src="resources/images/index.png" class="img-fluid row d-sm-none d-lg-block">
+                </div>
+                <form class="form-col col-sm-12 col-md-10 col-lg-4 mx-auto" method="POST" action="includes/login-include.php">
+                    <img class="logo-ccm row mb-4" src="resources/images/Logo1.png" alt="Coin Counter" width="150" height="63">
 
-                    <div class="inputs form-floating">
+                    <div class="inputs row form-floating ">
                         <input type="text" class="form-control" id="floatingInput" name="username" placeholder="Username">
                         <label for="floatingInput">Username</label>
                         <span id="username_error" class="my-3"><?php if(isset($_GET['username_error'])){ echo $_GET['username_error'];}?></span>
                     </div>
-                    <div class="inputs form-floating">
+                    <div class="inputs row form-floating ">
                         <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
                         <label for="floatingPassword">Password</label>
                         <span id="password_error"><?php if(isset($_GET['password_error'])){ echo $_GET['password_error'];}?></span>
@@ -54,7 +55,7 @@
                         <a href="forgot-email.php"><label class="a_forgot">Forgot Password?</label></a>
                     </div>
                     
-                    <div class="form-btn d-flex justify-content-start">
+                    <div class="form-btn row d-flex justify-content-start">
                         <button class="btn-signin" type="submit" name="submit">Sign in</button>
                         <a href="registration.php"><button type="button" class="btn-create">Create Account</button></a>
                     </div>

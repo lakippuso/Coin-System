@@ -60,13 +60,13 @@
             }
         }
         else{
-            $sql =  "INSERT INTO daily_report (machine_id, username, date, day_income) VALUES (?,?,?,$input)";
+            $sql =  "INSERT INTO daily_report (machine_id, username, date, day_income) VALUES (?,?,?,?)";
             $stmt = mysqli_stmt_init($con);
             if(!mysqli_stmt_prepare($stmt, $sql)){
                 echo 'INSERT error New Report!';
             }
             else{
-                mysqli_stmt_bind_param($stmt, "sss",$machine_id, $username, $date);
+                mysqli_stmt_bind_param($stmt, "ssss",$machine_id, $username, $date, $input);
                 mysqli_stmt_execute($stmt);
             }
         }

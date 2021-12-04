@@ -1,22 +1,5 @@
 
 
-<!-- Profile Section -->
-<div class="profile-side row mt-3">
-    <a href="profile.php" id="profile-link">
-        <img src="resources/images/profile.png" alt="" width="30" height="32" class="rounded-circle">
-        <strong>
-            <?php 
-                if(isset($_SESSION['session_id']) /*&& $_SESSION['session_category'] === 'user'*/){
-                    echo $_SESSION['session_firstname'];
-                }
-                else{
-                    header('Location: index.php?notloggedin');
-                }
-            ?>
-        </strong>
-    </a>
-</div>
-<hr class="m-1">
 
 <!-- Logout Dialog Box -->
 <div class="logout_bg">
@@ -42,6 +25,24 @@
 
 <!-- Navigation Buttons -->
 <ul id="side-menu">
+    
+    <!-- Profile Section -->
+    <div class="profile-side row mt-3">
+        <a href="profile.php g-0" id="profile-link">
+            <img src="resources/images/profile.png" alt="" width="30" height="32" class="rounded-circle">
+            <strong>
+                <?php 
+                    if(isset($_SESSION['session_id']) /*&& $_SESSION['session_category'] === 'user'*/){
+                        echo $_SESSION['session_firstname'];
+                    }
+                    else{
+                        header('Location: index.php?notloggedin');
+                    }
+                ?>
+            </strong>
+        </a>
+    </div>
+    <hr class="m-1">
     <li class="nav-item">
         <a class="link nav-link" href="dashboard.php">Dashboard</a>
     </li>
