@@ -15,6 +15,7 @@
 
 
 // LOCAL
+date_default_timezone_set("Asia/Singapore");
 $host = "localhost";
 $db_user = "root";
 $db_password = "";

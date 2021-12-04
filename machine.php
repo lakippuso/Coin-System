@@ -43,7 +43,7 @@
                             </div>
                             <div class="inputs" id="custom_input" style="display: none;">
                                 <label>Enter Machine Type:</label>
-                                <input type="text" name="machine_name" id="machine_name_input">
+                                <input type="text" name="custom_machine_type" id="machine_custom_input">
                             </div>
                             <div class="submit">
                                 <div class="design"></div>

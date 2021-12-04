@@ -27,8 +27,8 @@
 <ul id="side-menu">
     
     <!-- Profile Section -->
-    <div class="profile-side row mt-3">
-        <a href="profile.php g-0" id="profile-link">
+    <div class="profile-side row g-0 mt-3">
+        <a href="profile.php" id="profile-link" >
             <img src="resources/images/profile.png" alt="" width="30" height="32" class="rounded-circle">
             <strong>
                 <?php 
