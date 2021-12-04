@@ -24,22 +24,26 @@
                         <div class="title">Add Your Machine</div>
                         <form id="add_machine_form" method="POST" action="includes/add-machine.php">
                             <div class="inputs">
-                                <label>Machine ID Number</label>
+                                <label>Machine ID Number:</label>
                                 <input class="" type="text" name="machine_id" id="machine_id_input">
                             </div>
                             <div class="inputs">
-                                <label>Machine Name</label>
+                                <label>Machine Name:</label>
                                 <input type="text" name="machine_name" id="machine_name_input">
                             </div>
                             <div class="inputs">
                                 <label>Machine Type</label>
                                 <br>
-                                <select name="machine_type"class="types">
+                                <select name="machine_type" class="types" onchange="customInput()" id="machine_types">
                                     <option>Piso-Wifi</option>
                                     <option>Vending Machines</option>
                                     <option>Piso-Net</option>
-                                    <option>Others</option>
+                                    <option value="others">Others</option>
                                 </select>
+                            </div>
+                            <div class="inputs" id="custom_input" style="display: none;">
+                                <label>Enter Machine Type:</label>
+                                <input type="text" name="machine_name" id="machine_name_input">
                             </div>
                             <div class="submit">
                                 <div class="design"></div>

@@ -1,7 +1,7 @@
 function logout(){
     var modalBtn = document.querySelector('#log-out');
     var modalBg = document.querySelector('.logout_bg');
-    var modalCancel = document.querySelector('.lg_cancel');;
+    var modalCancel = document.querySelector('.lg_cancel');
 
     modalBtn.addEventListener('click', function () {
         modalBg.classList.add('lg-active');
@@ -69,6 +69,16 @@ function getSelectedValue () {
                 }
             })
         }
+}
+function customInput(){
+    var machine_type_dropdown = document.querySelector('#machine_types');
+    var custom_input = document.querySelector('#custom_input');
+    if(machine_type_dropdown.value == "others"){
+        custom_input.style = "display: block;";
+    }
+    else{
+        custom_input.style = "display: none;";
+    }
 }
 $(document).ready(function() {
     //Dashboard Page
