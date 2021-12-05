@@ -16,84 +16,6 @@
                     <h4 class="col-auto"><img src="resources/images/machines.png" style="width: 2em"></img>&nbsp;MACHINE</h1>
                     <!-- Date and Time -->
                 </div>
-
-                <!-- Add Machine Modal -->
-                <div class="machine_back">
-                    <div class="add_machineModal">
-                        <label class="close_btn">&times;</label><br>
-                        <div class="title">Add Your Machine</div>
-                        <div class="form container g-0" id="add_machine_form">
-
-                                <label class="row">Machine ID Number:</label>
-                                <input class="row col-12" type="text" name="machine_id" id="machine_id_input">
-                                <span class="error machine_id">Hello</span>
-
-                                <label class="row">Machine Name:</label>
-                                <input class="row col-12" type="text" name="machine_name" id="machine_name_input">
-                                <span class="error machine_name">Hello</span>
-
-                                <label class="row">Machine Type:</label>
-                                <select name="machine_type" class="types row col-12" onchange="customInput()" id="machine_types">
-                                    <option>Piso-Wifi</option>
-                                    <option>Vending Machines</option>
-                                    <option>Piso-Net</option>
-                                    <option value="others">Others</option>
-                                </select>
-                                <label class="machine_custom_label row">Enter Machine Type:</label>
-                                <input class="machine_custom_input row col-12" type="text" name="custom_machine_type">
-                                <span class="error machine_name">Hello</span>
-                                <div class="design row"></div>
-                                <input class="row col-10 align-self-center" type="submit" name="submit" value="Add Machine" id="add_machine_button">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Configuration Modal -->
-                <div class="config_bg">
-                    <div class="config_box">
-                        <form class="config">
-                            <div class="config_title d-flex justify-content-start">
-                                <img src="resources/images/setting.png" style="width: 30px;"/>&nbsp;
-                                <div style="margin-top: 0.3em; margin-left: 0.3em;">Machine Configuration</div>
-                            </div>
-                            <div class="config-title d-flex justify-content-between">
-                                <label style="font-weight: 600; margin-left: 1em;">Machine Information</label>
-                                <button class="delete">Delete</button>
-                            </div>
-                            <hr style="margin-left: 2em; margin-right: 2em;">
-
-                            <div class="config-machine d-flex justify-content-evenly">
-                                <div class="machine-section d-flex flex-column">
-                                    <label>Machine ID</label>
-                                    <input type="text" disabled>
-                                    <label>Machine Name</label>
-                                    <input type="text">
-                                    <label>Machine Type</label>
-                                    <input type="text" disabled>
-                                </div>
-                                <span class="vertical-line"></span>
-                                <div class="wifi-section d-flex flex-column">
-                                    <label style="margin-bottom: 1em; font-weight: 600;">Wifi Setup</label>
-                                    <div class="d-flex justify-content-evenly" style="margin-bottom: 1em;">
-                                        <button class="wifi-default" style="border: none; background: none;">Default</button>
-                                        <span class="vertical-line2"></span>
-                                        <button class="wifi-custom" style="border: none; background: none;">Custom</button>
-                                    </div>
-                                    <label>Wifi Name</label>
-                                    <input type="text">
-                                    <label>Wifi Password</label>
-                                    <input type="password">
-                                </div>
-                            </div>
-                            <div class="save-btn d-flex justify-content-end">
-                                <button class="config-save">Save Changes</button>
-                                <button class="config-cancel">Cancel</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-
-
                 <!-- Content -->
                 <div class="content">
                     <div class="machine" id="daily">
@@ -132,6 +54,7 @@
                                             $query = $query."AND machine_name = '$search_id'";
                                         }
                                     }
+                                    $query .= "ORDER BY date_created DESC";
                                     $result= $con->query($query);
                                     while($rows= $result-> fetch_assoc())
                                     {
@@ -180,6 +103,80 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <!-- Add Machine Modal -->
+        <div class="machine_back">
+            <div class="add_machineModal">
+                <label class="close_btn">&times;</label><br>
+                <div class="title">Add Your Machine</div>
+                <div class="form container g-0 mt-4" id="add_machine_form">
+                    <label class="row g-0">Machine ID Number:</label>
+                    <input class="inputs row col-12 g-0" type="text" name="machine_id" id="machine_id_input">
+                    <span class="error machine_id g-0">Hello</span>
+
+                    <label class="row g-0">Machine Name:</label>
+                    <input class="inputs row col-12 g-0" type="text" name="machine_name" id="machine_name_input">
+                    <span class="error machine_name g-0">Hello</span>
+
+                    <label for="machine_types" class="row g-0">Machine Type:</label>
+                    <select name="machine_type" class="types form-control row col-12 g-0" onchange="customInput()" id="machine_types">
+                        <option>Piso-Wifi</option>
+                        <option>Vending Machines</option>
+                        <option>Piso-Net</option>
+                        <option value="others">Others</option>
+                    </select>
+
+                    <label class="machine_custom_label g-0 row">Enter Machine Type:</label>
+                    <input class="machine_custom_input row g-0 col-12" type="text" name="custom_machine_type">
+                    <span class="error custom_type">Hello</span>
+                    <button class="row col-12 g-0 mt-1" id="add_machine_button">Add Machine</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Configuration Modal -->
+        <div class="config_bg">
+            <div class="config_box">
+                <form class="config">
+                    <div class="config_title d-flex justify-content-start">
+                        <img src="resources/images/setting.png" style="width: 30px;"/>&nbsp;
+                        <div style="margin-top: 0.3em; margin-left: 0.3em;">Machine Configuration</div>
+                    </div>
+                    <div class="config-title d-flex justify-content-between">
+                        <label style="font-weight: 600; margin-left: 1em;">Machine Information</label>
+                        <button class="delete">Delete</button>
+                    </div>
+                    <hr style="margin-left: 2em; margin-right: 2em;">
+
+                    <div class="config-machine d-flex justify-content-evenly">
+                        <div class="machine-section d-flex flex-column">
+                            <label>Machine ID</label>
+                            <input type="text" disabled>
+                            <label>Machine Name</label>
+                            <input type="text">
+                            <label>Machine Type</label>
+                            <input type="text" disabled>
+                        </div>
+                        <span class="vertical-line"></span>
+                        <div class="wifi-section d-flex flex-column">
+                            <label style="margin-bottom: 1em; font-weight: 600;">Wifi Setup</label>
+                            <div class="d-flex justify-content-evenly" style="margin-bottom: 1em;">
+                                <button class="wifi-default" style="border: none; background: none;">Default</button>
+                                <span class="vertical-line2"></span>
+                                <button class="wifi-custom" style="border: none; background: none;">Custom</button>
+                            </div>
+                            <label>Wifi Name</label>
+                            <input type="text">
+                            <label>Wifi Password</label>
+                            <input type="password">
+                        </div>
+                    </div>
+                    <div class="save-btn d-flex justify-content-end">
+                        <button class="config-save">Save Changes</button>
+                        <button class="config-cancel">Cancel</button>
+                    </div>
+                </form>
             </div>
         </div>
 <script type="text/javascript" src="resources/js/add_machine.js"></script>

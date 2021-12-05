@@ -15,7 +15,7 @@ add_machine_button.addEventListener('click', function(){
     var format = /[ `!@#$%^&*()+\-=\[\]{};':"\\|,.<>\/?~]/;
     var id_input = document.querySelector('#machine_id_input');
     var name_input = document.querySelector('#machine_name_input');
-    var custom_input = document.querySelector('#machine_custom_input');
+    var custom_input = document.querySelector('.machine_custom_input');
     var machine_type_dropdown = document.querySelector('#machine_types');
     
     var id_value = id_input.value.trim();
@@ -27,52 +27,65 @@ add_machine_button.addEventListener('click', function(){
     //Machine ID Input 
     if(id_value == ''){
         id_input.style = "border: 2px solid red";
-        console.log("ID is empty");
+        $('.machine_id').text("ID is empty");
+        $('.machine_id').css("display","block");
         error +=1;
     }
     else if(isNaN(id_value)){
         id_input.style = "border: 2px solid red";
-        console.log("ID is not valid");
+        id_input.style = "display: block";
+        $('.machine_id').text("ID is not valid");
+        $('.machine_id').css("display","block");
         error +=1;
     }
     else if(id_value.toString().length > 10){
         id_input.style = "border: 2px solid red";
-        console.log("10 digits only");
+        id_input.style = "display: block";
+        $('.machine_id').text("10 digits only");
+        $('.machine_id').css("display","block");
         error +=1;
     }
     else{
         id_input.style = "border: none";
+        $('.machine_id').css("display","none");
     }
     //Machine Name Input
     if(name_value == ''){
         name_input.style = "border: 2px solid red";
         error +=1;
-        console.log("Name is empty");
+        $('.machine_name').text("Name is empty");
+        $('.machine_name').css("display","block");
     }
     else if(format.test(name_value)){
-        console.log("Name has special char");
+        $('.machine_name').text("Name has special char");
+        $('.machine_name').css("display","block");
     }
     else{
         name_input.style = "border: none";
+        $('.machine_name').css("display","none");
     }
     //Custom Type Input
     if(machine_type_dropdown.value == 'others'){
         console.log('Others');
         if(custom_value == ''){
-            custom_input.style = "border: 2px solid red";
+            $(custom_input).css("border", "2px solid red");
+            $('.custom_type').text("Machine Type is empty");
+            $('.custom_type').css("display","block");
             error +=1;
-            console.log("Machine Type is empty");
         }
         else if(format.test(custom_value)){
-            console.log("Machine Type has special char");
+            $(custom_input).css("border", "2px solid red");
+            $('.custom_type').text("Machine Type has special char");
+            $('.custom_type').css("display","block");
             error +=1;
         }
         else{
-            custom_input.style = "border: none";
+            $(custom_input).css("border", "none");
         }
     }
     else{
-        custom_input.style = "border: none";
+        $(custom_input).css("border", "none");
+        $('.custom_type').css("display","none");
     }
     if(error == 0){
         var formData = {
@@ -90,8 +103,9 @@ add_machine_button.addEventListener('click', function(){
         }).done(function (data) {
             if(!data['success']){
                 console.log('Error in server');
-                console.log(data);
-                console.log(data['messages'].machine);
+                $('.machine_id').text(data['messages'].machine);
+                $('#machine_id_input').css("border", "2px solid red");
+                $('.machine_id').css('display','block');
             }
             else{
                 location.reload();
