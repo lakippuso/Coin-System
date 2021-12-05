@@ -1,7 +1,7 @@
 var addBtn = document.querySelector('#open_add');
 var addBg = document.querySelector('.machine_back');
 var addClose = document.querySelector('.close_btn');
-var machine_form = document.querySelector('#add_machine_form');
+var add_machine_button = document.querySelector('#add_machine_button');
 
 addBtn.addEventListener('click', function () {
     addBg.classList.add('back-active');
@@ -11,7 +11,7 @@ addClose.addEventListener('click', function () {
     addBg.classList.remove('back-active');
 });
 
-machine_form.addEventListener('submit', function(e){
+add_machine_button.addEventListener('click', function(){
     var format = /[ `!@#$%^&*()+\-=\[\]{};':"\\|,.<>\/?~]/;
     var id_input = document.querySelector('#machine_id_input');
     var name_input = document.querySelector('#machine_name_input');
@@ -88,8 +88,14 @@ machine_form.addEventListener('submit', function(e){
           dataType: "json",
           encode: true,
         }).done(function (data) {
-            console.log(data);
-            console.log(data['success']);
+            if(!data['success']){
+                console.log('Error in server');
+                console.log(data);
+                console.log(data['messages'].machine);
+            }
+            else{
+                location.reload();
+            }
         });
     }
 })

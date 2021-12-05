@@ -22,34 +22,29 @@
                     <div class="add_machineModal">
                         <label class="close_btn">&times;</label><br>
                         <div class="title">Add Your Machine</div>
-                        <form id="add_machine_form" method="POST" action="includes/add-machine.php">
-                            <div class="inputs">
-                                <label>Machine ID Number:</label>
-                                <input class="" type="text" name="machine_id" id="machine_id_input">
-                            </div>
-                            <div class="inputs">
-                                <label>Machine Name:</label>
-                                <input type="text" name="machine_name" id="machine_name_input">
-                            </div>
-                            <div class="inputs">
-                                <label>Machine Type</label>
-                                <br>
-                                <select name="machine_type" class="types" onchange="customInput()" id="machine_types">
+                        <div class="form container g-0" id="add_machine_form">
+
+                                <label class="row">Machine ID Number:</label>
+                                <input class="row col-12" type="text" name="machine_id" id="machine_id_input">
+                                <span class="error machine_id">Hello</span>
+
+                                <label class="row">Machine Name:</label>
+                                <input class="row col-12" type="text" name="machine_name" id="machine_name_input">
+                                <span class="error machine_name">Hello</span>
+
+                                <label class="row">Machine Type:</label>
+                                <select name="machine_type" class="types row col-12" onchange="customInput()" id="machine_types">
                                     <option>Piso-Wifi</option>
                                     <option>Vending Machines</option>
                                     <option>Piso-Net</option>
                                     <option value="others">Others</option>
                                 </select>
-                            </div>
-                            <div class="inputs" id="custom_input" style="display: none;">
-                                <label>Enter Machine Type:</label>
-                                <input type="text" name="custom_machine_type" id="machine_custom_input">
-                            </div>
-                            <div class="submit">
-                                <div class="design"></div>
-                                <input type="submit" name="submit" value="Add Machine">
-                            </div>
-                        </form>
+                                <label class="machine_custom_label row">Enter Machine Type:</label>
+                                <input class="machine_custom_input row col-12" type="text" name="custom_machine_type">
+                                <span class="error machine_name">Hello</span>
+                                <div class="design row"></div>
+                                <input class="row col-10 align-self-center" type="submit" name="submit" value="Add Machine" id="add_machine_button">
+                        </div>
                     </div>
                 </div>
 

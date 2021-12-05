@@ -72,12 +72,15 @@ function getSelectedValue () {
 }
 function customInput(){
     var machine_type_dropdown = document.querySelector('#machine_types');
-    var custom_input = document.querySelector('#custom_input');
+    var custom_input = document.querySelector('.machine_custom_input');
+    var custom_label = document.querySelector('.machine_custom_label');
     if(machine_type_dropdown.value == "others"){
         custom_input.style = "display: block;";
+        custom_label.style = "display: block;";
     }
     else{
         custom_input.style = "display: none;";
+        custom_label.style = "display: none;";
     }
 }
 $(document).ready(function() {
