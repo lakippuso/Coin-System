@@ -49,7 +49,7 @@
                     <div class="context m-3 d-flex justify-content-around">
                         <div class="user_info">
                             <div class="d-flex justify-content-between">
-                                <label>Income Chart</label>
+                                <label id="chart-label"><span>Income Chart<span></label>
                                 <div>
                                     <div class="dropdown_graph">
                                         <select id="income_list" onchange="getSelectedValue()">
@@ -62,18 +62,18 @@
                             </div>
                             <div class="graphs">
                                 <div class="weekly graph">
-                                    <canvas id="graph1" style="width:100%;width:500px;height:245px;"></canvas>
+                                    <canvas id="graph1" style="width:100%;width:500px;height:245px; display: block;"></canvas>
                                     <script src="resources/js/weekly.js"></script>
                                 </div>
 
 
                                 <div class="monthly graph">
-                                    <canvas id="graph2" style="width:100%;width:500px;height:245px;"></canvas>
+                                    <canvas id="graph2" style="width:100%;width:500px;height:245px; display: block;"></canvas>
                                     <script src="resources/js/monthly.js"></script>
                                 </div>
 
                                 <div class="annually graph">
-                                    <canvas id="graph3" style="width:100%;width:500px;height:245px;"></canvas>
+                                    <canvas id="graph3" style="width:100%;width:500px;height:245px; display: block;"></canvas>
                                     <script src="resources/js/annually.js"></script>
                                 </div>
                             </div>

@@ -8,4 +8,4 @@
         &nbsp;&nbsp;&nbsp;
         <a href="1index.php#developer-section" id="line">Developers</a>
     </div>
-</footer>                                      
+</footer>

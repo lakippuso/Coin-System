@@ -14,6 +14,11 @@ body{
 	color: white;
 	width: 100%;
 }
+
+.date-time {
+	display: block;
+}
+
 .nav-container a{
 	width: 12em;
 }
@@ -30,6 +35,22 @@ body{
 .side-bar{
     background-color: #2b7e7a;
 }
+@media screen and (max-width: 1200px) {
+	.date-time {
+	  margin-right: 2em;
+	}
+}
+
+@media screen and (max-width: 950px) {
+	.date-time {
+	  display: none;
+	}
+	.logo-link{
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
 #side-menu{
     padding: 0;
     display: table;
@@ -69,8 +90,9 @@ body{
     box-shadow: 0 8px 12px black;
 }
 
-/* sidebar */
-
+.side-collapse {
+	display: none;
+}
 .logout {
 	background: none; 
 	color: white; 
@@ -88,6 +110,19 @@ body{
 	background-color: white;
 }
 
+
+@media screen and (max-width: 1000px) {
+	.side-collapse {
+		display: block;
+	}
+	.profile-side {
+		display: none;
+	}
+	#side-menu {
+		display: none;
+	}
+}
+
 /* Dashboard User */
 .dropdown_graph {
     margin-top: 0.5vh;
@@ -99,6 +134,17 @@ body{
     border-radius: 5px;
 }
 
+@media screen and (max-width: 950px) {
+	.graphs {
+		display: none;
+	}
+	#chart-label span {
+		display: none;
+	}
+	#chart-label::after {
+		content: "Income Details";
+	}
+}
 /* Daily Report USER */
 
 .generate {
@@ -166,11 +212,6 @@ body{
 .radio__bg .radio__button:checked + .radio__label{
     background: #4dc0ba;
 }
-
-
-
-
-
 /* History USER */
 #history_table {
     margin-top: 10px;
@@ -178,8 +219,14 @@ body{
     margin-right: 25px;
 }
 
+.search_history {
+    margin-right: 3em;
+    margin-left: 1em;
+    margin-top: 1em;
+}
 
-.delete {
+
+.his-delete {
     color: #FEFFFF; 
     width: 8em; 
 	height: 2em;
@@ -190,6 +237,15 @@ body{
 
 .delete:hover {
 	background-color: #4dc0ba;
+}
+
+
+@media screen and (max-width: 950px) {
+	#history_search {
+		width: 5em;
+	}
+	.his-input {
+	}
 }
 
 /* Admin Dashboard */
@@ -251,6 +307,29 @@ body{
     background-color: rgba(0, 0, 0, 0.5);
 }
 
+@media screen and (max-width: 950px) {
+	.machine_label {
+		display: none;
+	}
+	#open_add {
+		display: none;
+	}
+	#config_btn {
+		display: none;
+	}
+
+	.machine_search {
+		width: 8em;
+	}
+	.dialog {
+		margin-left: auto;
+		margin-right: auto;
+		width: 280px;
+		font-size: 12px;
+	}
+
+}
+
 /* Dialog Box Reset */
 .dialog_bg {
     z-index: 1;
@@ -281,7 +360,6 @@ body{
 
 .dialog_box {
 	width: 500px;   
-	background-color: white;
 }
 
 .dialog_box .dialog{
@@ -383,6 +461,17 @@ body{
 }
 
 
+@media screen and (max-width: 950px) {
+	.logout_box {
+		width: 250px;
+		font-size: 10px;
+	}
+	.logout_box h2 {
+		font-size: 12px;
+	}
+}
+
+
 
 /*Add machine */
 
@@ -407,13 +496,16 @@ body{
 	visibility: visible;
 	opacity: 1;
 }
+
 .add_machineModal{
 	position: fixed;
     background: linear-gradient(to right,  #cfd9df 0%, #e2ebf0 100%);
 	width: 410px;
 	padding: 30px;
 	box-shadow: 0 0 8px rgba(0,0,0,0.4);
+
 }
+
 .add_machineModal .close_btn {
 	position: absolute;
 	right: 20px;
@@ -431,40 +523,38 @@ body{
 	font-weight: 600;
 	text-align: center;
 }
-.machine_custom_input, .machine_custom_label{
-	display: none;
-}
-.error{
-	color: red;
-	display: none;
-}
-/* 
-.add_machineModal .form {
-	display: inline;
+
+.add_machineModal form {
+	margin-top: -20px;
 }
 
-.add_machineModal .form .inputs {
+.add_machineModal form .inputs {
 	height: 45px;
 	width: 100%;
+	margin: 50px 0;
 }
 
-.add_machineModal .form .inputs label {
+.add_machineModal form .inputs label {
 	font-size: 18px;
 }
 
-.add_machineModal .form .inputs input {
+.add_machineModal form .inputs input {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
 	height: 100%;
 	width: 100%;
 	padding-left: 10px;
 	font-size: 17px;
 	border: 1px solid silver;
 }
-.add_machineModal .form .inputs input:hover {
+.add_machineModal form .inputs input:hover {
 	border-color: #33ccff;
 	border-bottom-width: 2px;
 }
 
-.add_machineModal .form .types {
+.add_machineModal form .types {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
 	margin-left: 5px;
 	height: 100%;
 	width: 100%;
@@ -473,14 +563,15 @@ body{
 
 }
 
-.add_machineModal .form .submit {
+.add_machineModal form .submit {
     margin-left: 5px;
 	height: 45px;
 	width: 100%;
 	position: relative;
 	overflow: hidden;
 }
-.add_machineModal .form .submit .design {
+
+.add_machineModal form .submit .design {
 	height: 100%;
 	width: 300%;
 	position: absolute;
@@ -488,11 +579,11 @@ body{
 	z-index: -1;
 	background: #2b7e7a;
 }
-.add_machineModal .form .submit:hover .design {
+.add_machineModal form .submit:hover .design {
 	left: 0;
 	background: lightseagreen;
 }
-.add_machineModal .form .submit input{
+.add_machineModal form .submit input {
 	height: 100%;
 	width: 100%;
 	padding-bottom: 10px;
@@ -503,8 +594,7 @@ body{
 	font-weight: 500;
 	letter-spacing: 1px;
 	cursor: pointer;
-} */
-
+}
 /* Profile */
 
 .nav-bars {
@@ -661,19 +751,6 @@ margin: 0;
 	padding: 1em;
 	padding-bottom: 0;
 }
-.vertical-line{
-	display: inline-block;
-	border-left: 2px solid #ccc;
-	margin: 2em;
-	margin-top: 0;
-	height: 15em;
-}
-.vertical-line2{
-	display: inline-block;
-	border-left: 2px solid #ccc;
-	height: 2em;
-}
-
 .config_box .config_title {
 	border-radius: 15px 15px 0 0;
 	padding: 0.5em;
@@ -705,6 +782,7 @@ margin: 0;
 }
 .config .save-btn {
 	margin-right: 3em;
+	margin-top: 1.5em;
 	margin-bottom: 1.5em;
 }
 
@@ -729,3 +807,37 @@ margin: 0;
 	background-color: #4dc0ba;
 }
 
+/* Mobile Collapse Header */
+.collapse-nav {
+	margin-top: 1em;
+}
+
+.collapse-nav .link-cp{
+    color: white;
+}
+.link-cp:hover{
+    background-color: white;
+    color: black;
+}
+
+.side-collapse {
+	margin: 0 2em 0 2em;
+}
+
+.collapse-lg {
+	background: none; 
+	color: white; 
+	border: none;
+	width: 100%;
+	text-align: left;
+}
+
+.collapse-lg:hover{
+	color: black;
+	background-color: white;
+}
+
+.collapse-lg:focus {
+	color: black;
+	background-color: white;
+}
