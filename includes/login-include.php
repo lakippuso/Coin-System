@@ -37,7 +37,6 @@ if(isset($_POST['submit'])){
                     session_start();
                     $_SESSION['session_id'] = $row['user_id'];
                     $_SESSION['session_username'] = $row['username'];
-                    $_SESSION['session_firstname'] = $row['first_name'];
                     //$_SESSION['session_category'] = $row['category'];
                     // if($_SESSION['session_category']=='admin'){
                     //     header("Location: ../admin-dashboard.php");

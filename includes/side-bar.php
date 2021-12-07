@@ -33,7 +33,13 @@
             <strong>
                 <?php 
                     if(isset($_SESSION['session_id']) /*&& $_SESSION['session_category'] === 'user'*/){
-                        echo $_SESSION['session_firstname'];
+                        include 'config.php';
+                        $username = $_SESSION['session_username'];
+                        $sql = "SELECT * FROM users WHERE username = '$username'";
+                        $result = mysqli_query($con, $sql);
+                        while($row = mysqli_fetch_assoc($result)){
+                            echo $row['first_name'];
+                        }
                     }
                     else{
                         header('Location: index.php?notloggedin');

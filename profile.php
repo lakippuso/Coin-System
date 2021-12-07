@@ -37,7 +37,7 @@
                     ?>
                     <!--Profile-->
                     <div class="profile tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                        <form class="my-profile" action="#" method="POST">
+                        <form class="my-profile" action="includes/profile-include.php" method="POST">
                             <div class="avatar">
                                 <label>Avatar</label>
                                 <img src="resources/images/profile.png" style="width: 10em;" class="profile-pic"></img>
@@ -46,9 +46,9 @@
                             <div class="name">
                                 <label>Name</label>
                                 <input type="text" name="first_name" id="first" placeholder="First Name" value="<?php echo $row['first_name'];?>">
-                                <input type="text" name="middle_name" id="middle" placeholder="Middle Name" value="<?php ?>">
+                                <input type="text" name="middle_name" id="middle" placeholder="Middle Name" value="<?php echo $row['middle_name']?>">
                                 <input type="text" name="last_name" id="last" placeholder="Last Name" value="<?php echo $row['last_name'];?>">
-                                <input type="text" name="name_suffix" id="suffix" placeholder="Suffix" value="<?php  ?>">
+                                <input type="text" name="name_suffix" id="suffix" placeholder="Suffix" value="<?php ?>">
                             </div>
                             <div class="email">
                                 <label>Email</label>
@@ -56,17 +56,17 @@
                             </div>
                             <div class="phone">
                                 <label>Phone</label>
-                                <input id="phone" name="phone" class="no-arrow" type="number" value="<?php ?>">
+                                <input id="phone" name="phone" class="no-arrow" type="number" value="<?php echo $row['contact_no']?>">
                             </div>
                             <hr>
                             <label style="margin-top: 0.5em;">Business Information</label>
                             <div class="b-name">
                                 <label>Name</label>
-                                <input name="phone" type="text">
+                                <input name="business_name" type="text" value="<?php  echo $row['business_name']?>">
                             </div>
                             <div class="b-add">
                                 <label>Address</label>
-                                <input name="phone" type="text">
+                                <input name="business_add" type="text" value="<?php  echo $row['business_add']?>">
                             </div>
                             <div class="save_change d-flex justify-content-end">
                                 <input type="submit" name="save" value="Save Changes">
