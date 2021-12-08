@@ -49,25 +49,33 @@
                                 <input type="text" name="middle_name" id="middle" placeholder="Middle Name" value="<?php echo $row['middle_name']?>">
                                 <input type="text" name="last_name" id="last" placeholder="Last Name" value="<?php echo $row['last_name'];?>">
                                 <input type="text" name="name_suffix" id="suffix" placeholder="Suffix" value="<?php ?>">
+                                <span class = "profile-error">Error :D</span>
                             </div>
                             <div class="email">
                                 <label>Email</label>
-                                <input type="email" name="email" value="<?php echo $row['email'];?>">
+                                <input type="text" name="email" id="email" value="<?php echo $row['email'];?>">
+                                <span class = "profile-error">Error :D</span>
                             </div>
                             <div class="phone">
                                 <label>Phone</label>
                                 <input id="phone" name="phone" class="no-arrow" type="number" value="<?php echo $row['contact_no']?>">
+                                <span class = "profile-error">Error :D</span>
                             </div>
                             <hr>
                             <label style="margin-top: 0.5em;">Business Information</label>
                             <div class="b-name">
                                 <label>Name</label>
                                 <input name="business_name" type="text" value="<?php  echo $row['business_name']?>">
+                                <span class = "profile-error">Error :D</span>
                             </div>
                             <div class="b-add">
                                 <label>Address</label>
                                 <input name="business_add" type="text" value="<?php  echo $row['business_add']?>">
+                                <span class = "profile-error">Error :D</span>
                             </div>
+                            <!-- <span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Disabled popover">
+                                <button class="btn btn-primary" type="button" disabled>Disabled button</button>
+                            </span> -->
                             <div class="save_change d-flex justify-content-end">
                                 <input type="submit" name="save" value="Save Changes">
                             </div>
@@ -77,6 +85,7 @@
                         }
                     ?>
                     
+                    <script type="text/javascript" src="resources/js/profile.js"></script>
                     <!--Password-->
                     <div class="manage-password tab-pane fade" id="password" role="tabpanel" aria-labelledby="password-tab">
                         <form class="m-pass" action="" method="">

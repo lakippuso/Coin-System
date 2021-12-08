@@ -244,8 +244,8 @@ body{
 	#history_search {
 		width: 5em;
 	}
-	.his-input {
-	}
+	/* .his-input {
+	} */
 }
 
 /* Admin Dashboard */
@@ -640,6 +640,12 @@ body{
 	margin-right: 3.8em;
 	margin-bottom: 1em;
 }
+
+.profile .my-profile span{
+	color: red;
+	display: none;
+}
+
 
 .no-arrow {
 	-moz-appearance: textfield;
