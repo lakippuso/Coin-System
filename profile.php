@@ -88,23 +88,26 @@
                     <script type="text/javascript" src="resources/js/profile.js"></script>
                     <!--Password-->
                     <div class="manage-password tab-pane fade" id="password" role="tabpanel" aria-labelledby="password-tab">
-                        <form class="m-pass" action="" method="">
+                        <div class="m-pass">
                             <div class="current">
                                 <label>Current</label>
-                                <input name="phone" type="password">
+                                <input name="phone" type="password" id="current_pass">
+                                <span class="error-pass">E</span>
                             </div>
                             <div class="new">
                                 <label>New Password</label>
-                                <input name="phone" type="password">
+                                <input name="phone" type="password" id="new_pass">
+                                <span class="error-pass">E</span>
                             </div>
                             <div class="retype">
                                 <label>Retype Password</label>
-                                <input name="phone" type="password">
+                                <input name="phone" type="password" id="retype_pass">
+                                <span class="error-pass">E</span>
                             </div>
                             <div class="save_change d-flex justify-content-end">
-                                <input type="submit" name="save" value="Save Changes">
+                                <input type="button" name="change_pass" id="change_pass" value="Save Changes">
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
                 
