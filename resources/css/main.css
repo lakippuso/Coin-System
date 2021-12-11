@@ -523,8 +523,12 @@ body{
 	font-weight: 600;
 	text-align: center;
 }
+.add_machineModal span {
+	color: red;
+	display: none;
+} 
 
-.add_machineModal form {
+/* .add_machineModal form {
 	margin-top: -20px;
 }
 
@@ -594,7 +598,7 @@ body{
 	font-weight: 500;
 	letter-spacing: 1px;
 	cursor: pointer;
-}
+} */
 /* Profile */
 
 .nav-bars {
