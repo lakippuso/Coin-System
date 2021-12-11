@@ -62,7 +62,6 @@ if(isset($_GET['pass']) && $_GET['pass']=='geekcoin'){
             }
         }
         else{
-            echo 'New Daily report for: '.$username;
             $sql =  "INSERT INTO daily_report (machine_id, username, date, day_income) VALUES (?,?,?,?)";
             $stmt = mysqli_stmt_init($con);
             if(!mysqli_stmt_prepare($stmt, $sql)){
