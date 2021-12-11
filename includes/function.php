@@ -2,7 +2,13 @@
 date_default_timezone_set("Asia/Singapore");
 //Date and Time Function
 function printDate(){
-    return date("Y/m/d");
+    return date("Y-m-d");
+}
+function printMonth(){
+    return date("Y-m-d");
+}
+function printWeek(){
+    return date("Y-")."W".date("W");
 }
 function printTime(){
     return date("h:i a");

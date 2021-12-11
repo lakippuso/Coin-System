@@ -75,15 +75,19 @@
     //Search Daily Report
     if(isset($_POST['filter'])){
         $location = "Location: ../dailyreport.php?";
-        if(isset($_POST['start_date'])) {
+        if(isset($_POST['start_date']) && $_POST['start_date'] != '') {
             $location .= "&start_date=".$_POST['start_date'];
+            if(isset($_POST['end_date']) && $_POST['end_date'] != '') { 
+                $location .= "&end_date=".$_POST['end_date'];
+            }
         }
-        if(isset($_POST['end_date'])) { 
-            $location .= "&end_date=".$_POST['end_date'];
+        else if(isset($_POST['start_year']) && $_POST['start_year'] != ''){
+            $location .= "year=".$_POST['start_year'];
         }
         if(isset($_POST['search_id'])) {
             $location .= "&search_id=".implode(", ",$_POST['search_id']);
         }
+        // echo $location;
         header($location);
         exit();
     }
