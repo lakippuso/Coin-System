@@ -18,19 +18,34 @@
                 }
             }
         }
-        if(isset($_POST['start_date']) && isset($_POST['end_date'])){
+        if(isset($_POST['start_date'])){
             $start_date = $_POST['start_date'];
-            $end_date = $_POST['end_date'];
+            if(isset($_POST['end_date'])){
+                $end_date = $_POST['end_date'];
+            }
             if(!empty($start_date) && !empty($end_date)){
                 // echo "Start Date: ".$start_date."<br>";
                 // echo "End Date: ".$end_date."<br>";
                 $query = $query."AND date BETWEEN '$start_date' AND '$end_date'";
             }
             else if(!empty($start_date)){
-                $query = $query."AND date = '$start_date'";
+                if(strlen($start_date) == 7){
+                    $str = substr($start_date, 5);
+                    $query = $query."AND MONTH(date) = '$str'";
+                }
+                else if(strlen($start_date) == 8){
+                    $str = substr($start_date, 6);
+                    $query = $query."AND WEEK(date) = '$str'";
+                }
+                else{
+                    $query = $query."AND date = '$start_date'";
+                }
             }
         }
-
+        else if(isset($_POST['year'])){
+            $year = $_POST['year'];
+            $query = $query."AND YEAR(date) = '$year'";
+        }
         $query = $query."ORDER BY date DESC";
         $result= $con->query($query);
         
