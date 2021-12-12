@@ -11,7 +11,8 @@ function logout(){
         modalBg.classList.remove('lg-active');
     });
 }
-function configuration(){
+//Ajax for Machine Config
+function configuration(id){
     var configBg = document.querySelector('.config_bg');
     var configCancel = document.querySelector('.config-cancel');
 
@@ -20,6 +21,18 @@ function configuration(){
     configCancel.addEventListener('click', function () {
         configBg.classList.remove('config-active');
     });
+
+    $.ajax({
+        type: "POST",
+        url: "includes/machine-config-include.php",
+        data: {machine_id: id},
+        dataType: "json",
+        encode: true,
+      }).done(function (data) {
+        $('#machine-config-id').val(data['id']);
+        $('#machine-config-name').val(data['name']);
+        $('#machine-config-type').val(data['type']);
+      });
 }
 function getSelectedValue () {
         var selectValue = document.getElementById("income_list").value;
@@ -97,7 +110,18 @@ $(document).ready(function() {
             }
         });
     }).change();
-    //HISTORY Page
+    //Delete machine [Machine Page]
+    $(document).on('click', '#delete-machine', function(){
+        var id = $('#machine-config-id').val();
+        
+        $.ajax({
+            type: "POST",
+            url: "includes/delete-machine-include.php",
+            data: {machine_id: id},
+          }).done(function () {
+                location.reload();
+          });
+    });
     //Select all values
     function select_unselect_checkbox (this_el, select_el) 
     {
@@ -118,10 +142,6 @@ $(document).ready(function() {
 
         select_unselect_checkbox($(this), ele); 
     });
-    var radioValue = $("input[name='period']:checked").val();
-    if(radioValue == "Daily") {
-        document.getElementById('end').style.display="none";
-    }
 });
 //Multiple Select in Daily Report
 $(function () {

@@ -113,3 +113,28 @@ add_machine_button.addEventListener('click', function(){
         });
     }
 })
+
+
+function dialog(button) {
+    var reset_bg = document.querySelector('.dialog_bg');
+    var reset_close = document.querySelector('.cancel');
+
+    console.log();
+    reset_bg.classList.add('db-active');
+
+    reset_close.addEventListener('click', function () {
+        reset_bg.classList.remove('db-active');
+    });
+
+    $(".continue").click(function(){
+        $.ajax({
+            url: "includes/reset-machine.php",
+            method: "GET",
+            data: {"machine_id": button},
+            success: function(response){
+                console.log(response);
+                reset_bg.classList.remove('db-active');
+            }
+        });
+    });
+}

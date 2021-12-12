@@ -70,7 +70,7 @@
                                     <th scope="col"><?php echo $rows['income']; ?></th>
                                     <th scope="col"><?php echo $rows['date_created']; ?></th>
                                     <th scope="col"style="text-align: center;">
-                                        <span class="badge bg-primary rounded-pill"><button onclick="configuration();" style="background: None; border: None; color: white; width:4em;">Config</button></span>
+                                        <span class="badge bg-primary rounded-pill"><button onclick="configuration(<?php echo $rows['machine_id'];?>);" style="background: None; border: None; color: white; width:4em;">Config</button></span>
                                         <span class="badge bg-primary rounded-pill"><button onclick="dialog(<?php echo $rows['machine_id'];?>)" style="background: None; border: None; color: white; width:4em;">Reset</button></span>            
                                     </th>
                                 </tr>
@@ -138,25 +138,25 @@
         <!-- Configuration Modal -->
         <div class="config_bg">
             <div class="config_box">
-                <form class="config">
+                <div class="config">
                     <div class="config_title d-flex justify-content-start">
                         <img src="resources/images/setting.png" style="width: 30px;"/>&nbsp;
                         <div style="margin-top: 0.3em; margin-left: 0.3em;">Machine Configuration</div>
                     </div>
                     <div class="config-title d-flex justify-content-between">
                         <label style="font-weight: 600; margin-left: 1em;">Machine Information</label>
-                        <button class="delete">Delete</button>
+                        <button class="delete" id="delete-machine">Delete</button>
                     </div>
                     <hr style="margin-left: 2em; margin-right: 2em;">
 
                     <div class="config-machine d-flex justify-content-evenly">
                         <div class="machine-section d-flex flex-column">
                             <label>Machine ID</label>
-                            <input type="text" disabled>
+                            <input type="text" id="machine-config-id" disabled>
                             <label>Machine Name</label>
-                            <input type="text">
+                            <input type="text" id="machine-config-name">
                             <label>Machine Type</label>
-                            <input type="text" disabled>
+                            <input type="text" id="machine-config-type" disabled>
                         </div>
                         <span class="vertical-line"></span>
                         <div class="wifi-section d-flex flex-column">
@@ -176,44 +176,10 @@
                         <button class="config-save">Save Changes</button>
                         <button class="config-cancel">Cancel</button>
                     </div>
-                </form>
+                </d>
             </div>
         </div>
 <script type="text/javascript" src="resources/js/add_machine.js"></script>
-<script type="text/javascript">
-    function dialog(button) {
-        var reset_bg = document.querySelector('.dialog_bg');
-        var reset_close = document.querySelector('.cancel');
-        var reset_button = document.getElementById('reset_button');
-
-        console.log();
-        reset_bg.classList.add('db-active');
-
-        reset_close.addEventListener('click', function () {
-            reset_bg.classList.remove('db-active');
-        });
-
-        $(".continue").click(function(){
-            $.ajax({
-                url: "includes/reset-machine.php",
-                method: "GET",
-                data: {"machine_id": button},
-                success: function(response){
-                    console.log(response);
-                    reset_bg.classList.remove('db-active');
-                }
-            });
-        });
-        // $.ajax({
-        //     url: "includes/reset-machine.php",
-        //     method: "GET",
-        //     data: {"machine_id": button},
-        //     success: function(response){
-        //         console.log(response);
-        //     }
-        // });
-    }
-</script>
 <!-- Footer -->
 <?php
     include 'includes/footer-inside.php';
