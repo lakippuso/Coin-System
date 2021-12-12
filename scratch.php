@@ -1,8 +1,6 @@
 <?php
     date_default_timezone_set("Asia/Singapore");
-    if(2021==date('Y')){
-        echo 69;
-    }
+    echo date("Y-")."W".date("W");
 
 ?>
 <!DOCTYPE html>

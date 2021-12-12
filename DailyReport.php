@@ -25,26 +25,27 @@
                                 <div class="calendar d-flex flex-column">
                                     <div class="radio__bg d-flex justify-content-evenly" id="incomePeriod" style="margin-bottom: 1em; margin-right: auto; margin-left: auto;">
                                         <div>
-                                            <input class="radio__button" type="radio" id="daily_report" name="period" value="Daily" <?php echo (isset($_POST['period'])) ? ($_POST['period']=='Daily')? 'checked':'':'';?> onclick="document.getElementById('end').style.display='none'" checked>
+                                            <input class="radio__button" type="radio" id="daily_report" name="period" value="Daily" onchange="radioChange();" checked>
                                             <label class="radio__label" for="daily_report">Daily</label><br>
                                         </div>
                                         <div>
-                                            <input class="radio__button" type="radio" id="weekly_report" name="period" value="Weekly" <?php echo (isset($_POST['period'])) ? ($_POST['period']=='Weekly')? 'checked':'':'';?> onclick="document.getElementById('end').style.display='none'">
+                                            <input class="radio__button" type="radio" id="weekly_report" name="period" value="Weekly" onchange="radioChange();">
                                             <label class="radio__label" for="weekly_report">Weekly</label><br>
                                         </div>
                                         <div>
-                                            <input class="radio__button" type="radio" id="monthly_report" name="period" value="Monthly" <?php echo (isset($_POST['period'])) ? ($_POST['period']=='Monthly')? 'checked':'':'';?> onclick="document.getElementById('end').style.display='none'">
+                                            <input class="radio__button" type="radio" id="monthly_report" name="period" value="Monthly" onchange="radioChange();">
                                             <label class="radio__label" for="monthly_report">Monthly</label>
                                         </div>
                                         <div>
-                                            <input class="radio__button" type="radio" id="annually" name="period" value="Annually" <?php echo (isset($_POST['period'])) ? ($_POST['period']=='Annually')? 'checked':'':'';?> onclick="document.getElementById('end').style.display='none'">
+                                            <input class="radio__button" type="radio" id="annually" name="period" value="Annually" onchange="radioChange();">
                                             <label class="radio__label" for="annually">Annually</label>
                                         </div>
                                         <div>
-                                            <input class="radio__button" type="radio" id="custom" name="period" value="Custom" <?php echo (isset($_POST['period'])) ? ($_POST['period']=='Custom')? 'checked':'':'';?> onclick="document.getElementById('end').style.display='block'">
+                                            <input class="radio__button" type="radio" id="custom" name="period" value="Custom" onchange="radioChange();">
                                             <label class="radio__label" for="custom">Custom</label>
                                         </div>
                                     </div>
+                                    <script src="resources/js/yearly.js"></script>
 
                                     <div class="d-flex justify-content-evenly" style="margin-top: auto; margin-right: auto; margin-left: 8px;">
                                         <div class="dropdown">
@@ -63,8 +64,9 @@
                                                 ?>
                                             </select>
                                         </div>
-                                        <div><input type="text" name="start_date" id="start" value="<?php if(isset($_POST['start_date'])) echo $_POST['start_date']?>"style="border-radius: 5px; padding: 3px;" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="Start Date"></div>
-                                        <div><input type="text" name="end_date" id="end" value="<?php if(isset($_POST['end_date'])) echo $_POST['end_date']?>"style="border-radius: 5px; padding: 3px;" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="End Date"></div>
+                                        <div><input type="date" name="start_date" id="start" max="<?php echo printDate();?>" style="border-radius: 5px; padding: 3px;" placeholder="Start Date"></div>
+                                        <div ><input type="text" name="start_year" id="year_start" style="border-radius: 5px; padding: 3px; display: none;" placeholder="yyyy" ></div>
+                                        <div><input type="date" name="end_date" id="end" max="<?php echo printDate();?>" style="border-radius: 5px; padding: 3px;" placeholder="End Date"></div>
                                         <div><button type="submit" name="filter" id="start" style="margin-top: 3px; padding: 4px; width: 40px; border: none; background: none;"><img src="resources/images/search.png" style="width: 30px;"/></button></div>
                                     </div>
                                 </div>
@@ -100,17 +102,33 @@
                                             }
                                         }
                                     }
-                                    if(isset($_GET['start_date']) && isset($_GET['end_date'])){
+                                    if(isset($_GET['start_date'])){
                                         $start_date = $_GET['start_date'];
-                                        $end_date = $_GET['end_date'];
+                                        if(isset($_GET['end_date'])){
+                                            $end_date = $_GET['end_date'];
+                                        }
                                         if(!empty($start_date) && !empty($end_date)){
                                             // echo "Start Date: ".$start_date."<br>";
                                             // echo "End Date: ".$end_date."<br>";
                                             $query = $query."AND date BETWEEN '$start_date' AND '$end_date'";
                                         }
                                         else if(!empty($start_date)){
-                                            $query = $query."AND date = '$start_date'";
+                                            if(strlen($start_date) == 7){
+                                                $str = substr($start_date, 5);
+                                                $query = $query."AND MONTH(date) = '$str'";
+                                            }
+                                            else if(strlen($start_date) == 8){
+                                                $str = substr($start_date, 6);
+                                                $query = $query."AND WEEK(date) = '$str'";
+                                            }
+                                            else{
+                                                $query = $query."AND date = '$start_date'";
+                                            }
                                         }
+                                    }
+                                    else if(isset($_GET['year'])){
+                                        $year = $_GET['year'];
+                                        $query = $query."AND YEAR(date) = '$year'";
                                     }
                                     $query = $query."ORDER BY date DESC";
                                     $result= $con->query($query);
@@ -136,7 +154,6 @@
         </div>
         </div>
 <!-- Footer -->
-
 
 <?php
     include 'includes/footer-inside.php';
