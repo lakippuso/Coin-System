@@ -41,7 +41,7 @@
                             <div class="avatar">
                                 <label>Avatar</label>
                                 <img src="resources/images/profile.png" style="width: 10em;" class="profile-pic"></img>
-                                <input class="choose_file" type="file">
+                                <input class="choose_file" type="file" name = "profile_upload">
                             </div>
                             <div class="name">
                                 <label>Name</label>

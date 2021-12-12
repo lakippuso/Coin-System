@@ -61,6 +61,12 @@ $(document).ready(function() {
             $('#new_pass').siblings('span').text('Enter new password!');
             error+=1;
         }
+        else if($('#new_pass').val().length < 8){
+            $('#new_pass').css("border","2px solid red");
+            $('#new_pass').siblings('span').css("display","inline");
+            $('#new_pass').siblings('span').text('Password must be 8 characters or more!');
+            error+=1;
+        }
         else{
             $('#new_pass').css("border","1px solid black");
             $('#new_pass').siblings('span').css("display","none");
