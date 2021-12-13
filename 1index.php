@@ -1,14 +1,14 @@
 <?php
     session_start();
     if(isset($_SESSION['session_id'])){
-        // if($_SESSION['session_category']=='admin'){
-        //     header("Location: admin-dashboard.php");
-        //     exit();
-        // }
-        // else{
-        // }
-        header("Location: dashboard.php");
-        exit();
+        if($_SESSION['session_category']=='admin'){
+            header("Location: admin-dashboard.php");
+            exit();
+        }
+        else{
+            header("Location: dashboard.php");
+            exit();
+        }
     }
 ?>
 <!DOCTYPE html>
@@ -16,7 +16,6 @@
     <head>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="resources/css/1index.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,38 +25,62 @@
     <body>
          <div class="header navbar navbar-expand-lg justify-content-between" id="myHeader">
             <div class="d-flex justify-content-around">
-                <img src="resources/images/LogoCC.png" style="position: relative; width: 50px;"></img>
-                <div class="floater"><h3>CCM</h3></div>
+                <a href="index.php"><img src="resources/images/LogoCC.png" style="position: relative; width: 50px;"></img></a>
+                <a href="index.php" class="floater" style="text-decoration: none; color: white; font-weight: 600"><h3>CCM</h3></a>
             </div>
             <div class="d-flex justify-content-around">
-                <a href="index.php"><button type="button" class="loginkulay" id="open_form">LOGIN</button></a>
+                <button type="button" class="loginkulay" id="open_form">LOGIN</button>
                 <a href="registration.php"><button type="button" class="registerkulay">SIGN UP</button></a>
+            </div>
+        </div>
+        
+        <div class="modal_bg">
+            <div class="login_form">
+                <label class="close_btn">&times;</label>
+                <div class="title">Login</div>
+                <form method="POST" action="includes/login-include.php">
+                    <div class="inputs">
+                        <label>Username</label>
+                        <input type="text" name="username">
+                        <span id="username_error" class="my-3"><?php if(isset($_GET['username_error'])){ echo $_GET['username_error'];}?></span>
+                    </div>
+                    <div class="inputs">
+                        <label>Password</label>
+                        <input type="password" name="password">
+                        <span id="password_error"><?php if(isset($_GET['password_error'])){ echo $_GET['password_error'];}?></span>
+                    </div>
+                    <div class="forgot">
+                        <label><a href="#">Forgot Password?</a></label>
+                    </div >
+                    <div class="submit">
+                        <div class="design"></div>
+                        <input type="submit" name="submit" value="LOGIN">
+                    </div>
+                    <div class="register" style="text-align: center;">New User?&nbsp;<a href="registration.php">Register Here!</a></div>
+                </form>
             </div>
         </div>
 
         <section class="section1" id="gallery"> 
         <div class="container pt-md-5">
         <h1>About Us</h1>
+        <hr>
             <div class="row">
                 <div class="col-md-4">
                     <div class="card cardcon mt-3 mb-3">
-                        <h3>Website Features</h3>
-                        <img src="resources/images/pic3.gif" class="card-img-top" alt="">
+                        <h3>About Website</h3>
+                        <img src="resources/images/website.gif" class="card-img-top" alt="">
                         <h4>Coin Counter Machine</h4>            
                         <div class="card-body">
                         <p class="card-text mt-3">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                            Reiciendis eveniet minus sapiente expedita iusto voluptas dolorum corrupti deserunt aperiam 
-                            assumenda laboriosam commodi adipisci reprehenderit quo ratione fugit ullam minima ipsam aliquid 
-                            necessitatibus, rerum maiores nam! Beatae necessitatibus corporis praesentium labore dolorum quod ut 
-                            esse velit ipsam, alias, tempora iusto blanditiis.
+                            Coin Counter Machine website was created to help small business who owned coin-related business to monitor their daily income, since businesses like these are needed multiple hands to be able to count their income. Website has the ability also to give details and compare the incomes for the owner to identify different problems their business encountered.
                         </p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card cardcon mt-5 mb-5">
-                        <h3>Coin Counter Website</h3>
+                        <h3>Coin Counter Machine</h3>
                         <img src="resources/images/pic2.gif" class="card-img-top" alt="">
                         <div class="card-body">
                         <p class="card-text mt-3">
@@ -73,16 +96,12 @@
                 
                 <div class="col-md-4">
                     <div class="card cardcon mt-3 mb-3">
-                        <h3>Machine Features</h3>
-                        <img src="resources/images/pic4.gif" class="card-img-top" alt="">
+                        <h3>About Machine</h3>
+                        <img src="resources/images/machine.gif" class="card-img-top" alt="">
                         <h4>Coin Counter Machine</h4>            
                         <div class="card-body">
                         <p class="card-text mt-3">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                            Reiciendis eveniet minus sapiente expedita iusto voluptas dolorum corrupti deserunt aperiam 
-                            assumenda laboriosam commodi adipisci reprehenderit quo ratione fugit ullam minima ipsam aliquid 
-                            necessitatibus, rerum maiores nam! Beatae necessitatibus corporis praesentium labore dolorum quod ut 
-                            esse velit ipsam, alias, tempora iusto blanditiis.
+                            Coin Counter Machine made an machine which can be embedded in other type of coin-based machines of different coin-related businesses such as Vending Machines, Piso-net and Piso-wifi. This machine has the ability to send accepted data (Coin) into the website which the website will display or compute. In order for the website to recieve real-time information, machine should be connected through internet to be able to use its function.
                         </p>
                         </div>
                     </div>
@@ -120,58 +139,37 @@
             </div>
         </div>
     </section>
-    <section class="section2" id="developer-section">
+    <h1>Picture natin</h1>
+    <section class="section3" id="developer-section">
         <div class="container">
-            <h2 class="title-content text-center">Meet the Team</h2>
+            <h2 class="title-content text-center">Developers</h2>
             <hr/>
             <div class="row content-name text-center text-md-start">
-                <div class="d-flex justify-content-evenly m-3"> 
-                    <div class="card" style="width: 18rem;">
-                        <img src="resources/images/profile.png" class="card-img-top" alt="John">
-                        <h4>John</h4>
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                        <img src="resources/images/fb.png" class="card-img-bottom" style="width: 2em; margin-left: auto; margin-right: auto; margin-bottom: 1em;"></img>
-                    </div>
-                    <div class="card" style="width: 18rem;">
-                        <img src="resources/images/profile.png" class="card-img-top" alt="Matt">
-                        <h4>Matt</h4>
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                        <img src="resources/images/fb.png" class="card-img-bottom" style="width: 2em; margin-left: auto; margin-right: auto; margin-bottom: 1em;"></img>
-                    </div>
+                <div class="col-md-2">
+                    <img src="resources/images/con1.gif" class="img-fluid">
                 </div>
-                <div class="d-flex justify-content-evenly m-3"> 
-                    <div class="card" style="width: 18rem;">
-                        <img src="resources/images/profile.png" class="card-img-top" alt="Angel">
-                        <h4>Angel</h4>
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                        <img src="resources/images/fb.png" class="card-img-bottom" style="width: 2em; margin-left: auto; margin-right: auto; margin-bottom: 1em;"></img>
-                    </div>
-                    <div class="card" style="width: 18rem;">
-                        <img src="resources/images/profile.png" class="card-img-top" alt="Julius">
-                        <h4>Julius</h4>
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                        <img src="resources/images/fb.png" class="card-img-bottom" style="width: 2em; margin-left: auto; margin-right: auto; margin-bottom: 1em;"></img>
-                    </div>
-                    <div class="card" style="width: 18rem;">
-                        <img src="resources/images/profile.png" class="card-img-top" alt="Joel">
-                        <h4>Joel</h4>
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                        <img src="resources/images/fb.png" class="card-img-bottom" style="width: 2em; margin-left: auto; margin-right: auto; margin-bottom: 1em;"></img>
-                    </div>
+                <div class="col content-detail">
+                    <h5 class="content-name-2 p-2 p-md-0 pt-md-2">INFO</h5>
+                    <p class="Con-p p-2 p-md-0 pt-md-2">
+                        Coin Counter machine(CCM) is a embedded coin sorting machine that sort and counts coins. This machine has a web interface which display income that machine process throughtout its process. This invention was meant for small business which uses coin operated system such as vending machine, piso-net, Wi-Fi etc.
+                    </p>
                 </div>
+
+                <div class="row content-name text-center text-md-start">
+                    <div class="col-md-2">
+                        <img src="resources/images/con2.gif" class="img-fluid">
+                    </div>
+                    <div class="col content-detail">
+                        <h5 class="content-name-2 p-2 p-md-0 pt-md-2">INFO</h5>
+                        <p class="Con-p p-2 p-md-0 pt-md-2">
+                            Coin Counter Machine(CCM) aims to provide a better solution in manual counting of income for these types of businesses since having a coin operated business takes a lot of effort to be able to count or sort coins. Having this type of innovation will make users work to be lessen.
+                        </p>
+                    </div>
             </div>
         </div>
     </section>
+
+    <script src="resources/js/login.js"></script>
 
     </body>
 </html>
