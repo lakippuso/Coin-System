@@ -177,7 +177,9 @@ body{
     height: 33px;
     border-radius: 5px;
 }
-
+#end{
+	display: none;
+}
 #start, #end {
     width: 12em;
 }
