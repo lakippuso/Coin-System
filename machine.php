@@ -111,7 +111,7 @@
             <div class="add_machineModal">
                 <label class="close_btn">&times;</label><br>
                 <div class="title">Add Your Machine</div>
-                <div class="form container g-0 mt-4" id="add_machine_form">
+                <div class="add-form container g-0 mt-4" id="add_machine_form">
                     <label class="row g-0">Machine ID Number:</label>
                     <input class="inputs row col-12 g-0" type="text" name="machine_id" id="machine_id_input">
                     <span class="error machine_id g-0">Hello</span>

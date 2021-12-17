@@ -531,7 +531,22 @@ body{
 	color: red;
 	display: none;
 } 
-
+.add-form label {
+	font-size: 1.2rem;
+} 
+.add-form input, .types, .add-button {
+	height: 2.5rem;
+	font-size: 1.1rem;
+}
+.adddiv{
+	text-align: center;
+}
+.add-button{
+	display: inline-block;
+	background-color: #2b7e7a;
+	color: white;
+	padding: 0;
+}
 /* .add_machineModal form {
 	margin-top: -20px;
 }
