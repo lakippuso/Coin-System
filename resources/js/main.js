@@ -122,6 +122,21 @@ $(document).ready(function() {
                 location.reload();
           });
     });
+    $(document).on('click', '#save-machine', function(){
+        var id = $("#machine-config-id").val();
+        var name = $("#machine-config-name").val();
+        
+        $.ajax({
+            type: "POST",
+            url: "includes/update-config-include.php",
+            data: {machine_id: id,
+                    machine_name: name},
+          }).done(function () {
+                // console.log("HELLO");
+                location.reload();
+          });
+    });
+    
     //Select all values
     function select_unselect_checkbox (this_el, select_el) 
     {

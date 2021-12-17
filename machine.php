@@ -175,7 +175,7 @@
                         </div>
                     </div>
                     <div class="save-btn d-flex justify-content-end">
-                        <button class="config-save">Save Changes</button>
+                        <button class="config-save" id="save-machine">Save Changes</button>
                         <button class="config-cancel">Cancel</button>
                     </div>
                 </d>
