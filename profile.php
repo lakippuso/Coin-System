@@ -50,7 +50,7 @@
                                 <input type="text" name="first_name" id="first" placeholder="First Name" value="<?php echo $row['first_name'];?>">
                                 <input type="text" name="middle_name" id="middle" placeholder="Middle Name" value="<?php echo $row['middle_name']?>">
                                 <input type="text" name="last_name" id="last" placeholder="Last Name" value="<?php echo $row['last_name'];?>">
-                                <input type="text" name="name_suffix" id="suffix" placeholder="Suffix" value="<?php ?>">
+                                <input type="text" name="name_suffix" id="suffix" placeholder="Suffix" value="<?php echo $row['suffix']?>">
                                 <span class = "profile-error">Error :D</span>
                             </div>
                             <div class="email">
@@ -79,7 +79,7 @@
                                 <button class="btn btn-primary" type="button" disabled>Disabled button</button>
                             </span> -->
                             <div class="save_change d-flex justify-content-end">
-                                <input type="submit" name="save" value="Save Changes">
+                                <input type="submit" name="save-profile" value="Save Changes">
                             </div>
                         </form>
                     </div>

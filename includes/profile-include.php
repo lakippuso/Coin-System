@@ -1,7 +1,7 @@
 <?php
     include 'config.php';
     session_start();
-    if(isset($_POST['save'])){
+    if(isset($_POST['save-profile'])){
         $firstname = $_POST['first_name'];
         $middlename = $_POST['middle_name'];
         $lastname = $_POST['last_name'];
@@ -17,12 +17,11 @@
         $conditions = "first_name = '".$firstname."'";
         $conditions .= ", middle_name = '".$middlename."'";
         $conditions .= ", last_name = '".$lastname."'";
-        // $conditions .= ', suffix = '.$suffix;
+        $conditions .= ", suffix = '".$suffix."'";
         $conditions .= ", email = '".$email."'";
         $conditions .= ", contact_no = '".$phone."'";
         $conditions .= ", business_name = '".$business_name."'";
         $conditions .= ", business_add = '".$business_add."'";
-        
         echo $conditions;
         $sql = "UPDATE users SET $conditions WHERE username = '$username'";
         mysqli_query($con,$sql);
