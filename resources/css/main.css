@@ -529,6 +529,22 @@ body{
 	color: red;
 	display: none;
 } 
+.form label {
+	font-size: 1.2rem;
+} 
+.form input, .types, .add-button {
+	height: 2.5rem;
+	font-size: 1.1rem;
+}
+.adddiv{
+	text-align: center;
+}
+.add-button{
+	display: inline-block;
+	background-color: #2b7e7a;
+	color: white;
+	padding: 0;
+}
 
 /* .add_machineModal form {
 	margin-top: -20px;
@@ -576,7 +592,6 @@ body{
 	position: relative;
 	overflow: hidden;
 }
-
 .add_machineModal form .submit .design {
 	height: 100%;
 	width: 300%;
@@ -600,7 +615,8 @@ body{
 	font-weight: 500;
 	letter-spacing: 1px;
 	cursor: pointer;
-} */
+}
+ */
 /* Profile */
 
 .nav-bars {

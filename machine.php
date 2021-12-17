@@ -130,7 +130,9 @@
                     <label class="machine_custom_label g-0 row">Enter Machine Type:</label>
                     <input class="machine_custom_input row g-0 col-12" type="text" name="custom_machine_type">
                     <span class="error custom_type">Hello</span>
-                    <button class="row col-12 g-0 mt-1" id="add_machine_button">Add Machine</button>
+                    <div class="adddiv">
+                        <button class="add-button row col-12 g-0 mt-1" id="add_machine_button">Add Machine</button>
+                    </div>
                 </div>
             </div>
         </div>
