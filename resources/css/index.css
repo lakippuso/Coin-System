@@ -24,6 +24,9 @@
     color: rgb(255, 128, 149);
 }
 
+.logo-ccm {
+    width: 11em;
+}
 
 .form-col .inputs {
     margin-bottom: 1rem;

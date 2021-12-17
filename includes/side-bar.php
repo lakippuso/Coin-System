@@ -3,7 +3,7 @@
 <!-- Profile Section -->
 <div class="profile-side row mt-3">
     <a href="profile.php" id="profile-link">
-        <img src="resources/images/profile.png" alt="" width="30" height="32" class="rounded-circle">
+        <img src="resources/images/profile.png" alt="" style="width:3em;" class="rounded-circle">
         <strong>
             <?php 
                 if(isset($_SESSION['session_id']) /*&& $_SESSION['session_category'] === 'user'*/){

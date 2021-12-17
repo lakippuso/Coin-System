@@ -37,7 +37,7 @@
                 
                 <form class="forgot-col col-sm-10 col-md-6 col-lg-4 mx-auto" method="" action="">
                     <div class="d-flex justify-content-center">
-                        <img class="logo-ccm mb-4" src="resources/images/LogoCC.png" alt="Coin Counter" width="100" height="100" style="margin-top: 1em;">
+                        <img class="logo-ccm mb-4" src="resources/images/GeekCoin.png" alt="Coin Counter" style="width: 18em; margin-top: 1em;">
                     </div>
                     <div class="message d-flex justify-content-center fs-6">
                         <p>We've already send the instructions to your email for setting up your password, if you didn't recieve an email. Please make sure you enter a valid email or check your spam folder if possible.</p>

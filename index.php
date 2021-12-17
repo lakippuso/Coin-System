@@ -16,7 +16,6 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="resources/css/index.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- FONT -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,7 +36,7 @@
                     <img src="resources/images/index.png" class="img-fluid row d-sm-none d-lg-block">
                 </div>
                 <form class="form-col col-sm-12 col-md-10 col-lg-4 mx-auto" method="POST" action="includes/login-include.php">
-                    <img class="logo-ccm row mb-4" src="resources/images/Logo1.png" alt="Coin Counter" width="150" height="63">
+                    <img class="logo-ccm row mb-4" src="resources/images/GeekCoin.png" alt="Coin Counter">
 
                     <div class="inputs row form-floating ">
                         <input type="text" class="form-control" id="floatingInput" name="username" placeholder="Username">
@@ -55,9 +54,9 @@
                         <a href="forgot-email.php"><label class="a_forgot">Forgot Password?</label></a>
                     </div>
                     
-                    <div class="form-btn row d-flex justify-content-start">
+                    <div class="form-btn d-flex justify-content-start">
                         <button class="btn-signin" type="submit" name="submit">Sign in</button>
-                        <a href="registration.php"><button type="button" class="btn-create">Create Account</button></a>
+                        <a href="registration.php" class="reg-link"><button type="button" class="btn-create">Create Account</button></a>
                     </div>
                 </form>
             </div>
@@ -70,3 +69,4 @@
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </html>
+

@@ -37,7 +37,7 @@
                 
                 <form class="forgot-col col-sm-10 col-md-6 col-lg-4 mx-auto" method="GET" action="forgot-message.php">
                     <div class="d-flex justify-content-center">
-                        <img class="logo-ccm mb-4" src="resources/images/LogoCC.png" alt="Coin Counter" width="100" height="100">
+                        <img class="logo-ccm mb-4" src="resources/images/GeekCoin.png" alt="Coin Counter" style="width: 18em">
                     </div>
                     <div class="title d-flex justify-content-center fs-5">
                         <label>Forgot Password</label>

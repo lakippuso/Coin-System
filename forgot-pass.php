@@ -35,9 +35,9 @@
             <div class="change-row col-sm-10 col-md-10 col-lg-7 d-flex justify-content-around mx-auto">
                 <img src="resources/images/forgot.png" class="image-col d-sm-none d-lg-block col-md-12 col-lg-6"></img>
                 
-                <form class="change-col col-sm-10 col-md-6 col-lg-4 mx-auto" method="GET" action="forgot-message.php">
+                <form class="change-col col-sm-10 col-md-6 col-lg-4 mx-auto" method="GET" action="index.php">
                     <div class="d-flex justify-content-center">
-                        <img class="logo-ccm mb-4" src="resources/images/LogoCC.png" alt="Coin Counter" width="100" height="100">
+                        <img class="logo-ccm mb-4" src="resources/images/GeekCoin.png" alt="Coin Counter" style="width: 18em">
                     </div>
                     <div class="title d-flex justify-content-center fs-5">
                         <label>Change Password</label>

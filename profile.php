@@ -2,6 +2,8 @@
 <?php
     include 'includes/header-inside.php';
 ?>
+
+<title>Profile</title>
         <div class="main mx-auto row g-0">
             <!-- Navigation Bar -->
             <?php //include 'includes/nav-bar.php'?>

@@ -2,7 +2,7 @@
 <nav class="top-nav navbar g-0 mx-auto">
     <div class="nav-container container-fluid">
         <a class="logo-link navbar-brand " href="#">
-            <img src="resources/images/Logo1.png" alt="LOGO" id="logo">
+            <img src="resources/images/GeekCoin.png" alt="LOGO" id="logo" style="width: 8em">
         </a>
         <div class="date-time col-1">
             <span class="row g-0">

@@ -2,6 +2,7 @@
 <?php
     include 'includes/header-inside.php';
 ?>
+<title>Dashboard</title>
 <!-- Body -->
         <div class="main row g-0 mx-auto">
             <!-- Navigation Bar -->

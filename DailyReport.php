@@ -2,6 +2,8 @@
 <?php
     include 'includes/header-inside.php';
 ?>
+
+<title>Report</title>
 <!-- Body -->
         <div class="main mx-auto row g-0">
             <!-- Navigation Bar -->

@@ -3,6 +3,7 @@
 <?php
     include 'includes/header-inside.php';
 ?>
+<title>History</title>
         <div class="main row g-0 mx-auto ">
             <!-- Navigation Bar -->
             <?php include 'includes/nav-bar.php'?>
@@ -27,7 +28,7 @@
                                     <button type="submit" name="search" style="border: none; background: none; padding: 4px;"><img src="resources/images/search.png" style="width: 30px;"/></button>
                                 </div>
                                 <div>
-                                    <input class="delete" type="submit" name="delete" value="Delete">
+                                    <input class="his-delete type="submit" name="delete" value="Delete">
                                 </div>
                             </div>
                         </div>
