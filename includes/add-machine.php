@@ -18,13 +18,13 @@
     }
 
     $date = date("Y-m-d");
-    $sql =  "SELECT * FROM machine_info WHERE machine_id = ? AND username = ?";
+    $sql =  "SELECT * FROM machine_info WHERE machine_id = ?";
     $stmt = mysqli_stmt_init($con);
     if(!mysqli_stmt_prepare($stmt, $sql)){
         $error['select'] = 'Statement Error Machine!';
     }
     else{
-        mysqli_stmt_bind_param($stmt, "ss", $machine_id, $username);
+        mysqli_stmt_bind_param($stmt, "s", $machine_id);
         mysqli_stmt_execute($stmt);
         $result = mysqli_stmt_get_result($stmt);
         if($row = mysqli_fetch_assoc($result)){
