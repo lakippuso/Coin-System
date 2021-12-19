@@ -4,9 +4,9 @@
     include 'includes/header-include.php';
 ?>
 <title>History</title>
+        <!-- Navigation Bar -->
+        <?php include 'includes/nav-bar.php'?>
         <div class="main row g-0 mx-auto ">
-            <!-- Navigation Bar -->
-            <?php include 'includes/nav-bar.php'?>
             <!-- Side Bar -->
             <div class="side-bar col-lg-2 g-0 d-flex flex-column">
                 <?php include 'includes/side-bar.php' ?>

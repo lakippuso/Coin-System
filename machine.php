@@ -3,9 +3,9 @@
     include 'includes/header-include.php';
 ?>
 <title>Machine</title>
+        <!-- Navigation Bar -->
+        <?php include 'includes/nav-bar.php'?>
         <div class="main mx-auto row g-0">
-            <!-- Navigation Bar -->
-            <?php include 'includes/nav-bar.php'?>
             <!-- Side Bar -->
             <div class="side-bar col-lg-2 g-0 d-flex flex-column">
                 <?php include 'includes/side-bar.php' ?>
