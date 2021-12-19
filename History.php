@@ -1,7 +1,7 @@
 <!-- Header -->
 
 <?php
-    include 'includes/header-inside.php';
+    include 'includes/header-include.php';
 ?>
 <title>History</title>
         <div class="main row g-0 mx-auto ">

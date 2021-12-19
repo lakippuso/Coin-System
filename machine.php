@@ -1,6 +1,6 @@
 <!-- Header -->
 <?php
-    include 'includes/header-inside.php';
+    include 'includes/header-include.php';
 ?>
 <title>Machine</title>
         <div class="main mx-auto row g-0">
