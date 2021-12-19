@@ -3,23 +3,23 @@
 <!-- Profile Section -->
 <div class="profile-side row mt-3">
     <a href="profile.php" id="profile-link">
-        <img src="resources/images/profile.png" alt="" style="width:3em;" class="rounded-circle">
-        <strong>
-            <?php 
-                if(isset($_SESSION['session_id']) /*&& $_SESSION['session_category'] === 'user'*/){
-                    include 'config.php';
-                    $username = $_SESSION['session_username'];
-                    $sql = "SELECT * FROM users WHERE username = '$username'";
-                    $result = mysqli_query($con, $sql);
-                    while($row = mysqli_fetch_assoc($result)){
-                        echo $row['first_name'];
-                    }
+        <?php 
+            if(isset($_SESSION['session_id']) /*&& $_SESSION['session_category'] === 'user'*/){
+                include 'config.php';
+                $username = $_SESSION['session_username'];
+                $sql = "SELECT * FROM users WHERE username = '$username'";
+                $result = mysqli_query($con, $sql);
+                while($row = mysqli_fetch_assoc($result)){
+                    ?>
+        <img src="<?php echo ($row['pic_url']!="")? $row['pic_url']: "resources/images/profile.png";?>" style="width: 2em;" class="profile-pic"></img>
+        <strong><?php echo $row['first_name'];?></strong>
+        <?php
                 }
-                else{
-                    header('Location: index.php?notloggedin');
-                }
-            ?>
-        </strong>
+            }
+            else{
+                header('Location: index.php?notloggedin');
+            }
+        ?>
     </a>
 </div>
 <hr class="m-1">
@@ -72,23 +72,23 @@
     <a class="navbar-brand" href="#">
         <div class="profile-collapse">
             <a href="profile.php" id="profile-link">
-                <img src="resources/images/profile.png" alt="" width="35" height="32" class="rounded-circle">
-                <strong>
-                    <?php 
-                        if(isset($_SESSION['session_id']) /*&& $_SESSION['session_category'] === 'user'*/){
-                            include 'config.php';
-                            $username = $_SESSION['session_username'];
-                            $sql = "SELECT * FROM users WHERE username = '$username'";
-                            $result = mysqli_query($con, $sql);
-                            while($row = mysqli_fetch_assoc($result)){
-                                echo $row['first_name'];
-                            }
+                <?php 
+                    if(isset($_SESSION['session_id']) /*&& $_SESSION['session_category'] === 'user'*/){
+                        include 'config.php';
+                        $username = $_SESSION['session_username'];
+                        $sql = "SELECT * FROM users WHERE username = '$username'";
+                        $result = mysqli_query($con, $sql);
+                        while($row = mysqli_fetch_assoc($result)){
+                            ?>
+                <img src="<?php echo ($row['pic_url']!="")? $row['pic_url']: "resources/images/profile.png";?>" style="width: 10em;" class="profile-pic"></img>
+                <strong><?php echo $row['first_name'];?></strong>
+                <?php
                         }
-                        else{
-                            header('Location: index.php?notloggedin');
-                        }
-                    ?>
-                </strong>
+                    }
+                    else{
+                        header('Location: index.php?notloggedin');
+                    }
+                ?>
             </a>
         </div>
     </a>

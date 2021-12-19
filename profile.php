@@ -39,11 +39,12 @@
                     ?>
                     <!--Profile-->
                     <div class="profile tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                        <form class="my-profile" action="includes/profile-include.php" method="POST">
+                        <form class="my-profile" action="includes/profile-include.php" method="POST" enctype="multipart/form-data">
                             <div class="avatar">
                                 <label>Avatar</label>
-                                <img src="resources/images/profile.png" style="width: 10em;" class="profile-pic"></img>
-                                <input class="choose_file" type="file" name = "profile_upload">
+                                <img src="<?php echo ($row['pic_url']!="")? $row['pic_url']: "resources/images/profile.png";?>" style="width: 10em;" class="profile-pic" id="avatar">
+                                <input class="choose_file" type="file" name = "profile_upload" accept ="image/*" id="profile_upload">
+                                <span class="profile-error">Error :D</span>
                             </div>
                             <div class="name">
                                 <label>Name</label>

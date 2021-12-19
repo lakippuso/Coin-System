@@ -18,7 +18,7 @@ $(document).ready(function() {
             error +=1;
         }
         else{
-            $('#first').css("border","none");
+            $('#first').css("border","1px solid black");
             $('#first').siblings('.profile-error').css("display","none");
         }
         if($('#email').val() == ''){
@@ -34,10 +34,31 @@ $(document).ready(function() {
             error +=1;
         }
         else{
-            $('#email').css("border","none");
+            $('#email').css("border","1px solid black");
             $('#email').siblings('.profile-error').css("display","none");
         }
+        var formData = new FormData();
+        var file = document.getElementById("profile_upload").files[0];
+        formData.append("Filedata", file);
 
+        var t = file.type.split('/').pop().toLowerCase();
+        var img_size = file.size;
+        if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+            $('#profile_upload').css("border","2px solid red");
+            $('#profile_upload').siblings('span').css("display","inline");
+            $('#profile_upload').siblings('span').text("Please select a valid image file!");
+            error+=1;
+        }
+        else if(img_size > 7340032){
+            $('#profile_upload').css("border","2px solid red");
+            $('#profile_upload').siblings('span').css("display","inline");
+            $('#profile_upload').siblings('span').text("Please select image file less than 7mb!");
+            error+=1;
+        }
+        else{
+            $('#profile_upload').css("border","1px solid black");
+            $('#profile_upload').siblings('span').css("display","none");
+        }
         if(error != 0){
             e.preventDefault();
         }
@@ -110,6 +131,13 @@ $(document).ready(function() {
                     location.reload();
                 }
             });
+        }
+    });
+    $('#profile_upload').change(function(event){
+        var img = document.getElementById('avatar');
+        img.src = URL.createObjectURL(event.target.files[0]);
+        img.onload = function() {
+            URL.revokeObjectURL(img.src) // free memory
         }
     });
 });

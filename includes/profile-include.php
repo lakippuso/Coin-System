@@ -22,7 +22,17 @@
         $conditions .= ", contact_no = '".$phone."'";
         $conditions .= ", business_name = '".$business_name."'";
         $conditions .= ", business_add = '".$business_add."'";
-        echo $conditions;
+        
+        if($_FILES["profile_upload"]["name"] != ''){
+            $target_dir = "resources/images/profile/";
+            $target_file = $target_dir . basename($_FILES["profile_upload"]["name"]);
+            move_uploaded_file($_FILES["profile_upload"]["tmp_name"], "../".$target_file);
+            $conditions .= ", pic_url = '".$target_file."'";
+        }
+        else{
+            echo $_FILES["profile_upload"]["name"];
+        }
+        // echo $conditions;
         $sql = "UPDATE users SET $conditions WHERE username = '$username'";
         mysqli_query($con,$sql);
         header('Location: ../profile.php');
