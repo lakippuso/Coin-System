@@ -8,13 +8,13 @@ $(document).ready(function() {
         var error = 0;
         if($('#first').val() == '' || $('#last').val() == ''){
             if($('#first').val() == ''){
-                $('#first').css("border","2px solid red");
+                $('#first').css("border","1px solid red");
             }
             if($('#last').val() == ''){
-                $('#last').css("border","2px solid red");
+                $('#last').css("border","1px solid red");
             }
             $('#first').siblings('.profile-error').css("display","inline");
-            $('#first').siblings('.profile-error').text("   Please enter your first and lastname");
+            $('#first').siblings('.profile-error').text("Please enter your first and lastname");
             error +=1;
         }
         else{
@@ -22,13 +22,13 @@ $(document).ready(function() {
             $('#first').siblings('.profile-error').css("display","none");
         }
         if($('#email').val() == ''){
-            $('#email').css("border","2px solid red");
+            $('#email').css("border","1px solid red");
             $('#email').siblings('.profile-error').css("display","inline");
             $('#email').siblings('.profile-error').text("   Please enter your email!");
             error +=1;
         }
         else if(!validateEmail($('#email').val())){
-            $('#email').css("border","2px solid red");
+            $('#email').css("border","1px solid red");
             $('#email').siblings('.profile-error').css("display","inline");
             $('#email').siblings('.profile-error').text("Invalid email!");
             error +=1;
@@ -44,13 +44,13 @@ $(document).ready(function() {
         var t = file.type.split('/').pop().toLowerCase();
         var img_size = file.size;
         if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
-            $('#profile_upload').css("border","2px solid red");
+            $('#profile_upload').css("border","1px solid red");
             $('#profile_upload').siblings('span').css("display","inline");
             $('#profile_upload').siblings('span').text("Please select a valid image file!");
             error+=1;
         }
         else if(img_size > 7340032){
-            $('#profile_upload').css("border","2px solid red");
+            $('#profile_upload').css("border","1px solid red");
             $('#profile_upload').siblings('span').css("display","inline");
             $('#profile_upload').siblings('span').text("Please select image file less than 7mb!");
             error+=1;
@@ -67,7 +67,7 @@ $(document).ready(function() {
     $('#change_pass').click(function() {
         var error = 0;
         if($('#current_pass').val() == ""){
-            $('#current_pass').css("border","2px solid red");
+            $('#current_pass').css("border","1px solid red");
             $('#current_pass').siblings('span').css("display","inline");
             $('#current_pass').siblings('span').text('Enter current password!');
             error+=1;
@@ -77,13 +77,13 @@ $(document).ready(function() {
             $('#current_pass').siblings('span').css("display","none");
         }
         if($('#new_pass').val() == ""){
-            $('#new_pass').css("border","2px solid red");
+            $('#new_pass').css("border","1px solid red");
             $('#new_pass').siblings('span').css("display","inline");
             $('#new_pass').siblings('span').text('Enter new password!');
             error+=1;
         }
         else if($('#new_pass').val().length < 8){
-            $('#new_pass').css("border","2px solid red");
+            $('#new_pass').css("border","1px solid red");
             $('#new_pass').siblings('span').css("display","inline");
             $('#new_pass').siblings('span').text('Password must be 8 characters or more!');
             error+=1;
@@ -93,13 +93,13 @@ $(document).ready(function() {
             $('#new_pass').siblings('span').css("display","none");
         }
         if($('#retype_pass').val() == ""){
-            $('#retype_pass').css("border","2px solid red");
+            $('#retype_pass').css("border","1px solid red");
             $('#retype_pass').siblings('span').css("display","inline");
             $('#retype_pass').siblings('span').text('Enter retype new password!');
             error+=1;
         }
         else if($('#new_pass').val() != $('#retype_pass').val()){
-            $('#retype_pass').css("border","2px solid red");
+            $('#retype_pass').css("border","1px solid red");
             $('#retype_pass').siblings('span').css("display","inline");
             $('#retype_pass').siblings('span').text("Password doesn't match!");
             error+=1;
@@ -123,7 +123,7 @@ $(document).ready(function() {
                 encode: true,
             }).done(function (data) {
                 if(!data['success']){
-                    $('#current_pass').css("border","2px solid red");
+                    $('#current_pass').css("border","1px solid red");
                     $('#current_pass').siblings('span').css("display","inline");
                     $('#current_pass').siblings('span').text(data['messages'].result);
                 }

@@ -23,7 +23,7 @@
                 <div class="content">
                     <div class="dailyReport" id="daily">
                         <div class="m-4 d-flex justify-content-around">
-                            <form method="POST" action="includes/report-include.php" class="d-flex justify-content-between">
+                            <div class="d-flex justify-content-between">
                                 <div class="calendar d-flex flex-column">
                                     <div class="radio__bg d-flex justify-content-evenly" id="incomePeriod" style="margin-bottom: 1em; margin-right: auto; margin-left: auto;">
                                         <div>
@@ -69,13 +69,13 @@
                                         <div><input type="date" name="start_date" id="start" max="<?php echo printDate();?>" style="border-radius: 5px; padding: 3px;" placeholder="Start Date"></div>
                                         <div ><input type="text" name="start_year" id="year_start" style="border-radius: 5px; padding: 3px; display: none;" placeholder="yyyy" ></div>
                                         <div><input type="date" name="end_date" id="end" max="<?php echo printDate();?>" style="border-radius: 5px; padding: 3px;" placeholder="End Date"></div>
-                                        <div><button type="submit" name="filter" id="start" style="margin-top: 3px; padding: 4px; width: 40px; border: none; background: none;"><img src="resources/images/search.png" style="width: 30px;"/></button></div>
+                                        <div><button id="search_report" style="margin-top: 3px; padding: 4px; width: 40px; border: none; background: none;"><img src="resources/images/search.png" style="width: 30px;"/></button></div>
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-end" style="width: 20em;">
-                                    <input class="generate" type="submit" name="generate" value="Generate Report">
+                                    <input class="generate" type="button" id="generate" value="Generate Report">
                                 </div>
-                            </form>
+                            </div>
                         </div>
 
                     
@@ -90,48 +90,48 @@
                                     <th class="col-lg-4">Total Income</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="report_table">
                                 <?php
                                     require 'includes/config.php';
                                     $i = 1;
                                     $username = $_SESSION['session_username'];
                                     $query="SELECT * FROM daily_report where username = '$username'";
-                                    if(isset($_GET['search_id'])){
-                                        $search_id = $_GET['search_id'];
-                                        if(!empty($search_id)){
-                                            if($search_id != "All Machines"){
-                                                $query = $query."AND machine_id IN ($search_id)";
-                                            }
-                                        }
-                                    }
-                                    if(isset($_GET['start_date'])){
-                                        $start_date = $_GET['start_date'];
-                                        if(isset($_GET['end_date'])){
-                                            $end_date = $_GET['end_date'];
-                                        }
-                                        if(!empty($start_date) && !empty($end_date)){
-                                            // echo "Start Date: ".$start_date."<br>";
-                                            // echo "End Date: ".$end_date."<br>";
-                                            $query = $query."AND date BETWEEN '$start_date' AND '$end_date'";
-                                        }
-                                        else if(!empty($start_date)){
-                                            if(strlen($start_date) == 7){
-                                                $str = substr($start_date, 5);
-                                                $query = $query."AND MONTH(date) = '$str'";
-                                            }
-                                            else if(strlen($start_date) == 8){
-                                                $str = substr($start_date, 6);
-                                                $query = $query."AND WEEK(date) = '$str'";
-                                            }
-                                            else{
-                                                $query = $query."AND date = '$start_date'";
-                                            }
-                                        }
-                                    }
-                                    else if(isset($_GET['year'])){
-                                        $year = $_GET['year'];
-                                        $query = $query."AND YEAR(date) = '$year'";
-                                    }
+                                    // if(isset($_GET['search_id'])){
+                                    //     $search_id = $_GET['search_id'];
+                                    //     if(!empty($search_id)){
+                                    //         if($search_id != "All Machines"){
+                                    //             $query = $query."AND machine_id IN ($search_id)";
+                                    //         }
+                                    //     }
+                                    // }
+                                    // if(isset($_GET['start_date'])){
+                                    //     $start_date = $_GET['start_date'];
+                                    //     if(isset($_GET['end_date'])){
+                                    //         $end_date = $_GET['end_date'];
+                                    //     }
+                                    //     if(!empty($start_date) && !empty($end_date)){
+                                    //         // echo "Start Date: ".$start_date."<br>";
+                                    //         // echo "End Date: ".$end_date."<br>";
+                                    //         $query = $query."AND date BETWEEN '$start_date' AND '$end_date'";
+                                    //     }
+                                    //     else if(!empty($start_date)){
+                                    //         if(strlen($start_date) == 7){
+                                    //             $str = substr($start_date, 5);
+                                    //             $query = $query."AND MONTH(date) = '$str'";
+                                    //         }
+                                    //         else if(strlen($start_date) == 8){
+                                    //             $str = substr($start_date, 6);
+                                    //             $query = $query."AND WEEK(date) = '$str'";
+                                    //         }
+                                    //         else{
+                                    //             $query = $query."AND date = '$start_date'";
+                                    //         }
+                                    //     }
+                                    // }
+                                    // else if(isset($_GET['year'])){
+                                    //     $year = $_GET['year'];
+                                    //     $query = $query."AND YEAR(date) = '$year'";
+                                    // }
                                     $query = $query."ORDER BY date DESC";
                                     $result= $con->query($query);
                                     while($rows= $result-> fetch_assoc())

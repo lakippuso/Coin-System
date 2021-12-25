@@ -34,6 +34,7 @@ function configuration(id){
         $('#machine-config-type').val(data['type']);
       });
 }
+//Chart in Dashboard
 function getSelectedValue () {
         var selectValue = document.getElementById("income_list").value;
         if(selectValue == "weekly")
@@ -110,6 +111,34 @@ $(document).ready(function() {
             }
         });
     }).change();
+    //Report Page
+    $('#search_report').click(function(){
+        var id = $('#list').val();
+        var start = $('#start').val();
+        var end = $('#end').val();
+        var year = $('#year_start').val();
+        $('#report_table').text('');
+        $('#report_table').load('includes/report-include.php', {
+            search_id: id,
+            filter: 1,
+            start_date: start,
+            end_date: end,
+            year: year
+        });
+    });
+    $('#generate').click(function(){
+        var id = $('#list').val();
+        var start = $('#start').val();
+        var end = $('#end').val();
+        var year = $('#year_start').val();
+        $('#report_table').load('includes/report-include.php', {
+            search_id: id,
+            generate: 1,
+            start_date: start,
+            end_date: end,
+            year: year
+        });
+    });
     //Delete machine [Machine Page]
     $(document).on('click', '#delete-machine', function(){
         var id = $('#machine-config-id').val();

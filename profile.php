@@ -48,15 +48,15 @@
                             </div>
                             <div class="name">
                                 <label>Name</label>
-                                <input type="text" name="first_name" id="first" placeholder="First Name" value="<?php echo $row['first_name'];?>">
+                                <input type="text" name="first_name" id="first" placeholder="First Name" value="<?php echo $row['first_name'];?>" required>
                                 <input type="text" name="middle_name" id="middle" placeholder="Middle Name" value="<?php echo $row['middle_name']?>">
-                                <input type="text" name="last_name" id="last" placeholder="Last Name" value="<?php echo $row['last_name'];?>">
+                                <input type="text" name="last_name" id="last" placeholder="Last Name" value="<?php echo $row['last_name'];?>" required>
                                 <input type="text" name="name_suffix" id="suffix" placeholder="Suffix" value="<?php echo $row['suffix']?>">
                                 <span class = "profile-error">Error :D</span>
                             </div>
                             <div class="email">
                                 <label>Email</label>
-                                <input type="text" name="email" id="email" value="<?php echo $row['email'];?>">
+                                <input type="email" name="email" id="email" value="<?php echo $row['email'];?>" required>
                                 <span class = "profile-error">Error :D</span>
                             </div>
                             <div class="phone">

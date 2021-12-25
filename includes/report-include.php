@@ -8,17 +8,15 @@
         $username = $_SESSION['session_username'];
         $query="SELECT * FROM daily_report where username = '$username'";
 
-        //Get values for MySQL
-        if(isset($_POST['search_id'])){
-            $search_id = $_POST['search_id'];
+        if(isset($_POST['search_id']) && $_POST['search_id'] != ''){
+            $search_id = implode(', ',$_POST['search_id']);
             if(!empty($search_id)){
-                $search_id = implode(',',$search_id);
                 if($search_id != "All Machines"){
                     $query = $query."AND machine_id IN ($search_id)";
                 }
             }
         }
-        if(isset($_POST['start_date'])){
+        if(isset($_POST['start_date']) && $_POST['start_date'] != ''){
             $start_date = $_POST['start_date'];
             if(isset($_POST['end_date'])){
                 $end_date = $_POST['end_date'];
@@ -42,10 +40,13 @@
                 }
             }
         }
-        else if(isset($_POST['year'])){
+        else if(isset($_POST['year']) && $_POST['year'] != ''){
             $year = $_POST['year'];
-            $query = $query."AND YEAR(date) = '$year'";
+            if($year != ''){
+                $query = $query."AND YEAR(date) = '$year'";
+            }
         }
+        
         $query = $query."ORDER BY date DESC";
         $result= $con->query($query);
         
@@ -89,20 +90,89 @@
     }
     //Search Daily Report
     if(isset($_POST['filter'])){
-        $location = "Location: ../dailyreport.php?";
-        if(isset($_POST['start_date']) && $_POST['start_date'] != '') {
-            $location .= "&start_date=".$_POST['start_date'];
-            if(isset($_POST['end_date']) && $_POST['end_date'] != '') { 
-                $location .= "&end_date=".$_POST['end_date'];
+        // $end = $_POST['end_date'];
+        // $start = $_POST['start_date'];
+        // $start_year = $_POST['start_year'];
+        // $filter = $_POST['filter'];
+        // $id = $_POST['search_id'];
+
+        // echo implode(', ',$id)."<br>";
+        // echo $end."<br>";
+        // echo $start."<br>";
+        // echo $start_year."<br>";
+        // echo $filter."<br>";
+        $i = 1;
+        $username = $_SESSION['session_username'];
+        $query="SELECT * FROM daily_report where username = '$username'";
+
+        if(isset($_POST['search_id']) && $_POST['search_id'] != ''){
+            $search_id = implode(', ',$_POST['search_id']);
+            if(!empty($search_id)){
+                if($search_id != "All Machines"){
+                    $query = $query."AND machine_id IN ($search_id)";
+                }
             }
         }
-        else if(isset($_POST['start_year']) && $_POST['start_year'] != ''){
-            $location .= "year=".$_POST['start_year'];
+        if(isset($_POST['start_date']) && $_POST['start_date'] != ''){
+            $start_date = $_POST['start_date'];
+            if(isset($_POST['end_date'])){
+                $end_date = $_POST['end_date'];
+            }
+            if(!empty($start_date) && !empty($end_date)){
+                // echo "Start Date: ".$start_date."<br>";
+                // echo "End Date: ".$end_date."<br>";
+                $query = $query."AND date BETWEEN '$start_date' AND '$end_date'";
+            }
+            else if(!empty($start_date)){
+                if(strlen($start_date) == 7){
+                    $str = substr($start_date, 5);
+                    $query = $query."AND MONTH(date) = '$str'";
+                }
+                else if(strlen($start_date) == 8){
+                    $str = substr($start_date, 6);
+                    $query = $query."AND WEEK(date) = '$str'";
+                }
+                else{
+                    $query = $query."AND date = '$start_date'";
+                }
+            }
         }
-        if(isset($_POST['search_id'])) {
-            $location .= "&search_id=".implode(", ",$_POST['search_id']);
+        else if(isset($_POST['year']) && $_POST['year'] != ''){
+            $year = $_POST['year'];
+            if($year != ''){
+                $query = $query."AND YEAR(date) = '$year'";
+            }
         }
-        // echo $location;
-        header($location);
-        exit();
+
+        //DISPLAY SECTION
+        $query = $query."ORDER BY date DESC";
+        $result= $con->query($query);
+        while($rows= $result-> fetch_assoc())
+        {
+            echo '<tr>';
+            echo '    <th scope="col">'.$i.'</th>';
+            echo '    <th scope="col">'.$rows['machine_id'].'</th>';
+            echo '    <th scope="col">'.$rows['date'].'</th>';
+            echo '    <th scope="col">'.$rows['day_income'].'</th>';
+            echo '</tr>';
+            $i+=1;
+        }
+
+
+        // $location = "Location: ../dailyreport.php?";
+        // if(isset($_POST['start_date']) && $_POST['start_date'] != '') {
+        //     $location .= "&start_date=".$_POST['start_date'];
+        //     if(isset($_POST['end_date']) && $_POST['end_date'] != '') { 
+        //         $location .= "&end_date=".$_POST['end_date'];
+        //     }
+        // }
+        // else if(isset($_POST['start_year']) && $_POST['start_year'] != ''){
+        //     $location .= "year=".$_POST['start_year'];
+        // }
+        // if(isset($_POST['search_id'])) {
+        //     $location .= "&search_id=".implode(", ",$_POST['search_id']);
+        // }
+        // // echo $location;
+        // header($location);
+        // exit();
     }
