@@ -24,7 +24,7 @@
                         <div class="dailyReport" id="daily">
                             <div class="search_label d-flex justify-content-between">
                                 <div>
-                                    <input type="text" name="search_id" id="search_history" placeholder="Search">
+                                    <input type="text" name="search_id" id="search_history" placeholder="Search Machine ID">
                                     <button type="submit" name="search" style="border: none; background: none; padding: 4px;"><img src="resources/images/search.png" style="width: 30px;"/></button>
                                 </div>
                                 <div>
@@ -40,7 +40,7 @@
                                     <tr>
                                         <th><input type="checkbox" class="select_all_items"></th>
                                         <th class="col-lg-2">History ID </th>
-                                        <th class="col-lg-4">Machine Name</th>
+                                        <th class="col-lg-4">Machine ID</th>
                                         <th class="col-lg-3">Total Income</th>
                                         <th class="col-lg-4">Date</th>
                                     </tr>

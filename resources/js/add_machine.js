@@ -26,20 +26,20 @@ add_machine_button.addEventListener('click', function(){
 
     //Machine ID Input 
     if(id_value == ''){
-        id_input.style = "border: 2px solid red";
+        id_input.style = "border: 1px solid red";
         $('.machine_id').text("ID is empty");
         $('.machine_id').css("display","block");
         error +=1;
     }
     else if(isNaN(id_value)){
-        id_input.style = "border: 2px solid red";
+        id_input.style = "border: 1px solid red";
         id_input.style = "display: block";
         $('.machine_id').text("ID is not valid");
         $('.machine_id').css("display","block");
         error +=1;
     }
     else if(id_value.toString().length > 10){
-        id_input.style = "border: 2px solid red";
+        id_input.style = "border: 1px solid red";
         id_input.style = "display: block";
         $('.machine_id').text("10 digits only");
         $('.machine_id').css("display","block");
@@ -51,7 +51,7 @@ add_machine_button.addEventListener('click', function(){
     }
     //Machine Name Input
     if(name_value == ''){
-        name_input.style = "border: 2px solid red";
+        name_input.style = "border: 1px solid red";
         error +=1;
         $('.machine_name').text("Name is empty");
         $('.machine_name').css("display","block");
@@ -68,13 +68,13 @@ add_machine_button.addEventListener('click', function(){
     if(machine_type_dropdown.value == 'others'){
         console.log('Others');
         if(custom_value == ''){
-            $(custom_input).css("border", "2px solid red");
+            $(custom_input).css("border", "1px solid red");
             $('.custom_type').text("Machine Type is empty");
             $('.custom_type').css("display","block");
             error +=1;
         }
         else if(format.test(custom_value)){
-            $(custom_input).css("border", "2px solid red");
+            $(custom_input).css("border", "1px solid red");
             $('.custom_type').text("Machine Type has special char");
             $('.custom_type').css("display","block");
             error +=1;
@@ -104,7 +104,7 @@ add_machine_button.addEventListener('click', function(){
             if(!data['success']){
                 console.log('Error in server');
                 $('.machine_id').text(data['messages'].machine);
-                $('#machine_id_input').css("border", "2px solid red");
+                $('#machine_id_input').css("border", "1px solid red");
                 $('.machine_id').css('display','block');
             }
             else{

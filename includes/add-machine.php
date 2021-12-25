@@ -18,28 +18,43 @@
     }
 
     $date = date("Y-m-d");
-    $sql =  "SELECT * FROM machine_info WHERE machine_id = ?";
+    $sql =  "SELECT * FROM machine_info WHERE machine_id = ? AND username = ?";
     $stmt = mysqli_stmt_init($con);
     if(!mysqli_stmt_prepare($stmt, $sql)){
         $error['select'] = 'Statement Error Machine!';
     }
     else{
-        mysqli_stmt_bind_param($stmt, "s", $machine_id);
+        mysqli_stmt_bind_param($stmt, "ss", $machine_id, $username);
         mysqli_stmt_execute($stmt);
         $result = mysqli_stmt_get_result($stmt);
         if($row = mysqli_fetch_assoc($result)){
-            $error['machine'] = 'Machine is already registered!';
+            $error['machine'] = 'You already registered this machine!';
         }
         else{
-            //INSERT NEW MACHINE
-            $sql =  "INSERT INTO machine_info (machine_id, machine_name, machine_type, username, income , date_created) VALUES (?, ?, ?, ?, 0, ?)";
+            $sql =  "SELECT * FROM machine_info WHERE machine_id = ?";
             $stmt = mysqli_stmt_init($con);
             if(!mysqli_stmt_prepare($stmt, $sql)){
-                $error['insert'] = 'insert error Machine!';
+                $error['select'] = 'Statement Error Machine!';
             }
             else{
-                mysqli_stmt_bind_param($stmt, "sssss", $machine_id, $machine_name, $machine_type, $username, $date);
+                mysqli_stmt_bind_param($stmt, "s", $machine_id);
                 mysqli_stmt_execute($stmt);
+                $result = mysqli_stmt_get_result($stmt);
+                if($row = mysqli_fetch_assoc($result)){
+                    $error['machine'] = 'Machine is already registered by another user!';
+                }
+                else{
+                    //INSERT NEW MACHINE
+                    $sql =  "INSERT INTO machine_info (machine_id, machine_name, machine_type, username, income , date_created) VALUES (?, ?, ?, ?, 0, ?)";
+                    $stmt = mysqli_stmt_init($con);
+                    if(!mysqli_stmt_prepare($stmt, $sql)){
+                        $error['insert'] = 'insert error Machine!';
+                    }
+                    else{
+                        mysqli_stmt_bind_param($stmt, "sssss", $machine_id, $machine_name, $machine_type, $username, $date);
+                        mysqli_stmt_execute($stmt);
+                    }
+                }
             }
         }
     }

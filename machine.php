@@ -25,7 +25,7 @@
                             <div class="d-flex justfiy-content-between">
                                 <button class="add_machine" id="open_add">Add Machine</button>
                                 <form method = "POST" action="machine.php" class="dropdown_graph">
-                                    <input type="text" name="search" placeholder="Search">
+                                    <input type="text" name="search" placeholder="Search Name">
                                     <button type="submit" style="border: none; background: none; padding: 4px;"><img src="resources/images/search.png" style="width: 30px;"/></button>
                                 </form>
                             </div>
