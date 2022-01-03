@@ -16,6 +16,16 @@ body{
     background-color: #4dc0ba;
 }
 
+@media screen and (max-width: 800px) {
+	.homepage-logo {
+        width: 6em;
+        margin-right: 3em;
+    }
+    .registerkulay {
+        display: none;
+    }
+
+}
 .floater {
     margin-top: 0.7em;
     margin-left: 0.5em;
@@ -34,7 +44,6 @@ body{
 }
 
 .loginkulay {
-    
     margin-right: 1em;
     height: 2.5em;
     width: 6em;
@@ -54,6 +63,17 @@ body{
     background-size: cover;
 }
 
+.create-own {
+    margin-right: auto;
+    margin-left: auto;
+    border: 1px solid black;
+    width: 15em;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.create-own:hover {
+    background-color: #4dc0ba;
+}
 .cardcon{
     background-color: #fff;
     min-height: 620px;

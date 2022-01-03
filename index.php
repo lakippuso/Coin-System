@@ -27,8 +27,10 @@
         <!-- JS FILE 
             <script defer src="resources/js/register.js"></script> -->
         <!-- <meta http-equiv="refresh" content="1"> -->
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
         <title>Coin Counter System</title>
     </head>
+    
 
     <body>
         <div class="login-body g-0 container-fluid">

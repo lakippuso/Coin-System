@@ -26,15 +26,15 @@
     </head>
     <body>
          <div class="header navbar navbar-expand-lg justify-content-between" id="myHeader">
-            <div class="d-flex justify-content-around">
-                <img src="resources/images/GeekCoin.png" style="position: relative; width: 12em;"></img>
+            <div class="hp-logo d-flex justify-content-around">
+                <img src="resources/images/GeekCoin.png" class="homepage-logo" style="max-width: 12em;"></img>
             </div>
             <div class="d-flex justify-content-around">
                 <a href="index.php"><button type="button" class="loginkulay" id="open_form">LOGIN</button></a>
                 <a href="registration.php" class="reg-link"><button type="button" class="registerkulay">SIGN UP</button></a>
             </div>
         </div>
-
+        
         <section class="section1" id="gallery"> 
         <div class="container pt-md-5">
         <h2 class="title-content text-center">About Us</h2>
@@ -63,7 +63,7 @@
                         <p class="card-text mt-3" style="margin-bottom: 3em; align-text: center;">
                             User's required to sign-up to use our website and GREAT NEWS! Signing is free. Register to be able to experiences our innovation's capabilities.
                         </p>
-                        <a href="#" class="btn-card">Create your own Account</a>
+                        <a href="#" class="create-own btn d-none d-lg-block">Create your own Account</a>
                         </div>
                     </div>
                 </div>

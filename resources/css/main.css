@@ -35,13 +35,8 @@ body{
 .side-bar{
     background-color: #2b7e7a;
 }
-@media screen and (max-width: 1200px) {
-	.date-time {
-	  margin-right: 2em;
-	}
-}
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 1000px) {
 	.date-time {
 	  display: none;
 	}
@@ -133,7 +128,7 @@ body{
     height: 30px;
     border-radius: 5px;
 }
-
+/*
 @media screen and (max-width: 950px) {
 	.graphs {
 		display: none;
@@ -144,7 +139,7 @@ body{
 	#chart-label::after {
 		content: "Income Details";
 	}
-}
+} */
 /* Daily Report USER */
 
 .generate {
@@ -618,6 +613,7 @@ body{
 	letter-spacing: 1px;
 	cursor: pointer;
 } */
+
 /* Profile */
 
 .nav-bars {
@@ -841,6 +837,7 @@ margin: 0;
 }
 
 /* Mobile Collapse Header */
+
 .collapse-nav {
 	margin-top: 1em;
 }

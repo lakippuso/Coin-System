@@ -11,8 +11,8 @@
                 $result = mysqli_query($con, $sql);
                 while($row = mysqli_fetch_assoc($result)){
                     ?>
-        <img src="<?php echo ($row['pic_url']!="")? $row['pic_url']: "resources/images/profile.png";?>" style="width: 2em;" class="profile-pic"></img>
-        <strong><?php echo $row['first_name'];?></strong>
+            <img src="<?php echo ($row['pic_url']!="")? $row['pic_url']: "resources/images/profile.png";?>" style="width: 3em; border-radius: 25px; border: 1px solid black" class="sidebar-pic"></img>
+            &nbsp;&nbsp;<strong><?php echo $row['first_name'];?></strong>
         <?php
                 }
             }
@@ -80,8 +80,8 @@
                         $result = mysqli_query($con, $sql);
                         while($row = mysqli_fetch_assoc($result)){
                             ?>
-                <img src="<?php echo ($row['pic_url']!="")? $row['pic_url']: "resources/images/profile.png";?>" style="width: 10em;" class="profile-pic"></img>
-                <strong><?php echo $row['first_name'];?></strong>
+                <img src="<?php echo ($row['pic_url']!="")? $row['pic_url']: "resources/images/profile.png";?>" style="width: 3em; border-radius: 25px; border: 1px solid black;" class="collapse-pic"></img>
+                &nbsp;&nbsp;<strong><?php echo $row['first_name'];?></strong>
                 <?php
                         }
                     }

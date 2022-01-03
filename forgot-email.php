@@ -16,7 +16,7 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="resources/css/index.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
         <link rel="shortcut icon" href="resources/images/LogoCC.png"/>
         <!-- FONT -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,7 +45,11 @@
                     </div>
                     
                     <div class="inputs form-floating">
-                        <input type="email" class="form-control" id="floatingInput" name="email" placeholder="Email">
+                        <input type="text" class="form-control" id="floatingInput" name="username" placeholder="Username" required>
+                        <label for="floatingInput">Username</label>
+                    </div>
+                    <div class="inputs form-floating">
+                        <input type="email" class="form-control" id="floatingInput" name="email" placeholder="Email" required>
                         <label for="floatingInput">Email</label>
                     </div>
                     
