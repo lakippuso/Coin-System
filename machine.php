@@ -25,7 +25,7 @@
                             <div class="d-flex justfiy-content-between">
                                 <button class="add_machine" id="open_add">Add Machine</button>
                                 <form method = "POST" action="machine.php" class="dropdown_graph">
-                                    <input type="text" name="search" placeholder="Search Name">
+                                    <input type="text" name="search" placeholder="Search Name" value="<?php echo (isset($_POST['search']))? $_POST['search']: null;?>">
                                     <button type="submit" style="border: none; background: none; padding: 4px;"><img src="resources/images/search.png" style="width: 30px;"/></button>
                                 </form>
                             </div>
@@ -51,7 +51,7 @@
                                     $query="SELECT * FROM machine_info where username = '$username'";
                                     if(isset($_POST['search'])){
                                         $search_id = $_POST['search'];
-                                        if(!empty($search_id)){
+                                        if(!empty($search_id) && $search_id != "" ){
                                             $query = $query."AND machine_name = '$search_id'";
                                         }
                                     }
