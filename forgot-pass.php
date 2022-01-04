@@ -35,31 +35,48 @@
         <div class="change-body g-0 container-fluid">
             <div class="change-row col-sm-10 col-md-10 col-lg-7 d-flex justify-content-around mx-auto">
                 <img src="resources/images/forgot.png" class="image-col d-sm-none d-lg-block col-md-12 col-lg-6"></img>
-                
-                <form class="change-col col-sm-10 col-md-6 col-lg-4 mx-auto" method="GET" action="index.php">
-                    <div class="d-flex justify-content-center">
-                        <img class="logo-ccm mb-4" src="resources/images/GeekCoin.png" alt="Coin Counter" style="width: 18em">
-                    </div>
-                    <div class="title d-flex justify-content-center fs-5">
-                        <label>Change Password</label>
-                    </div>
-                    <div class="inputs form-floating">
-                        <input type="password" class="form-control" id="floatingInput" name="new_pass" placeholder="New Password">
-                        <label for="floatingInput">New Password</label>
-                    </div>
-                    <ul>
-                        <li>Your password must contain letters and numbers.</li>
-                        <li>Your password must at least 8 characters.</li>
-                    </ul>
-                    <div class="inputs form-floating">
-                        <input type="password" class="form-control" id="floatingInput" name="new_retype" placeholder="Retype New Password">
-                        <label for="floatingInput">Retype New Password</label>
-                    </div>
-                    
-                    <div class="change-btn d-flex justify-content-center">
-                        <button class="btn-submit" type="submit" name="change">Change Password</button>
-                    </div>
-                </form>
+                <?php
+                    $selector = $_GET['selector'];
+                    $validator = $_GET['validator'];
+
+                    if(empty($selector) || empty($validator)){
+                        echo "Error Request";
+                    }
+                    else{
+                        if(ctype_xdigit($selector) !== false && ctype_xdigit($validator)){
+                            ?>
+                            <form class="change-col col-sm-10 col-md-6 col-lg-4 mx-auto" method="POST" action="includes/reset-pass-include.php">
+                                <input type="hidden" name="selector" value="<?php echo $selector;?>">
+                                <input type="hidden" name="validator" value="<?php echo $validator;?>">
+                                <div class="d-flex justify-content-center">
+                                    <img class="logo-ccm mb-4" src="resources/images/GeekCoin.png" alt="Coin Counter" style="width: 18em">
+                                </div>
+                                <div class="title d-flex justify-content-center fs-5">
+                                    <label>Change Password</label>
+                                </div>
+                                <div class="inputs form-floating">
+                                    <input type="password" class="form-control" id="floatingInput" name="new_pass" placeholder="New Password">
+                                    <label for="floatingInput">New Password</label>
+                                </div>
+                                <ul>
+                                    <li>Your password must contain letters and numbers.</li>
+                                    <li>Your password must at least 8 characters.</li>
+                                </ul>
+                                <div class="inputs form-floating">
+                                    <input type="password" class="form-control" id="floatingInput" name="new_retype" placeholder="Retype New Password">
+                                    <label for="floatingInput">Retype New Password</label>
+                                </div>
+                                
+                                <div class="change-btn d-flex justify-content-center">
+                                    <button class="btn-submit" type="submit" name="change_password">Change Password</button>
+                                </div>
+                            </form>                            
+                            
+                            <?php
+
+                        }
+                    }
+                ?>
             </div>
 
         </div>

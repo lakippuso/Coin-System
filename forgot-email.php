@@ -36,7 +36,7 @@
             <div class="forgot-row col-sm-10 col-md-10 col-lg-7 d-flex justify-content-around mx-auto">
                 <img src="resources/images/forgot.png" class="image-col d-sm-none d-lg-block col-md-12 col-lg-6"></img>
                 
-                <form class="forgot-col col-sm-10 col-md-6 col-lg-4 mx-auto" method="GET" action="forgot-message.php">
+                <form class="forgot-col col-sm-10 col-md-6 col-lg-4 mx-auto" method="POST" action="includes/reset-pass-include.php">
                     <div class="d-flex justify-content-center">
                         <img class="logo-ccm mb-4" src="resources/images/GeekCoin.png" alt="Coin Counter" style="width: 18em">
                     </div>
