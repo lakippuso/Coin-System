@@ -42,8 +42,8 @@ if(isset($_POST['reset_submit'])){
     $message .= '<p>Link: </p><br>';
     $message .= '<a href="'.$url.'">'.$url.'</a>';
 
-    $header = "From: Geekcoin <geekcoin@yopmail.com>\r\n";
-    $header .= "Reply-To: Geekcoin <geekcoin@yopmail.com>\r\n";
+    $header = "From: Geekcoin <support@geekcoin.online>\r\n";
+    $header .= "Reply-To: Geekcoin <support@geekcoin.online>\r\n";
     $header = "Content-type: text/html\r\n";
 
     mail($to, $subject, $message, $header);
