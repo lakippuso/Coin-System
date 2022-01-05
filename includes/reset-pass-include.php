@@ -7,7 +7,7 @@ if(isset($_POST['reset_submit'])){
 
     $url = "https://geekcoin.online/forgot-pass.php?selector=".$selector."&validator=".bin2hex($token);
 
-    $expires = date("u") + 1800;
+    $expires = date("U") + 1800;
 
 
     $email = $_POST['reset_email'];
@@ -61,23 +61,23 @@ else if(isset($_POST['change_password'])){
     $stmt = mysqli_stmt_init($con);
 
     if(!mysqli_stmt_prepare( $stmt, $sql)){
-        header("Location: ../forgot_pass.php?SQL ERROR SELECTION IN RESET TABLE!");
+        header("Location: ../forgot-pass.php?SQL ERROR SELECTION IN RESET TABLE!");
         exit();
     }
     else{
-        mysqli_stmt_bind_param($stmt,"ss",$selector, $validator);    
+        mysqli_stmt_bind_param($stmt,"ss",$selector, $currentDate);    
         mysqli_stmt_execute($stmt);
 
         $result = mysqli_stmt_get_result($stmt);
         if(!$row = mysqli_fetch_assoc($result)){
-            header("Location: ../forgot_pass.php?NEED TO RESUBMIT PASS RESET!");
+            header("Location: ../forgot-pass.php?NEED TO RESUBMIT PASS RESET!");
             exit();
         }
         else{
             $tokenbin = hex2bin($validator);
             $tokencheck = password_verify($tokenbin, $row['reset_token']);
             if($tokencheck === false){
-                header("Location: ../forgot_pass.php?ERROR IN TOKEN!");
+                header("Location: ../forgot-pass.php?ERROR IN TOKEN!");
                 exit();
             }
             else if ($tokencheck === true){
@@ -87,7 +87,7 @@ else if(isset($_POST['change_password'])){
                 
                 $stmt = mysqli_stmt_init($con);
                 if(!mysqli_stmt_prepare( $stmt, $sql)){
-                    header("Location: ../forgot_pass.php?SQL ERROR SELECTION IN USER TABLE!");
+                    header("Location: ../forgot-pass.php?SQL ERROR SELECTION IN USER TABLE!");
                     exit();
                 }
                 else{
@@ -95,14 +95,14 @@ else if(isset($_POST['change_password'])){
                     mysqli_stmt_execute($stmt);
                     $result = mysqli_stmt_get_result($stmt);
                     if(!$row = mysqli_fetch_assoc($result)){
-                        header("Location: ../forgot_pass.php?email doesn't exist!");
+                        header("Location: ../forgot-pass.php?email doesn't exist!");
                         exit();
                     }
                     else{
                         $sql = "UPDATE users SET password = ? WHERE email = ?";
                         $stmt = mysqli_stmt_init($con);
                         if(!mysqli_stmt_prepare( $stmt, $sql)){
-                            header("Location: ../forgot_pass.php?SQL ERROR UDPATE IN USER TABLE!");
+                            header("Location: ../forgot-pass.php?SQL ERROR UDPATE IN USER TABLE!");
                             exit();
                         }
                         else{
