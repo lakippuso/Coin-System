@@ -44,17 +44,17 @@
                         <label>Forgot Password</label>
                     </div>
                     
-                    <div class="inputs form-floating">
+                    <!-- <div class="inputs form-floating">
                         <input type="text" class="form-control" id="floatingInput" name="username" placeholder="Username" required>
                         <label for="floatingInput">Username</label>
-                    </div>
+                    </div> -->
                     <div class="inputs form-floating">
-                        <input type="email" class="form-control" id="floatingInput" name="email" placeholder="Email" required>
+                        <input type="email" class="form-control" id="floatingInput" name="reset_email" placeholder="Email" required>
                         <label for="floatingInput">Email</label>
                     </div>
                     
                     <div class="forgot-btn d-flex justify-content-center">
-                        <button class="btn-submit" type="submit" name="submit">Submit</button>
+                        <button class="btn-submit" type="submit" name="reset_submit">Submit</button>
                     </div>
                 </form>
             </div>
