@@ -114,11 +114,11 @@
         </div>
     </section>
     <section class="section2" id="developer-section">
-        <div class="container">
+        <div class="container-fluid g-0">
             <h2 class="title-content text-center">Meet the Team</h2>
             <hr/>
-            <div class="row content-name text-center text-md-start">
-                <div class="d-flex justify-content-evenly m-3"> 
+            <div class="content-name text-center text-md-start">
+                <div class="d-flex justify-content-evenly m-3">
                     <div class="card" style="width: 18rem;">
                         <img src="resources/images/John.png" class="card-img-top" alt="John">
                         <h4><strong>Leo</strong></h4>
