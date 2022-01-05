@@ -5,7 +5,7 @@ if(isset($_POST['reset_submit'])){
     $selector = bin2hex(random_bytes(8));
     $token = random_bytes(32);
 
-    $url = "geekcoin.online/forgot-email.php?selector=".$selector."&validator=".bin2hex($token);
+    $url = "https://geekcoin.online/forgot-pass.php?selector=".$selector."&validator=".bin2hex($token);
 
     $expires = date("u") + 1800;
 
