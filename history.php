@@ -61,10 +61,10 @@
                                         ?>
                                     <tr>
                                                 <th><input type="checkbox" class="cb_item" name="selected[]" value="<?php echo $rows['history_id'];?>"></th>
-                                                <th scope="col"><?php echo $rows['history_id'];?></th>
-                                                <th scope="col"><?php echo $rows['machine_id'];?></th>
-                                                <th scope="col"><?php echo $rows['total_income'];?></th>
-                                                <th scope="col"><?php echo $rows['reset_date'];?></th>
+                                                <th scope="col"><?php echo htmlspecialchars($rows['history_id']);?></th>
+                                                <th scope="col"><?php echo htmlspecialchars($rows['machine_id']);?></th>
+                                                <th scope="col"><?php echo htmlspecialchars($rows['total_income']);?></th>
+                                                <th scope="col"><?php echo htmlspecialchars($rows['reset_date']);?></th>
                                     </tr>
                                                     
                                     <?php  }?>

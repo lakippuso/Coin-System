@@ -59,7 +59,7 @@
                                                     while($rows= $result-> fetch_assoc())
                                                     {
                                                 ?>
-                                                    <option value="<?php echo $rows['machine_id']; ?>"><?php echo $rows['machine_id']; ?></option>   
+                                                    <option value="<?php echo htmlspecialchars($rows['machine_id']);  ?>"><?php echo htmlspecialchars($rows['machine_id']); ?></option>   
                                                 <?php
                                                     }
                                                     $con-> close();
@@ -139,9 +139,9 @@
                                 ?>
                                         <tr>
                                             <th scope="col"><?php echo $i ?></th>
-                                            <th scope="col"><?php echo $rows['machine_id']; ?></th>
-                                            <th scope="col"><?php echo $rows['date']; ?></th>
-                                            <th scope="col"><?php echo $rows['day_income']; ?></th>
+                                            <th scope="col"><?php echo htmlspecialchars($rows['machine_id']); ?></th>
+                                            <th scope="col"><?php echo htmlspecialchars($rows['date']); ?></th>
+                                            <th scope="col"><?php echo htmlspecialchars($rows['day_income']); ?></th>
                                         </tr>
                                 <?php
                                 
