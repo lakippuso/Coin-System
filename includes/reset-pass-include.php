@@ -38,15 +38,15 @@ if(isset($_POST['reset_submit'])){
 
     $to = $email;
     $subject = "Password Reset For Your Geekcoin Account";
-    $message = '<p>You requested a password reset! CLick the link below.</p>';
+    $message = '<p>You requested a password reset! Click the link below.</p>';
     $message .= '<p>Link: </p><br>';
     $message .= '<a href="'.$url.'">'.$url.'</a>';
 
     $header = "From: Geekcoin <support@geekcoin.online>\r\n";
     $header .= "Reply-To: Geekcoin <support@geekcoin.online>\r\n";
-    $header = "Content-type: text/html\r\n";
+    $header .= "Content-type: text/html\r\n";
 
-    mail($to, $subject, $message, $header);
+    mail($to, $subject, $message);
     header("Location: ../forgot-message.php");
     exit();
 }
@@ -65,7 +65,7 @@ else if(isset($_POST['change_password'])){
         exit();
     }
     else{
-        mysqli_stmt_bind_param($stmt,"s",$email);    
+        mysqli_stmt_bind_param($stmt,"ss",$selector, $validator);    
         mysqli_stmt_execute($stmt);
 
         $result = mysqli_stmt_get_result($stmt);
