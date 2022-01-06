@@ -18,6 +18,7 @@
             }
             else{
                 header('Location: index.php?notloggedin');
+                exit();
             }
         ?>
     </a>
@@ -87,6 +88,7 @@
                     }
                     else{
                         header('Location: index.php?notloggedin');
+                        exit();
                     }
                 ?>
             </a>
