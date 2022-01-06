@@ -134,6 +134,7 @@ function dialog(button) {
             success: function(response){
                 console.log(response);
                 reset_bg.classList.remove('db-active');
+                window.location.reload();
             }
         });
     });
