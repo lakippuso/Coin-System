@@ -1,5 +1,6 @@
 @import url(http://fonts.googleapis.com/css2?family=Arvo);
 
+
 body{
     font-family: 'Arvo', serif;
 }
@@ -709,6 +710,9 @@ margin: 0;
     border: none; 
     border-radius: 5px;
 }
+.manage-password .m-pass input {
+	width: 18em;
+}
 
 .manage-password .m-pass .current label {
 	margin-right: 6em;
@@ -729,6 +733,46 @@ margin: 0;
 	display: none;
 }
 
+#pass-visible1 {
+	position: relative;
+	right: 4%;
+	top: 6px;
+    color: #aaa;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+#pass-visible2 {
+	position: relative;
+	right: 4%;
+	top: 6px;
+    color: #aaa;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#pass-visible3 {
+	position: relative;
+	right: 4%;
+	top: 6px;
+    color: #aaa;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
 
 /* config */
 
@@ -835,6 +879,13 @@ margin: 0;
 	background-color: #4dc0ba;
 }
 
+.vertical-line{
+	display: inline-block;
+	border-left: 2px solid #ccc;
+	margin: 2em;
+	margin-top: 0;
+	height: 16em;
+}
 /* Mobile Collapse Header */
 
 .collapse-nav {

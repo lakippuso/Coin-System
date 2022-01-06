@@ -20,6 +20,21 @@
     box-shadow: 0px 10px 10px 0px black;
 }
 
+
+#pass-visible {
+    position: relative;
+    margin-left: 86%;
+    margin-top: -35px;
+    color: #aaa;
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 #username_error, #password_error {
     color: rgb(255, 128, 149);
 }
@@ -49,6 +64,12 @@
 .form-col .form-btn .btn-signin {
     background-color: #4dc0ba;
     border-radius: 10px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .form-col .form-btn .btn-signin:hover {
@@ -58,7 +79,13 @@
 
 .form-col .form-btn .btn-create {
     background: none;
-    color: #33ccff  ;
+    color: #33ccff;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .form-col .form-btn .btn-create:hover {
@@ -84,6 +111,23 @@ footer{
     color: #fff;
 }
 
+.a_forgot {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.a_remember {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
 
 /* Forgot */
 

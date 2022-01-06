@@ -3,6 +3,7 @@
     include 'includes/header-include.php';
 ?>
 
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <title>Profile</title>
         <!-- Navigation Bar -->
         <?php include 'includes/nav-bar.php'?>
@@ -48,32 +49,32 @@
                             </div>
                             <div class="name">
                                 <label>Name</label>
-                                <input type="text" name="first_name" id="first" placeholder="First Name" value="<?php echo htmlspecialchars($row['first_name']) ;?>" required>
-                                <input type="text" name="middle_name" id="middle" placeholder="Middle Name" value="<?php echo htmlspecialchars($row['middle_name']) ?>">
-                                <input type="text" name="last_name" id="last" placeholder="Last Name" value="<?php echo htmlspecialchars($row['last_name']) ;?>" required>
-                                <input type="text" name="name_suffix" id="suffix" placeholder="Suffix" value="<?php echo htmlspecialchars($row['suffix']) ?>">
+                                <input type="text" name="first_name" id="first" placeholder="First Name" value="<?php echo $row['first_name'];?>" required>
+                                <input type="text" name="middle_name" id="middle" placeholder="Middle Name" value="<?php echo $row['middle_name']?>">
+                                <input type="text" name="last_name" id="last" placeholder="Last Name" value="<?php echo $row['last_name'];?>" required>
+                                <input type="text" name="name_suffix" id="suffix" placeholder="Suffix" value="<?php echo $row['suffix']?>">
                                 <span class = "profile-error">Error :D</span>
                             </div>
                             <div class="email">
                                 <label>Email</label>
-                                <input type="email" name="email" id="email" value="<?php echo htmlspecialchars($row['email']) ;?>" required>
+                                <input type="email" name="email" id="email" value="<?php echo $row['email'];?>" required>
                                 <span class = "profile-error">Error :D</span>
                             </div>
                             <div class="phone">
                                 <label>Phone</label>
-                                <input id="phone" name="phone" class="no-arrow" type="number" value="<?php echo htmlspecialchars($row['contact_no']) ?>">
+                                <input id="phone" name="phone" class="no-arrow" type="number" value="<?php echo $row['contact_no']?>">
                                 <span class = "profile-error">Error :D</span>
                             </div>
                             <hr>
                             <label style="margin-top: 0.5em;">Business Information</label>
                             <div class="b-name">
                                 <label>Name</label>
-                                <input name="business_name" type="text" value="<?php  echo htmlspecialchars($row['business_name']) ?>">
+                                <input name="business_name" type="text" value="<?php  echo $row['business_name']?>">
                                 <span class = "profile-error">Error :D</span>
                             </div>
                             <div class="b-add">
                                 <label>Address</label>
-                                <input name="business_add" type="text" value="<?php  echo htmlspecialchars($row['business_add']) ?>">
+                                <input name="business_add" type="text" value="<?php  echo $row['business_add']?>">
                                 <span class = "profile-error">Error :D</span>
                             </div>
                             <!-- <span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Disabled popover">
@@ -94,17 +95,20 @@
                         <div class="m-pass">
                             <div class="current">
                                 <label>Current</label>
-                                <input name="phone" type="password" id="current_pass">
+                                <input type="password" class="show-pass1" id="current_pass">
+                                <i class="material-icons" id="pass-visible1">visibility_off</i>
                                 <span class="error-pass">E</span>
                             </div>
                             <div class="new">
                                 <label>New Password</label>
-                                <input name="phone" type="password" id="new_pass">
+                                <input type="password" class="show-pass2" id="new_pass">
+                                <i class="material-icons" id="pass-visible2">visibility_off</i>
                                 <span class="error-pass">E</span>
                             </div>
                             <div class="retype">
                                 <label>Retype Password</label>
-                                <input name="phone" type="password" id="retype_pass">
+                                <input type="password" class="show-pass3" id="retype_pass">
+                                <i class="material-icons" id="pass-visible3">visibility_off</i>
                                 <span class="error-pass">E</span>
                             </div>
                             <div class="save_change d-flex justify-content-end">
@@ -120,6 +124,7 @@
         
 <!-- Footer -->
 
+<script type="text/javascript" src="resources/js/profile-pass.js"></script>
 <?php
     include 'includes/footer-inside.php';
 ?>

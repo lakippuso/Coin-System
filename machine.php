@@ -71,7 +71,7 @@
                                     <th scope="col"><?php echo htmlspecialchars($rows['income']); ?></th>
                                     <th scope="col"><?php echo htmlspecialchars($rows['date_created']); ?></th>
                                     <th scope="col"style="text-align: center;">
-                                        <span class="badge bg-primary rounded-pill"><button onclick="configuration(<?php echo $rows['machine_id'];?>);" style="background: None; border: None; color: white; width:4em;">Config</button></span>
+                                        <span class="badge bg-primary rounded-pill"><button onclick="configuration(<?php echo $rows['machine_id'];?>);" style="background: None; border: None; color: white; width:4em;">Details</button></span>
                                         <span class="badge bg-primary rounded-pill"><button onclick="dialog(<?php echo $rows['machine_id'];?>)" style="background: None; border: None; color: white; width:4em;">Reset</button></span>            
                                     </th>
                                 </tr>
@@ -163,16 +163,13 @@
                         </div>
                         <span class="vertical-line"></span>
                         <div class="wifi-section d-flex flex-column">
-                            <label style="margin-bottom: 1em; font-weight: 600;">Wifi Setup</label>
-                            <div class="d-flex justify-content-evenly" style="margin-bottom: 1em;">
-                                <button class="wifi-default" style="border: none; background: none;">Default</button>
-                                <span class="vertical-line2"></span>
-                                <button class="wifi-custom" style="border: none; background: none;">Custom</button>
-                            </div>
-                            <label>Wifi Name</label>
-                            <input type="text">
-                            <label>Wifi Password</label>
-                            <input type="password">
+                            <label style="margin-bottom: 1em; font-weight: 600;">Machine Income Details</label>
+                            <label>Total Income Collected</label>
+                            <input type="text" id="overall-income" disabled>
+                            <label>Daily Income</label>
+                            <input type="text" id="detail-daily-income" disabled>
+                            <label>Monthly Income</label>
+                            <input type="text" id="detail-monthly-income" disabled>
                         </div>
                     </div>
                     <div class="save-btn d-flex justify-content-end">
