@@ -23,21 +23,21 @@
                 <div class="content">
                     <div class="content1">
                         <div class="dashboard-box row my-4 g-0 d-flex justify-content-around">
-                            <div class="analytic-cards card col-sm-3 col-md-3 col-lg-3">
+                            <div class="analytic-cards card col-sm-3 col-md-3 col-lg-3 shadow">
                                 <div class="card-body">
                                     <h4>Total Machines </h4>
                                     <hr>
                                     <label for="">Registered Machines: <strong><?php echo getNumMachines($_SESSION['session_username']);?></strong></label>
                                 </div>
                             </div>
-                            <div class="analytic-cards card col-sm-3 col-md-3 col-lg-3">
+                            <div class="analytic-cards card col-sm-3 col-md-3 col-lg-3 shadow">
                                 <div class="card-body">
                                     <h4>Daily Income</h4>
                                     <hr>
                                     <label for="">Today's Income: <?php echo getIncomeToday($_SESSION['session_username'])?></label>
                                 </div>
                             </div>
-                            <div class="cards analytic-cards card col-sm-3 col-md-3 col-lg-3">
+                            <div class="cards analytic-cards card col-sm-3 col-md-3 col-lg-3 shadow">
                                 <div class="card-body">
                                     <h4 id="income_type"></h4>
                                     <hr>

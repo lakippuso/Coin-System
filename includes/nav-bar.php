@@ -1,5 +1,5 @@
 <!-- Navbar -->
-<nav class="top-nav navbar g-0 mx-auto">
+<nav class="top-nav navbar g-0 mx-auto shadow-lg">
     <div class="nav-container container-fluid">
         <a class="logo-link navbar-brand " href="dashboard.php">
             <img src="resources/images/GeekCoin.png" alt="LOGO" id="logo" style="width: 8em">
