@@ -49,32 +49,32 @@
                             </div>
                             <div class="name">
                                 <label>Name</label>
-                                <input type="text" name="first_name" id="first" placeholder="First Name" value="<?php echo $row['first_name'];?>" required>
-                                <input type="text" name="middle_name" id="middle" placeholder="Middle Name" value="<?php echo $row['middle_name']?>">
-                                <input type="text" name="last_name" id="last" placeholder="Last Name" value="<?php echo $row['last_name'];?>" required>
-                                <input type="text" name="name_suffix" id="suffix" placeholder="Suffix" value="<?php echo $row['suffix']?>">
+                                <input type="text" name="first_name" id="first" placeholder="First Name" value="<?php echo htmlspecialchars($row['first_name']) ;?>" required>
+                                <input type="text" name="middle_name" id="middle" placeholder="Middle Name" value="<?php echo htmlspecialchars($row['middle_name']) ?>">
+                                <input type="text" name="last_name" id="last" placeholder="Last Name" value="<?php echo htmlspecialchars($row['last_name']) ;?>" required>
+                                <input type="text" name="name_suffix" id="suffix" placeholder="Suffix" value="<?php echo htmlspecialchars($row['suffix']) ?>">
                                 <span class = "profile-error">Error :D</span>
                             </div>
                             <div class="email">
                                 <label>Email</label>
-                                <input type="email" name="email" id="email" value="<?php echo $row['email'];?>" required>
+                                <input type="email" name="email" id="email" value="<?php echo htmlspecialchars($row['email']) ;?>" required>
                                 <span class = "profile-error">Error :D</span>
                             </div>
                             <div class="phone">
                                 <label>Phone</label>
-                                <input id="phone" name="phone" class="no-arrow" type="number" value="<?php echo $row['contact_no']?>">
+                                <input id="phone" name="phone" class="no-arrow" type="number" value="<?php echo htmlspecialchars($row['contact_no']) ?>">
                                 <span class = "profile-error">Error :D</span>
                             </div>
                             <hr>
                             <label style="margin-top: 0.5em;">Business Information</label>
                             <div class="b-name">
                                 <label>Name</label>
-                                <input name="business_name" type="text" value="<?php  echo $row['business_name']?>">
+                                <input name="business_name" type="text" value="<?php  echo htmlspecialchars($row['business_name']) ?>">
                                 <span class = "profile-error">Error :D</span>
                             </div>
                             <div class="b-add">
                                 <label>Address</label>
-                                <input name="business_add" type="text" value="<?php  echo $row['business_add']?>">
+                                <input name="business_add" type="text" value="<?php  echo htmlspecialchars($row['business_add']) ?>">
                                 <span class = "profile-error">Error :D</span>
                             </div>
                             <!-- <span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Disabled popover">
