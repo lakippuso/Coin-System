@@ -22,9 +22,9 @@
 
 
 #pass-visible {
-    position: relative;
-    margin-left: 86%;
-    margin-top: -35px;
+    position: absolute;
+    left: 22vw;
+    bottom: 5vh;
     color: #aaa;
     cursor: pointer;
     -webkit-touch-callout: none;

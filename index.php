@@ -47,9 +47,9 @@
                         <label for="floatingInput">Username</label>
                         <span id="username_error" class="my-3"><?php if(isset($_GET['username_error'])){ echo $_GET['username_error'];}?></span>
                     </div>
-                    <div class="inputs row form-floating ">
+                    <div class="inputs row form-floating">
                         <input type="password" class="login-pass form-control" id="floatingPassword" name="password" placeholder="Password">
-                        <i class="material-icons" id="pass-visible">visibility_off</i>
+                        <span class="material-icons" id="pass-visible">visibility_off</span>
                         <label for="floatingPassword">Password</label>
                         <span id="password_error" style="margin-top: 1em;"><?php if(isset($_GET['password_error'])){ echo $_GET['password_error'];}?></span>
                     </div>
