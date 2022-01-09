@@ -22,7 +22,6 @@ if(isset($_GET['pass']) && $_GET['pass']=='geekcoin'){
         if($row = mysqli_fetch_assoc($result)){
             //Insert Data
             $sum = $row['income'] + $input;
-            $username = $row['username'];
             $sql =  "UPDATE machine_info SET income = ? WHERE machine_id = ?";
             $stmt = mysqli_stmt_init($con);
             if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -51,6 +50,7 @@ if(isset($_GET['pass']) && $_GET['pass']=='geekcoin'){
         if($row = mysqli_fetch_assoc($result)){
             //Insert Data
             $sum = $row['day_income'] + $input;
+            $username = $row['username'];
             $sql =  "UPDATE daily_report SET day_income = ? WHERE machine_id = ? and date = ?";
             $stmt = mysqli_stmt_init($con);
             if(!mysqli_stmt_prepare($stmt, $sql)){
@@ -62,14 +62,31 @@ if(isset($_GET['pass']) && $_GET['pass']=='geekcoin'){
             }
         }
         else{
-            $sql =  "INSERT INTO daily_report (machine_id, username, date, day_income) VALUES (?,?,?,?)";
+            $sql =  "SELECT * FROM machine_info WHERE machine_id = ?";
             $stmt = mysqli_stmt_init($con);
             if(!mysqli_stmt_prepare($stmt, $sql)){
-                echo 'INSERT error New Report!';
+                echo 'Statement Error Report!';
             }
             else{
-                mysqli_stmt_bind_param($stmt, "ssss",$machine_id, $username, $date, $input);
+                mysqli_stmt_bind_param($stmt, "s", $machine_id);
                 mysqli_stmt_execute($stmt);
+                $result = mysqli_stmt_get_result($stmt);
+                if($row = mysqli_fetch_assoc($result)){
+                    //Insert Data
+                    $username = $row['username'];
+                    $sql =  "INSERT INTO daily_report (machine_id, username, date, day_income) VALUES (?,?,?,?)";
+                    $stmt = mysqli_stmt_init($con);
+                    if(!mysqli_stmt_prepare($stmt, $sql)){
+                        echo 'INSERT error New Report!';
+                    }
+                    else{
+                        mysqli_stmt_bind_param($stmt, "ssss",$machine_id, $username, $date, $input);
+                        mysqli_stmt_execute($stmt);
+                    }
+                }
+                else{
+                    echo 'Machine is not registered!';
+                }
             }
         }
     }
