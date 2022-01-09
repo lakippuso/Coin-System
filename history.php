@@ -39,7 +39,7 @@
                                 <thead>
                                     <tr>
                                         <th><input type="checkbox" class="select_all_items"></th>
-                                        <th class="col-lg-2">History ID </th>
+                                        <th class="col-lg-2">Machine Name</th>
                                         <th class="col-lg-4">Machine ID</th>
                                         <th class="col-lg-3">Total Income</th>
                                         <th class="col-lg-4">Date</th>
@@ -49,7 +49,7 @@
                                         <?php 
                                             require 'includes/config.php';
                                             $username = $_SESSION['session_username'];
-                                            $sql="SELECT * FROM history where username = '$username'";
+                                            $sql="SELECT * FROM  history LEFT JOIN machine_info ON history.machine_id = machine_info.machine_id WHERE machine_info.username = '$username'";
                                             if(isset($_GET['search_id'])){
                                                 $search_id = $_GET['search_id'];
                                                 if(!empty($search_id)){
@@ -61,7 +61,7 @@
                                         ?>
                                     <tr>
                                                 <th><input type="checkbox" class="cb_item" name="selected[]" value="<?php echo $rows['history_id'];?>"></th>
-                                                <th scope="col"><?php echo htmlspecialchars($rows['history_id']);?></th>
+                                                <th scope="col"><?php echo htmlspecialchars($rows['machine_name']);?></th>
                                                 <th scope="col"><?php echo htmlspecialchars($rows['machine_id']);?></th>
                                                 <th scope="col"><?php echo htmlspecialchars($rows['total_income']);?></th>
                                                 <th scope="col"><?php echo htmlspecialchars($rows['reset_date']);?></th>

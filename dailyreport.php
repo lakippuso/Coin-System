@@ -54,7 +54,8 @@
                                             <select name="search_id[]" id="list" multiple="multiple" class="machine active">
                                                 <?php
                                                     require 'includes/config.php';
-                                                    $query="SELECT machine_id FROM machine_info ";
+                                                    $username = $_SESSION['session_username'];
+                                                    $query="SELECT machine_id FROM machine_info WHERE username = '$username'";
                                                     $result= $con->query($query);
                                                     while($rows= $result-> fetch_assoc())
                                                     {
@@ -85,7 +86,8 @@
                             <thead>
                                 <tr>
                                     <th class="col">No.</th>
-                                    <th class="col-lg-4">Machine Name</th>
+                                    <th class="col-lg-2">Machine ID</th>
+                                    <th class="col-lg-2">Machine Name</th>
                                     <th class="col-lg-4">Date</th>
                                     <th class="col-lg-4">Total Income</th>
                                 </tr>
@@ -95,7 +97,7 @@
                                     require 'includes/config.php';
                                     $i = 1;
                                     $username = $_SESSION['session_username'];
-                                    $query="SELECT * FROM daily_report where username = '$username'";
+                                    $query="SELECT * FROM daily_report LEFT JOIN machine_info ON daily_report.machine_id = machine_info.machine_id WHERE machine_info.username = '$username'";
                                     // if(isset($_GET['search_id'])){
                                     //     $search_id = $_GET['search_id'];
                                     //     if(!empty($search_id)){
@@ -140,6 +142,7 @@
                                         <tr>
                                             <th scope="col"><?php echo $i ?></th>
                                             <th scope="col"><?php echo htmlspecialchars($rows['machine_id']); ?></th>
+                                            <th scope="col"><?php echo htmlspecialchars($rows['machine_name']); ?></th>
                                             <th scope="col"><?php echo htmlspecialchars($rows['date']); ?></th>
                                             <th scope="col"><?php echo htmlspecialchars($rows['day_income']); ?></th>
                                         </tr>

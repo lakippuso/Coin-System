@@ -6,13 +6,13 @@
     if(isset($_POST['generate'])){ 
         //Execute MySQL
         $username = $_SESSION['session_username'];
-        $query="SELECT * FROM daily_report where username = '$username'";
+        $query="SELECT * FROM daily_report LEFT JOIN machine_info ON daily_report.machine_id = machine_info.machine_id WHERE machine_info.username = '$username'";
 
         if(isset($_POST['search_id']) && $_POST['search_id'] != ''){
             $search_id = implode(', ',$_POST['search_id']);
             if(!empty($search_id)){
                 if($search_id != "All Machines"){
-                    $query = $query."AND machine_id IN ($search_id)";
+                    $query = $query."AND daily_report.machine_id IN ($search_id)";
                 }
             }
         }
@@ -103,13 +103,13 @@
         // echo $filter."<br>";
         $i = 1;
         $username = $_SESSION['session_username'];
-        $query="SELECT * FROM daily_report where username = '$username'";
+        $query="SELECT * FROM daily_report LEFT JOIN machine_info ON daily_report.machine_id = machine_info.machine_id WHERE machine_info.username = '$username'";
 
         if(isset($_POST['search_id']) && $_POST['search_id'] != ''){
             $search_id = implode(', ',$_POST['search_id']);
             if(!empty($search_id)){
                 if($search_id != "All Machines"){
-                    $query = $query."AND machine_id IN ($search_id)";
+                    $query = $query."AND daily_report.machine_id IN ($search_id)";
                 }
             }
         }
@@ -151,6 +151,7 @@
         {
             echo '<tr>';
             echo '    <th scope="col">'.$i.'</th>';
+            echo '    <th scope="col">'.$rows['machine_name'].'</th>';
             echo '    <th scope="col">'.$rows['machine_id'].'</th>';
             echo '    <th scope="col">'.$rows['date'].'</th>';
             echo '    <th scope="col">'.$rows['day_income'].'</th>';
