@@ -56,8 +56,9 @@
         <h4 align="center">Coin Counter Report</h4><br /> 
         <table align="center" border="1" cellspacing="0" cellpadding="3">  
             <tr>  
-                <th width="30%">Date</th>  
-                <th width="50%">Machine_id</th>  
+                <th width="20%">Date</th>  
+                <th width="30%">Machine_id</th>  
+                <th width="30%">Machine_Name</th>  
                 <th width="20%">Income</th>  
             </tr>  
         ';  
