@@ -68,7 +68,59 @@
                         <th scope="col">'.$rows['machine_id'].'</th>
                         <th scope="col">'.$rows['day_income'].'</th>
                     </tr>';  
-        }  
+        }
+        
+        //Filter for Total Income
+        $query="SELECT SUM(day_income) as total FROM daily_report LEFT JOIN machine_info ON daily_report.machine_id = machine_info.machine_id WHERE machine_info.username = '$username'";
+        if(isset($_POST['search_id']) && $_POST['search_id'] != ''){
+            $search_id = implode("', '",$_POST['search_id']);
+            $search_id = "'".$search_id."'";
+            if(!empty($search_id)){
+                if($search_id != "All Machines"){
+                    $query = $query."AND machine_info.machine_name IN ($search_id)";
+                }
+            }
+        }
+        if(isset($_POST['start_date']) && $_POST['start_date'] != ''){
+            $start_date = $_POST['start_date'];
+            if(isset($_POST['end_date'])){
+                $end_date = $_POST['end_date'];
+            }
+            if(!empty($start_date) && !empty($end_date)){
+                // echo "Start Date: ".$start_date."<br>";
+                // echo "End Date: ".$end_date."<br>";
+                $query = $query."AND date BETWEEN '$start_date' AND '$end_date'";
+            }
+            else if(!empty($start_date)){
+                if(strlen($start_date) == 7){
+                    $str = substr($start_date, 5);
+                    $query = $query."AND MONTH(date) = '$str'";
+                }
+                else if(strlen($start_date) == 8){
+                    $str = substr($start_date, 6);
+                    $query = $query."AND WEEK(date) = '$str'";
+                }
+                else{
+                    $query = $query."AND date = '$start_date'";
+                }
+            }
+        }
+        else if(isset($_POST['year']) && $_POST['year'] != ''){
+            $year = $_POST['year'];
+            if($year != ''){
+                $query = $query."AND YEAR(date) = '$year'";
+            }
+        }
+        $result= $con->query($query);
+        while($rows= $result-> fetch_assoc())
+        {
+        $content .= '<tr>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                        <th scope="col">Total Income: '.$rows['total'].'</th>
+                    </tr>';  
+                
+        } 
         //Create PDF
         $obj_pdf = new TCPDF('P', PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);  
         $obj_pdf->SetCreator(PDF_CREATOR);  
@@ -159,6 +211,63 @@
             echo '    <th scope="col">'.$rows['day_income'].'</th>';
             echo '</tr>';
             $i+=1;
+        }
+
+
+
+        //Filter for Total Income
+        $query="SELECT SUM(day_income) as total FROM daily_report LEFT JOIN machine_info ON daily_report.machine_id = machine_info.machine_id WHERE machine_info.username = '$username'";
+        if(isset($_POST['search_id']) && $_POST['search_id'] != ''){
+            $search_id = implode("', '",$_POST['search_id']);
+            $search_id = "'".$search_id."'";
+            if(!empty($search_id)){
+                if($search_id != "All Machines"){
+                    $query = $query."AND machine_info.machine_name IN ($search_id)";
+                }
+            }
+        }
+        if(isset($_POST['start_date']) && $_POST['start_date'] != ''){
+            $start_date = $_POST['start_date'];
+            if(isset($_POST['end_date'])){
+                $end_date = $_POST['end_date'];
+            }
+            if(!empty($start_date) && !empty($end_date)){
+                // echo "Start Date: ".$start_date."<br>";
+                // echo "End Date: ".$end_date."<br>";
+                $query = $query."AND date BETWEEN '$start_date' AND '$end_date'";
+            }
+            else if(!empty($start_date)){
+                if(strlen($start_date) == 7){
+                    $str = substr($start_date, 5);
+                    $query = $query."AND MONTH(date) = '$str'";
+                }
+                else if(strlen($start_date) == 8){
+                    $str = substr($start_date, 6);
+                    $query = $query."AND WEEK(date) = '$str'";
+                }
+                else{
+                    $query = $query."AND date = '$start_date'";
+                }
+            }
+        }
+        else if(isset($_POST['year']) && $_POST['year'] != ''){
+            $year = $_POST['year'];
+            if($year != ''){
+                $query = $query."AND YEAR(date) = '$year'";
+            }
+        }
+        $result= $con->query($query);
+        while($rows= $result-> fetch_assoc())
+        {
+        ?>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"><?php echo "Total Income: ".$rows['total']?></th>
+                </tr>
+        <?php
         }
 
 

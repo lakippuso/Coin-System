@@ -5,7 +5,7 @@ body{
     font-family: 'Arvo', serif;
 }
 .main{
-    width: 100vw;
+    width: 100%;
 }
 /*Nav*/
 .top-nav{
@@ -75,7 +75,7 @@ body{
 }
 .dashboard{
 	padding: 1em 1em 0 1em;
-	min-height: 92vh;
+	min-height: 90vh;
 }
 .header{
     background-color: #4dc0ba;

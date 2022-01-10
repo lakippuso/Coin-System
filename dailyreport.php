@@ -89,7 +89,7 @@
                                     <th class="col-lg-2">Machine ID</th>
                                     <th class="col-lg-2">Machine Name</th>
                                     <th class="col-lg-4">Date</th>
-                                    <th class="col-lg-4">Total Income</th>
+                                    <th class="col-lg-4">Income</th>
                                 </tr>
                             </thead>
                             <tbody id="report_table">
@@ -98,7 +98,7 @@
                                     $i = 1;
                                     $username = $_SESSION['session_username'];
                                     $date_now = date('Y-m-d');
-                                    $query="SELECT * FROM daily_report LEFT JOIN machine_info ON daily_report.machine_id = machine_info.machine_id WHERE machine_info.username = '$username'";
+                                    $query="SELECT * FROM daily_report LEFT JOIN machine_info ON daily_report.machine_id = machine_info.machine_id WHERE machine_info.username = '$username' AND date = '$date_now'";
                                     // if(isset($_GET['search_id'])){
                                     //     $search_id = $_GET['search_id'];
                                     //     if(!empty($search_id)){
@@ -152,6 +152,7 @@
                                         $i+=1;
                                     }
                                 ?>
+
                             </tbody>
                         </table>
                     </div>
