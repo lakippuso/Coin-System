@@ -10,7 +10,7 @@
     $y = 1;
     $year = date('Y');
     while($y <= 12){
-        $sql = "SELECT SUM(day_income) as income from daily_report WHERE username = '$username' AND MONTH(date) = '$y' AND YEAR(date) = '$year";
+        $sql = "SELECT SUM(day_income) as income from daily_report WHERE username = '$username' AND MONTH(date) = '$y' AND YEAR(date) = '$year'";
         $result = mysqli_query($con,$sql);
         if($row = mysqli_fetch_assoc($result))
         {
