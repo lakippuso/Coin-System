@@ -30,7 +30,7 @@ if(isset($_POST['submit'])){
             if($row = mysqli_fetch_assoc($result)){
                 $check_pass = password_verify($password, $row['password']);
                 if($check_pass == false){
-                    header("Location: ../index.php?password_error=Wrong Password!1");
+                    header("Location: ../index.php?password_error=Wrong Password!");
                     exit();
                 }
                 else if($check_pass == true){
@@ -48,7 +48,7 @@ if(isset($_POST['submit'])){
                     // }
                 }
                 else{
-                    header("Location: ../index.php?password_error=Wrong Password!2");
+                    header("Location: ../index.php?password_error=Wrong Password!");
                     exit();
                 }
             }

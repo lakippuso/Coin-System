@@ -44,7 +44,7 @@
 }
 
 .form-col .inputs {
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
 }
 .form-col .checkbox1 label:hover {
     color: white;
@@ -61,7 +61,7 @@
     border: none;
 }
 
-.form-col .form-btn .btn-signin {
+.form-col .form-btn .btn-signin{
     background-color: #4dc0ba;
     border-radius: 10px;
     -webkit-touch-callout: none;
@@ -77,7 +77,7 @@
     color: black;
 }
 
-.form-col .form-btn .btn-create {
+.form-col .form-btn .btn-create , .a_forgot{
     background: none;
     color: #33ccff;
     -webkit-touch-callout: none;

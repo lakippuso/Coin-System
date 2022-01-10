@@ -55,7 +55,6 @@
                     </div>
 
                     <div class="checkbox1 mb-3 d-flex justify-content-between">
-                        <label class="a_remember"><input type="checkbox" value="remember-me"> Remember me</label>
                         <a href="forgot-email.php"><label class="a_forgot">Forgot Password?</label></a>
                     </div>
                     
