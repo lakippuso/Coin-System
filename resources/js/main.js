@@ -32,6 +32,9 @@ function configuration(id){
         $('#machine-config-id').val(data['id']);
         $('#machine-config-name').val(data['name']);
         $('#machine-config-type').val(data['type']);
+        $('#overall-income').val(data['total']);
+        $('#detail-daily-income').val(data['daily']);
+        $('#detail-monthly-income').val(data['monthly']);
       });
 }
 //Chart in Dashboard
