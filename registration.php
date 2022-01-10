@@ -70,7 +70,7 @@
                 </form>
 
                 <div class="desc-card col-sm-12 col-md-12 col-lg-4 my-auto order-sm-first order-lg-last">
-                    <img src="resources/images/Logo1.png" alt="logo" style="width: 12vw; margin-left: auto; margin-right: auto;">
+                    <img src="resources/images/GeekCoin.png" alt="logo" style="width: 12vw; margin-left: auto; margin-right: auto;">
                     <hr>
                     <h3>Sign Up!</h3>
                     <div class="register_tagline" style="font-size: 16px">It's always free. Register to be able to access our website!</div>
