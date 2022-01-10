@@ -66,6 +66,7 @@
         $content .= '<tr>
                         <th scope="col">'.$rows['date'].'</th>
                         <th scope="col">'.$rows['machine_id'].'</th>
+                        <th scope="col">'.$rows['machine_name'].'</th>
                         <th scope="col">'.$rows['day_income'].'</th>
                     </tr>';  
         }
@@ -205,8 +206,8 @@
         {
             echo '<tr>';
             echo '    <th scope="col">'.$i.'</th>';
-            echo '    <th scope="col">'.$rows['machine_name'].'</th>';
             echo '    <th scope="col">'.$rows['machine_id'].'</th>';
+            echo '    <th scope="col">'.$rows['machine_name'].'</th>';
             echo '    <th scope="col">'.$rows['date'].'</th>';
             echo '    <th scope="col">'.$rows['day_income'].'</th>';
             echo '</tr>';
