@@ -118,6 +118,7 @@
         $content .= '<tr>
                         <th scope="col"></th>
                         <th scope="col"></th>
+                        <th scope="col"></th>
                         <th scope="col">Total Income: '.$rows['total'].'</th>
                     </tr>';  
                 
