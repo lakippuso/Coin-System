@@ -55,12 +55,12 @@
                                                 <?php
                                                     require 'includes/config.php';
                                                     $username = $_SESSION['session_username'];
-                                                    $query="SELECT machine_id FROM machine_info WHERE username = '$username'";
+                                                    $query="SELECT machine_name FROM machine_info WHERE username = '$username'";
                                                     $result= $con->query($query);
                                                     while($rows= $result-> fetch_assoc())
                                                     {
                                                 ?>
-                                                    <option value="<?php echo htmlspecialchars($rows['machine_id']);  ?>"><?php echo htmlspecialchars($rows['machine_id']); ?></option>   
+                                                    <option value="<?php echo htmlspecialchars($rows['machine_name']);  ?>"><?php echo htmlspecialchars($rows['machine_name']); ?></option>   
                                                 <?php
                                                     }
                                                     $con-> close();
@@ -97,6 +97,7 @@
                                     require 'includes/config.php';
                                     $i = 1;
                                     $username = $_SESSION['session_username'];
+                                    $date_now = date('Y-m-d');
                                     $query="SELECT * FROM daily_report LEFT JOIN machine_info ON daily_report.machine_id = machine_info.machine_id WHERE machine_info.username = '$username'";
                                     // if(isset($_GET['search_id'])){
                                     //     $search_id = $_GET['search_id'];

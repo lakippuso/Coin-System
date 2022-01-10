@@ -10,9 +10,10 @@
 
         if(isset($_POST['search_id']) && $_POST['search_id'] != ''){
             $search_id = implode(', ',$_POST['search_id']);
+            $search_id = "'".$search_id."'";
             if(!empty($search_id)){
                 if($search_id != "All Machines"){
-                    $query = $query."AND daily_report.machine_id IN ($search_id)";
+                    $query = $query."AND machine_info.machine_name IN ($search_id)";
                 }
             }
         }
@@ -106,10 +107,11 @@
         $query="SELECT * FROM daily_report LEFT JOIN machine_info ON daily_report.machine_id = machine_info.machine_id WHERE machine_info.username = '$username'";
 
         if(isset($_POST['search_id']) && $_POST['search_id'] != ''){
-            $search_id = implode(', ',$_POST['search_id']);
+            $search_id = implode("', '",$_POST['search_id']);
+            $search_id = "'".$search_id."'";
             if(!empty($search_id)){
                 if($search_id != "All Machines"){
-                    $query = $query."AND daily_report.machine_id IN ($search_id)";
+                    $query = $query."AND machine_info.machine_name IN ($search_id)";
                 }
             }
         }
