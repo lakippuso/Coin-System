@@ -44,7 +44,7 @@
                         echo "Error Request";
                     }
                     else{
-                        //if(ctype_xdigit($selector) !== false && ctype_xdigit($validator)){
+                        if(ctype_xdigit($selector) !== false && ctype_xdigit($validator)){
                             ?>
                             <form id = "forgot-pass-form" class="change-col col-sm-10 col-md-6 col-lg-4 mx-auto" method="POST" action="includes/reset-pass-include.php">
                                 <input type="hidden" name="selector" value="<?php echo $selector;?>">
@@ -79,7 +79,7 @@
                             
                             <?php
 
-                        //}
+                        }
                     }
                 ?>
             </div>
