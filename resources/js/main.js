@@ -189,27 +189,6 @@ $(document).ready(function() {
 
         select_unselect_checkbox($(this), ele); 
     });
-
-
-    $("#forgot-pass-form").submit(function(e){
-        var format = /[ `!@#$%^&*()+\-=\[\]{};':"\\|,.<>\/?~]/;
-        var new_pass = document.querySelector("");
-        var error = 0;
-        if(new_pass.toString().length < 8){
-            console.log("Short password! Must be Greater than 8");
-            error += 1;
-        }
-        if(format.test(new_pass)){
-            console.log("True in format test! Have special chars");
-        }
-        else{
-            console.log("False in format test! Don't have special chars");
-            error += 1;
-        }
-
-        console.log(error);
-        e.preventDefault();
-    });
 });
 //Multiple Select in Daily Report
 $(function () {

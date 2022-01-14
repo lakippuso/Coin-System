@@ -38,7 +38,7 @@ if(isset($_POST['reset_submit'])){
 
     $to = $email;
     $subject = "Password Reset For Your Geekcoin Account";
-    $message = '<p>You requested a password reset! Click the link below.</p>';
+    $message = '<p>You forgot your accounts password? We received your request! You may now reset your password to a new one. Just click the link below.</p>';
     $message .= '<p>Link: </p>';
     $message .= '<a href="'.$url.'">'.$url.'</a>';
 
