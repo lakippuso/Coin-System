@@ -5,7 +5,7 @@ if(isset($_POST['reset_submit'])){
     $selector = bin2hex(random_bytes(8));
     $token = random_bytes(32);
 
-    $url = "https://geekcoin.online/forgot-pass.php?selector=".$selector."&validator=".bin2hex($token);
+    $url = "http://geekcoin.online/forgot-pass.php?selector=".$selector."&validator=".bin2hex($token);
 
     $expires = date("U") + 1800;
 
@@ -46,7 +46,7 @@ if(isset($_POST['reset_submit'])){
     $header .= "Reply-To: Geekcoin <support@geekcoin.online>\r\n";
     $header .= "Content-type: text/html\r\n";
 
-    mail($to, $subject, $message);
+    mail($to, $subject, $message, $header);
     header("Location: ../forgot-message.php");
     exit();
 }
