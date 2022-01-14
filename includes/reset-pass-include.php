@@ -39,7 +39,7 @@ if(isset($_POST['reset_submit'])){
     $to = $email;
     $subject = "Password Reset For Your Geekcoin Account";
     $message = '<p>You requested a password reset! Click the link below.</p>';
-    $message .= '<p>Link: </p><br>';
+    $message .= '<p>Link: </p>';
     $message .= '<a href="'.$url.'">'.$url.'</a>';
 
     $header = "From: Geekcoin <support@geekcoin.online>\r\n";
@@ -121,6 +121,9 @@ else if(isset($_POST['change_password'])){
                                 mysqli_stmt_bind_param($stmt,"s",$token_email);    
                                 mysqli_stmt_execute($stmt);
                             }
+                            
+                            header("Location: ../index.php");
+                            exit();
                         }
                     }
                 }
