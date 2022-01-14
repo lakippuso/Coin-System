@@ -45,7 +45,7 @@
                     else{
                         if(ctype_xdigit($selector) !== false && ctype_xdigit($validator)){
                             ?>
-                            <form class="change-col col-sm-10 col-md-6 col-lg-4 mx-auto" method="POST" action="includes/reset-pass-include.php">
+                            <form id = "forgot-pass-form" class="change-col col-sm-10 col-md-6 col-lg-4 mx-auto" method="POST" action="includes/reset-pass-include.php">
                                 <input type="hidden" name="selector" value="<?php echo $selector;?>">
                                 <input type="hidden" name="validator" value="<?php echo $validator;?>">
                                 <div class="d-flex justify-content-center">
@@ -55,16 +55,18 @@
                                     <label>Change Password</label>
                                 </div>
                                 <div class="inputs form-floating">
-                                    <input type="password" class="form-control" id="floatingInput" name="new_pass" placeholder="New Password">
+                                    <input type="password" class="form-control" id="floatingInput" name="new_pass" placeholder="New Password" required>
                                     <label for="floatingInput">New Password</label>
+                                    <span class="forgot-error">Error</span>
                                 </div>
                                 <ul>
                                     <li>Your password must contain letters and numbers.</li>
                                     <li>Your password must at least 8 characters.</li>
                                 </ul>
                                 <div class="inputs form-floating">
-                                    <input type="password" class="form-control" id="floatingInput" name="new_retype" placeholder="Retype New Password">
+                                    <input type="password" class="form-control" id="floatingInput" name="new_retype" placeholder="Retype New Password" required>
                                     <label for="floatingInput">Retype New Password</label>
+                                    <span class="forgot-error">Error</span>
                                 </div>
                                 
                                 <div class="change-btn d-flex justify-content-center">
