@@ -1,6 +1,5 @@
 <?php
     include 'config.php';
-    include '../resources/lib/tcpdf/tcpdf.php';
     session_start();
     //Generate Report
     if(isset($_POST['generate'])){ 
@@ -125,6 +124,14 @@
                 
         } 
         //Create PDF
+        
+        //MPDF SETTINGS
+        // require_once __DIR__ . '../resources/lib/vendor/autoload.php';
+        // $mpdf = new \Mpdf\Mpdf();
+
+        //TCPDF SETTINGS
+        include '../resources/lib/tcpdf/tcpdf.php';
+
         $obj_pdf = new TCPDF('P', PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);  
         $obj_pdf->SetCreator(PDF_CREATOR);  
         $obj_pdf->SetTitle("Coin Counter Report");  
@@ -138,10 +145,18 @@
         $obj_pdf->setPrintFooter(false);  
         $obj_pdf->SetAutoPageBreak(TRUE, 10);  
         $obj_pdf->SetFont('helvetica', '', 11);  
-        $obj_pdf->AddPage();  
+        $obj_pdf->AddPage();
+
         $content .= '</table>';
+
+        //TCPDF WRITE
         $obj_pdf->writeHTML($content);  
-        $obj_pdf->Output('file.pdf', 'I');  
+        $obj_pdf->Output('file.pdf', 'D');  
+
+        //MPDF WRITE
+        // $mpdf->WriteHTML($content);
+        // $mpdf->Output('file.pdf','I');
+        
         
     }
     //Search Daily Report
