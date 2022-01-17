@@ -131,7 +131,6 @@
 
         //TCPDF SETTINGS
         include '../resources/lib/tcpdf/tcpdf.php';
-        header("Content-type: application/force-download");
         $obj_pdf = new TCPDF('P', PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);  
         $obj_pdf->SetCreator(PDF_CREATOR);  
         $obj_pdf->SetTitle("Coin Counter Report");  
@@ -150,9 +149,8 @@
         $content .= '</table>';
 
         //TCPDF WRITE
-        $obj_pdf->writeHTML($content);  
-        $obj_pdf->Output('file.pdf', 'D');  
-
+        $obj_pdf->writeHTML($content);
+        $obj_pdf->Output('file.pdf', 'D');
         //MPDF WRITE
         // $mpdf->WriteHTML($content);
         // $mpdf->Output('file.pdf','I');

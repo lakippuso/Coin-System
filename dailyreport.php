@@ -23,7 +23,7 @@
                 <div class="content">
                     <div class="dailyReport" id="daily">
                         <div class="m-4 d-flex justify-content-around">
-                            <div class="d-flex justify-content-between">
+                            <form class="d-flex justify-content-between" action="includes/report-include.php" method="POST">
                                 <div class="calendar d-flex flex-column">
                                     <div class="radio__bg d-flex justify-content-evenly" id="incomePeriod" style="margin-bottom: 1em; margin-right: auto; margin-left: auto;">
                                         <div>
@@ -70,13 +70,13 @@
                                         <div><input type="date" name="start_date" id="start" max="<?php echo printDate();?>" style="border-radius: 5px; padding: 3px;" placeholder="Start Date"></div>
                                         <div ><input type="text" name="start_year" id="year_start" style="border-radius: 5px; padding: 3px; display: none;" placeholder="yyyy" ></div>
                                         <div><input type="date" name="end_date" id="end" max="<?php echo printDate();?>" style="border-radius: 5px; padding: 3px;" placeholder="End Date"></div>
-                                        <div><button id="search_report" style="margin-top: 3px; padding: 4px; width: 40px; border: none; background: none;"><img src="resources/images/search.png" style="width: 30px;"/></button></div>
+                                        <div><button type="button" id="search_report" style="margin-top: 3px; padding: 4px; width: 40px; border: none; background: none;"><img src="resources/images/search.png" style="width: 30px;"/></button></div>
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-end" style="width: 20em;">
-                                    <input class="generate" type="button" id="generate" value="Generate Report">
+                                    <input class="generate" type="submit" name="generate" id="generate" value="Generate Report">
                                 </div>
-                            </div>
+                            </form>
                         </div>
 
                     
