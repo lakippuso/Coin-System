@@ -54,7 +54,7 @@
         $content .= '  
         <h4 align="center">Coin Counter Report</h4><br /> 
         <table align="center" border="1" cellspacing="0" cellpadding="3">  
-            <tr>  
+            <tr style="background-color:#2b7e7a; color:white">  
                 <th width="20%">Date</th>  
                 <th width="30%">Machine ID</th>
                 <th width="30%">Machine Name</th>  
