@@ -149,12 +149,12 @@
         $content .= '</table>';
 
         //TCPDF WRITE
+        header("Content-type:application/pdf");
         $obj_pdf->writeHTML($content);
-        $obj_pdf->Output('file.pdf', 'D');
+        exit($obj_pdf->Output('file.pdf', 'D'));
         //MPDF WRITE
         // $mpdf->WriteHTML($content);
         // $mpdf->Output('file.pdf','I');
-        
         
     }
     //Search Daily Report
