@@ -1,6 +1,5 @@
 <?php
     include 'config.php';
-    include '../resources/lib/tcpdf/tcpdf.php';
     session_start();
     //Generate Report
     if(isset($_POST['generate'])){ 
@@ -55,7 +54,7 @@
         $content .= '  
         <h4 align="center">Coin Counter Report</h4><br /> 
         <table align="center" border="1" cellspacing="0" cellpadding="3">  
-            <tr>  
+            <tr style="background-color:#2b7e7a; color:white">  
                 <th width="20%">Date</th>  
                 <th width="30%">Machine ID</th>
                 <th width="30%">Machine Name</th>  
@@ -125,6 +124,13 @@
                 
         } 
         //Create PDF
+        
+        //MPDF SETTINGS
+        // require_once __DIR__ . '../resources/lib/vendor/autoload.php';
+        // $mpdf = new \Mpdf\Mpdf();
+
+        //TCPDF SETTINGS
+        include '../resources/lib/tcpdf/tcpdf.php';
         $obj_pdf = new TCPDF('P', PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);  
         $obj_pdf->SetCreator(PDF_CREATOR);  
         $obj_pdf->SetTitle("Coin Counter Report");  
@@ -138,10 +144,17 @@
         $obj_pdf->setPrintFooter(false);  
         $obj_pdf->SetAutoPageBreak(TRUE, 10);  
         $obj_pdf->SetFont('helvetica', '', 11);  
-        $obj_pdf->AddPage();  
+        $obj_pdf->AddPage();
+
         $content .= '</table>';
-        $obj_pdf->writeHTML($content);  
-        $obj_pdf->Output('file.pdf', 'I');  
+
+        //TCPDF WRITE
+        header("Content-type:application/pdf");
+        $obj_pdf->writeHTML($content);
+        exit($obj_pdf->Output('file.pdf', 'D'));
+        //MPDF WRITE
+        // $mpdf->WriteHTML($content);
+        // $mpdf->Output('file.pdf','I');
         
     }
     //Search Daily Report

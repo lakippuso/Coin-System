@@ -237,3 +237,8 @@ footer{
     background-color: white;
     color: black;
 }
+
+.list-error{
+    color: rgb(255, 128, 149);
+    display: none;
+}
