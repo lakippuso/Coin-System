@@ -108,7 +108,7 @@
                         mysqli_stmt_bind_param($stmt, "sssssss", $firstname, $lastname, $email, $username, $hashed_pass, $date, $vkey);
                         mysqli_stmt_execute($stmt);
 
-                        $url = "http://geekcoin.online/email-verify.php?vkey='$vkey'";
+                        $url = "http://geekcoin.online/email-verify.php?vkey=".$vkey;
 
                         $to = $email;
                         $subject = "Verification of Email for Geek Coin";
