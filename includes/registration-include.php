@@ -112,7 +112,7 @@
 
                         $to = $email;
                         $subject = "Verification of Email for Geek Coin";
-                        $message = '<p>Hello'.$firstname.', We are glad you signed up for Geek Coin. To activate your account, please confirm your email by clicking the link below.</p>';
+                        $message = '<p>Hello '.$firstname.', We are glad you signed up for Geek Coin. To activate your account, please confirm your email by clicking the link below.</p>';
                         $message .= '<p>Link: </p>';
                         $message .= '<a href="'.$url.'">'.$url.'</a>';
 
