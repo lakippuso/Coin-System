@@ -5,7 +5,7 @@
     $username = $_SESSION['session_username'];
     $arr = array("data" => array(), 
                 "sum" => array(), 
-                "label" => array('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturnday') );
+                "label" => array('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday') );
     
     $now = date("D", strtotime("today"));
     $i = 0;
