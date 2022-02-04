@@ -1,7 +1,7 @@
 <!-- Navbar -->
 <nav class="top-nav navbar g-0 mx-auto shadow-lg">
     <div class="nav-container container-fluid">
-        <a class="logo-link navbar-brand " href="dashboard.php">
+        <a class="logo-link navbar-brand " href="#">
             <img src="resources/images/GeekCoin.png" alt="LOGO" id="logo" style="width: 8em">
         </a>
         <div class="date-time col-1">
