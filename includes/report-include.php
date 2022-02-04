@@ -5,6 +5,20 @@
     if(isset($_POST['generate'])){ 
         //Execute MySQL
         $username = $_SESSION['session_username'];
+        //GET DATA FOR HEADER OF PDF
+        $query="SELECT * FROM users WHERE username = '$username'";
+        $result= $con->query($query);
+        while($rows= $result-> fetch_assoc())  
+        {       
+            $firstname = $rows['first_name'];
+            $middlename = $rows['middle_name'];
+            $lastname = $rows['last_name'];
+            $business_add = $rows['business_add'];
+            $business_name = $rows['business_name'];
+            $contact = $rows['contact_no'];
+        }
+
+        //SELECTION IN DAILY REPORT
         $query="SELECT * FROM daily_report LEFT JOIN machine_info ON daily_report.machine_id = machine_info.machine_id WHERE machine_info.username = '$username'";
 
         if(isset($_POST['search_id']) && $_POST['search_id'] != ''){
@@ -49,10 +63,36 @@
         
         $query = $query."ORDER BY date DESC";
         $result= $con->query($query);
-        
+
+        if($middlename != '' || $middlename == NULL){
+            $middlename.=".";
+        }
+        $fullname = $firstname." ".$middlename." ".$lastname;
         $content = '';  
-        $content .= '  
-        <h4 align="center">Coin Counter Report</h4><br /> 
+        $content .= '        
+        <table align="center" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td width="20%"></td>
+                <td align="center" width="60%" style="font-size: 20px;">'.$business_name.'</td>
+                <td width="20%"></td>
+            </tr>
+            <tr>
+                <td width="20%"></td>
+                <td align="center" width="60%" style="font-size: 8px;">'.$business_add.'</td>
+                <td width="20%"></td>
+            </tr>
+            <tr>
+                <td width="20%"></td>
+                <td align="center" width="60%" style="font-size: 8px;">'.$contact.'</td>
+                <td width="20%"></td>
+            </tr>
+            <tr>
+                <td width="40%" ><label for="">Name: </label><span>'.$fullname.'</span></td>
+                <td width="20%" ></td>
+                <td width="40%" ><label for="">Contact: </label><span>'.$contact.'</span></td>
+            </tr>
+        </table>
+        <h4 align="center">Coin Counter Report</h4><br/> 
         <table align="center" border="1" cellspacing="0" cellpadding="3">  
             <tr style="background-color:#2b7e7a; color:white">  
                 <th width="20%">Date</th>  
@@ -131,8 +171,9 @@
 
         //TCPDF SETTINGS
         include '../resources/lib/tcpdf/tcpdf.php';
+
         $obj_pdf = new TCPDF('P', PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);  
-        $obj_pdf->SetCreator(PDF_CREATOR);  
+        $obj_pdf->SetCreator(PDF_CREATOR);
         $obj_pdf->SetTitle("Coin Counter Report");  
         $obj_pdf->SetHeaderData('', '', PDF_HEADER_TITLE, PDF_HEADER_STRING);  
         $obj_pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));  
@@ -144,14 +185,14 @@
         $obj_pdf->setPrintFooter(false);  
         $obj_pdf->SetAutoPageBreak(TRUE, 10);  
         $obj_pdf->SetFont('helvetica', '', 11);  
+        $image_file = "../resources/images/GeekCoin.png";
         $obj_pdf->AddPage();
 
         $content .= '</table>';
 
         //TCPDF WRITE
-        header("Content-type:application/pdf");
         $obj_pdf->writeHTML($content);
-        exit($obj_pdf->Output('file.pdf', 'D'));
+        $obj_pdf->Output('file.pdf', 'I');
         //MPDF WRITE
         // $mpdf->WriteHTML($content);
         // $mpdf->Output('file.pdf','I');
