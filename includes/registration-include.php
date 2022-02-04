@@ -91,7 +91,7 @@
                 $valid++;
             }
             else{
-                $sql =  "INSERT INTO users (first_name, last_name, email, username, password, date_created) VALUES (?, ?, ?, ?, ?, ?)";
+                $sql =  "INSERT INTO users (first_name, last_name, email, username, password, date_created, vkey, verified) VALUES (?, ?, ?, ?, ?, ?, ?, 0)";
                 $stmt = mysqli_stmt_init($con);
                 if(!mysqli_stmt_prepare($stmt, $sql)){ 
                     $message = $message."SQLERROR3&";
@@ -104,8 +104,24 @@
                     }else{
                         $date = date('Y-m-d');
                         $hashed_pass = password_hash($password, PASSWORD_DEFAULT);
-                        mysqli_stmt_bind_param($stmt, "ssssss", $firstname, $lastname, $email, $username, $hashed_pass, $date);
+                        $vkey = password_hash(time().$username, PASSWORD_DEFAULT);
+                        mysqli_stmt_bind_param($stmt, "sssssss", $firstname, $lastname, $email, $username, $hashed_pass, $date, $vkey);
                         mysqli_stmt_execute($stmt);
+
+                        $url = "http://geekcoin.online/email-verify.php?vkey='$vkey'";
+
+                        $to = $email;
+                        $subject = "Verification of Email for Geek Coin";
+                        $message = '<p>Hello'.$firstname.', We are glad you signed up for Geek Coin. To activate your account, please confirm your email by clicking the link below.</p>';
+                        $message .= '<p>Link: </p>';
+                        $message .= '<a href="'.$url.'">'.$url.'</a>';
+
+                        $header = "From: Geekcoin <support@geekcoin.online>\r\n";
+                        $header .= "Reply-To: Geekcoin <support@geekcoin.online>\r\n";
+                        $header .= "Content-type: text/html\r\n";
+
+                        mail($to, $subject, $message, $header);
+
                         header("Location: ../index.php?signup=success");
                         exit();
                     }

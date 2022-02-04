@@ -41,7 +41,7 @@
                 </div>
                 <form class="form-col col-sm-12 col-md-10 col-lg-4 mx-auto" method="POST" action="includes/login-include.php">
                     <img class="logo-ccm row mb-4" src="resources/images/GeekCoin.png" alt="Coin Counter">
-
+                    <span id="email_error" style="margin: 1em;"><?php if(isset($_GET['email_error'])){ echo $_GET['email_error'];}?></span>
                     <div class="inputs row form-floating ">
                         <input type="text" class="form-control" id="floatingInput" name="username" placeholder="Username">
                         <label for="floatingInput">Username</label>

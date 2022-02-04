@@ -33,6 +33,10 @@ if(isset($_POST['submit'])){
                     header("Location: ../index.php?password_error=Wrong Password!");
                     exit();
                 }
+                else if($row["verified"] == 0){
+                    header("Location: ../index.php?email_error=Account is not verified! Please check your email.");
+                    exit();
+                }
                 else if($check_pass == true){
                     session_start();
                     $_SESSION['session_id'] = $row['user_id'];

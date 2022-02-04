@@ -37,7 +37,7 @@
     user-select: none;
 }
 
-#username_error, #password_error {
+#username_error, #password_error, #email_error{
     color: rgb(255, 128, 149);
 }
 
