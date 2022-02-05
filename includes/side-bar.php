@@ -4,7 +4,7 @@
 <div class="profile-side row mt-3">
     <a href="profile.php" id="profile-link">
         <?php 
-            if(isset($_SESSION['session_id'])/* && $_SESSION['session_category'] === 'user'*/){
+            if(isset($_SESSION['session_id']) && $_SESSION['session_category'] === 'user'){
                 include 'config.php';
                 $username = $_SESSION['session_username'];
                 $sql = "SELECT * FROM users WHERE username = '$username'";
@@ -74,7 +74,7 @@
         <div class="profile-collapse">
             <a href="profile.php" id="profile-link">
                 <?php 
-                    if(isset($_SESSION['session_id']) /*&& $_SESSION['session_category'] === 'user'*/){
+                    if(isset($_SESSION['session_id']) && $_SESSION['session_category'] === 'user'){
                         include 'config.php';
                         $username = $_SESSION['session_username'];
                         $sql = "SELECT * FROM users WHERE username = '$username'";

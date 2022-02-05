@@ -23,24 +23,32 @@
                 <div class="content">
                     <div class="content1">
                         <div class="dashboard-box row my-4 g-0 d-flex justify-content-around">
-                            <div class="analytic-cards card col-sm-5 col-md-5 col-lg-5 shadow">
+                            <div class="analytic-cards card col-sm-3 col-md-3 col-lg-3 shadow">
                                 <div class="card-body">
                                     <h4>Total Machines </h4>
                                     <hr>
-                                    <label for="">Registered Machines: <strong><?php echo getNumMachines($_SESSION['session_username']);?></strong></label>
+                                    <label for="">Registered Machines: <strong><?php echo getTotalMachines();?></strong></label>
                                 </div>
                             </div>
-                            <div class="analytic-cards card col-sm-5 col-md-5 col-lg-5 shadow">
+                            <div class="analytic-cards card col-sm-3 col-md-3 col-lg-3 shadow">
+                                <div class="card-body">
+                                    <h4>New Clients</h4>
+                                    <hr>
+                                    <label for="">Clients: <?php echo getAllUsers()?></label>
+                                </div>
+                            </div>
+                            <div class="analytic-cards card col-sm-3 col-md-3 col-lg-3 shadow">
                                 <div class="card-body">
                                     <h4>Total Clients</h4>
                                     <hr>
-                                    <label for="">Clients: <?php echo getIncomeToday($_SESSION['session_username'])?></label>
+                                    <label for="">Clients: <?php echo getAllUsers()?></label>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="machine-list col">
+                            <h4>Machine List</h4>
                             <table class="table table-striped table-hover table-bordered">
                                 <thead>
                                     <tr>
@@ -56,6 +64,9 @@
                                 </tbody>
                             </table>
                         </div>
+                    </div>
+                    <div class="row">
+                        <h4>Client List</h4>
                         <div class="client-list col">
                             <table class="table table-striped table-hover table-bordered">
                                 <thead>

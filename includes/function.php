@@ -18,9 +18,22 @@ function printTime(){
 
 //ADMIN FUNCTIONS
 //GET number of users
-function getAllUsers($owner){
+function getAllUsers(){
     require 'config.php';
-    $sql =  "SELECT * FROM machine_info";
+    $sql =  "SELECT * FROM users WHERE category = 'user'";
+    $stmt = mysqli_stmt_init($con);
+    if(!mysqli_stmt_prepare($stmt, $sql)){
+        echo 'error!';
+    }
+    else{
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_store_result($stmt);
+        return mysqli_stmt_num_rows($stmt);
+    }
+}
+function getTotalMachines(){
+    require 'config.php';
+    $sql = "SELECT * FROM machine_info";
     $stmt = mysqli_stmt_init($con);
     if(!mysqli_stmt_prepare($stmt, $sql)){
         echo 'error!';
