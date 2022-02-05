@@ -114,6 +114,26 @@ $(document).ready(function() {
             }
         });
     }).change();
+
+    //Admin DASHBOARD
+    
+    $('#machine_id_search').keyup(function(){
+        var id = $('#machine_id_search').val();
+        $('#machine-tbody').text('');
+        $('#machine-tbody').load('includes/admin-dashboard-include.php', {
+            machine_id: id,
+            machine_list: 1
+        });
+    });
+    $('#client_id_search').keyup(function(){
+        var id = $('#client_id_search').val();
+        console.log(id);
+        $('#client-tbody').text('');
+        $('#client-tbody').load('includes/admin-dashboard-include.php', {
+            username: id,
+            client_list: 1
+        });
+    });
     //Report Page
     $('#search_report').click(function(){
         var id = $('#list').val();

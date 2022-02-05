@@ -129,6 +129,10 @@ body{
     height: 30px;
     border-radius: 5px;
 }
+
+.machine-table, .client-table{
+	height: 30vh;
+}
 /*
 @media screen and (max-width: 950px) {
 	.graphs {

@@ -91,7 +91,7 @@
                 $valid++;
             }
             else{
-                $sql =  "INSERT INTO users (first_name, last_name, email, username, password, date_created, vkey, verified) VALUES (?, ?, ?, ?, ?, ?, ?, 0)";
+                $sql =  "INSERT INTO users (first_name, last_name, email, username, password, date_created, vkey, verified, category) VALUES (?, ?, ?, ?, ?, ?, ?, 0, 'user')";
                 $stmt = mysqli_stmt_init($con);
                 if(!mysqli_stmt_prepare($stmt, $sql)){ 
                     $message = $message."SQLERROR3&";

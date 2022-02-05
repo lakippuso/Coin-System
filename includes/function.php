@@ -31,6 +31,15 @@ function getAllUsers(){
         return mysqli_stmt_num_rows($stmt);
     }
 }
+function getNewUsers(){
+    require 'config.php';
+    
+    $m = date('m');
+    $y = date('Y');
+    $query = "SELECT * from users WHERE category = 'user' AND MONTH(date_created) = '$m' AND YEAR(date_created) = '$y'";
+    $result= $con->query($query);
+    echo $result -> num_rows;
+}
 function getTotalMachines(){
     require 'config.php';
     $sql = "SELECT * FROM machine_info";
