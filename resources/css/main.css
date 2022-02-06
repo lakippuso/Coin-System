@@ -130,8 +130,8 @@ body{
     border-radius: 5px;
 }
 
-.machine-table, .client-table{
-	height: 30vh;
+.machine-list, .client-list{
+	height: 40vh;
 }
 /*
 @media screen and (max-width: 950px) {
