@@ -67,6 +67,7 @@
         if($middlename != '' || $middlename == NULL){
             $middlename.=".";
         }
+        $date_now = date('m-d-Y');
         $fullname = $firstname." ".$middlename." ".$lastname;
         $content = '';  
         $content .= '        
@@ -89,7 +90,7 @@
             <tr>
                 <td width="40%" ><label for="">Name: </label><span>'.$fullname.'</span></td>
                 <td width="20%" ></td>
-                <td width="40%" ><label for="">Contact: </label><span>'.$contact.'</span></td>
+                <td width="40%" ><label for="">Date: </label><span>'.$date_now.'</span></td>
             </tr>
         </table>
         <h4 align="center">Coin Counter Report</h4><br/> 
