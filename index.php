@@ -45,15 +45,14 @@
                     <div class="inputs row form-floating ">
                         <input type="text" class="form-control" id="floatingInput" name="username" placeholder="Username">
                         <label for="floatingInput">Username</label>
-                        <span id="username_error" class="my-3"><?php if(isset($_GET['username_error'])){ echo $_GET['username_error'];}?></span>
                     </div>
+                    <span id="username_error" class="my-3"><?php if(isset($_GET['username_error'])){ echo $_GET['username_error'];}?></span>
                     <div class="inputs row form-floating">
                         <input type="password" class="login-pass form-control" id="floatingPassword" name="password" placeholder="Password">
                         <span class="material-icons" id="pass-visible">visibility_off</span>
                         <label for="floatingPassword">Password</label>
-                        <span id="password_error" style="margin-top: 1em;"><?php if(isset($_GET['password_error'])){ echo $_GET['password_error'];}?></span>
                     </div>
-
+                    <span id="password_error" style="margin-top: 1em;"><?php if(isset($_GET['password_error'])){ echo $_GET['password_error'];}?></span>
                     <div class="checkbox1 mb-3 d-flex justify-content-between">
                         <a href="forgot-email.php"><label class="a_forgot">Forgot Password?</label></a>
                     </div>
