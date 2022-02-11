@@ -22,7 +22,7 @@
         $query="SELECT * FROM daily_report LEFT JOIN machine_info ON daily_report.machine_id = machine_info.machine_id WHERE machine_info.username = '$username'";
 
         if(isset($_POST['search_id']) && $_POST['search_id'] != ''){
-            $search_id = implode(', ',$_POST['search_id']);
+            $search_id = implode("','",$_POST['search_id']);
             $search_id = "'".$search_id."'";
             if(!empty($search_id)){
                 if($search_id != "All Machines"){
@@ -70,7 +70,7 @@
         $date_now = date('m-d-Y');
         $fullname = $firstname." ".$middlename." ".$lastname;
         $content = '';  
-        $content .= '        
+        $content .= '       
         <table align="center" border="0" cellspacing="0" cellpadding="0">
             <tr>
                 <td width="20%"></td>
