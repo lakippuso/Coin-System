@@ -68,7 +68,7 @@
                                     <th scope="col"><?php echo $x ?></th>
                                     <th scope="col"><?php echo htmlspecialchars($rows['machine_name']); ?></th>
                                     <th scope="col"><?php echo htmlspecialchars($rows['machine_type']); ?></th>
-                                    <th scope="col"><?php echo htmlspecialchars($rows['income']); ?></th>
+                                    <th scope="col"><?php echo htmlspecialchars("₱ ".$rows['income']); ?></th>
                                     <th scope="col"><?php echo htmlspecialchars($rows['date_created']); ?></th>
                                     <th scope="col"style="text-align: center;">
                                         <span class="badge bg-primary rounded-pill"><button onclick="configuration(<?php echo $rows['machine_id'];?>);" style="background: None; border: None; color: white; width:4em;">Details</button></span>

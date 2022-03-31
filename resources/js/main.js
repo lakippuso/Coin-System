@@ -32,9 +32,9 @@ function configuration(id){
         $('#machine-config-id').val(data['id']);
         $('#machine-config-name').val(data['name']);
         $('#machine-config-type').val(data['type']);
-        $('#overall-income').val(data['total']);
-        $('#detail-daily-income').val(data['daily']);
-        $('#detail-monthly-income').val(data['monthly']);
+        $('#overall-income').val("₱ "+data['total']);
+        $('#detail-daily-income').val("₱ "+data['daily']);
+        $('#detail-monthly-income').val("₱ "+data['monthly']);
       });
 }
 //Chart in Dashboard
@@ -52,7 +52,10 @@ function getSelectedValue () {
                     console.log(data);
                     var values = JSON.parse(data);
                     console.log(values['sum']);
-                    document.getElementById("income_data").innerHTML = values['sum'];
+                    if(values['sum'] == null){
+                        values['sum'] = 0;
+                    }
+                    document.getElementById("income_data").innerHTML = "₱ "+values['sum'];
                 }
             })
         }
@@ -67,7 +70,10 @@ function getSelectedValue () {
                     console.log(data);
                     var values = JSON.parse(data);
                     console.log(values['sum']);
-                    document.getElementById("income_data").innerHTML = values['sum'];
+                    if(values['sum'] == null){
+                        values['sum'] = 0;
+                    }
+                    document.getElementById("income_data").innerHTML = "₱ "+values['sum'];
                 }
             })
         }
@@ -82,7 +88,10 @@ function getSelectedValue () {
                     console.log(data);
                     var values = JSON.parse(data);
                     console.log(values['sum']);
-                    document.getElementById("income_data").innerHTML = values['sum'];
+                    if(values['sum'] == null){
+                        values['sum'] = 0;
+                    }
+                    document.getElementById("income_data").innerHTML = "₱ "+values['sum'];
                 }
             })
         }

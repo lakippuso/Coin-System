@@ -34,7 +34,7 @@
                                 <div class="card-body">
                                     <h4>Daily Income</h4>
                                     <hr>
-                                    <label for="">Today's Income: <?php echo getIncomeToday($_SESSION['session_username'])?></label>
+                                    <label for="">Today's Income: ₱ <?php echo getIncomeToday($_SESSION['session_username'])?></label>
                                 </div>
                             </div>
                             <div class="cards analytic-cards card col-sm-3 col-md-3 col-lg-3 shadow">
