@@ -108,7 +108,7 @@
                         <th scope="col">'.$rows['date'].'</th>
                         <th scope="col">'.$rows['machine_id'].'</th>
                         <th scope="col">'.$rows['machine_name'].'</th>
-                        <th scope="col">'.$rows['day_income'].'</th>
+                        <th scope="col">₱ '.$rows['day_income'].'</th>
                     </tr>';  
         }
         
@@ -160,7 +160,7 @@
                         <th scope="col"></th>
                         <th scope="col"></th>
                         <th scope="col"></th>
-                        <th scope="col">Total Income: '.$rows['total'].'</th>
+                        <th scope="col">Total Income: ₱ '.$rows['total'].'</th>
                     </tr>';  
                 
         } 
@@ -266,7 +266,7 @@
             echo '    <th scope="col">'.$rows['machine_id'].'</th>';
             echo '    <th scope="col">'.$rows['machine_name'].'</th>';
             echo '    <th scope="col">'.$rows['date'].'</th>';
-            echo '    <th scope="col">'.$rows['day_income'].'</th>';
+            echo '    <th scope="col">₱ '.$rows['day_income'].'</th>';
             echo '</tr>';
             $i+=1;
         }
@@ -323,7 +323,7 @@
                     <th scope="col"></th>
                     <th scope="col"></th>
                     <th scope="col"></th>
-                    <th scope="col"><?php echo "Total Income: ".$rows['total']?></th>
+                    <th scope="col"><?php echo "Total Income:₱ ".$rows['total']?></th>
                 </tr>
         <?php
         }

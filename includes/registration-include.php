@@ -122,7 +122,7 @@
 
                         mail($to, $subject, $message, $header);
 
-                        header("Location: ../index.php?signup=success");
+                        header("Location: ../registration-message.php");
                         exit();
                     }
                 }

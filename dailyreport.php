@@ -145,7 +145,7 @@
                                             <th scope="col"><?php echo htmlspecialchars($rows['machine_id']); ?></th>
                                             <th scope="col"><?php echo htmlspecialchars($rows['machine_name']); ?></th>
                                             <th scope="col"><?php echo htmlspecialchars($rows['date']); ?></th>
-                                            <th scope="col"><?php echo htmlspecialchars($rows['day_income']); ?></th>
+                                            <th scope="col"><?php echo htmlspecialchars("₱ ".$rows['day_income']); ?></th>
                                         </tr>
                                 <?php
                                 

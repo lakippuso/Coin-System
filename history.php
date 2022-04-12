@@ -53,7 +53,7 @@
                                             if(isset($_GET['search_id'])){
                                                 $search_id = $_GET['search_id'];
                                                 if(!empty($search_id)){
-                                                    $sql = $sql."AND machine_id = '$search_id'";
+                                                    $sql = $sql."AND history.machine_id = '$search_id'";
                                                 }
                                             }
                                             $result = mysqli_query($con,$sql);
@@ -63,7 +63,7 @@
                                                 <th><input type="checkbox" class="cb_item" name="selected[]" value="<?php echo $rows['history_id'];?>"></th>
                                                 <th scope="col"><?php echo htmlspecialchars($rows['machine_name']);?></th>
                                                 <th scope="col"><?php echo htmlspecialchars($rows['machine_id']);?></th>
-                                                <th scope="col"><?php echo htmlspecialchars($rows['total_income']);?></th>
+                                                <th scope="col"><?php echo htmlspecialchars("₱ ".$rows['total_income']);?></th>
                                                 <th scope="col"><?php echo htmlspecialchars($rows['reset_date']);?></th>
                                     </tr>
                                                     

@@ -15,18 +15,18 @@
 
 
 // Hostinger
-date_default_timezone_set("Asia/Singapore");
-$host = "localhost";
-$db_user = "u244916412_geekcoin";
-$db_password = "!6OAGs4LXGBx";
-$db_name = "u244916412_coin_machine";
-
-// LOCAL
 // date_default_timezone_set("Asia/Singapore");
 // $host = "localhost";
-// $db_user = "root";
-// $db_password = "";
-// $db_name = "coin_machine_database";
+// $db_user = "u244916412_geekcoin";
+// $db_password = "!6OAGs4LXGBx";
+// $db_name = "u244916412_coin_machine";
+
+// LOCAL
+date_default_timezone_set("Asia/Singapore");
+$host = "localhost";
+$db_user = "root";
+$db_password = "";
+$db_name = "coin_machine_database";
 
 
 $con = mysqli_connect($host, $db_user, $db_password,$db_name);
