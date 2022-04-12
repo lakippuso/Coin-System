@@ -22,7 +22,9 @@
                     <div class="machine" id="daily">
                         <div class="search_label d-flex justify-content-between">
                             <label class="machine_label">Machine List</label>
-                            <div class="d-flex justfiy-content-between">
+                            <div class="d-flex justfiy-content-between">     
+
+                                <button class="add_machine" id="reset_machine" onclick="dialog()">Reset Machine</button>
                                 <button class="add_machine" id="open_add">Add Machine</button>
                                 <form method = "POST" action="machine.php" class="dropdown_graph">
                                     <input type="text" name="search" placeholder="Search Name" value="<?php echo (isset($_POST['search']))? $_POST['search']: null;?>">
@@ -35,6 +37,7 @@
                         <table class="table table-striped table-hover table-bordered">
                             <thead>
                                 <tr>
+                                    <th scope="col"><input type="checkbox" class="select_all_items"></th>
                                     <th scope="col">No.</th>
                                     <th class="col-lg-3">Machine Name</th>
                                     <th class="col-lg-2">Machine Type</th>
@@ -65,6 +68,7 @@
 
                                     ?>
                                 <tr>
+                                    <th scope="col"><input type="checkbox" class="cb_item" name="machine_select" value = "<?php echo htmlspecialchars($rows['machine_id']); ?>"></th>
                                     <th scope="col"><?php echo $x ?></th>
                                     <th scope="col"><?php echo htmlspecialchars($rows['machine_name']); ?></th>
                                     <th scope="col"><?php echo htmlspecialchars($rows['machine_type']); ?></th>
@@ -72,7 +76,6 @@
                                     <th scope="col"><?php echo htmlspecialchars($rows['date_created']); ?></th>
                                     <th scope="col"style="text-align: center;">
                                         <span class="badge bg-primary rounded-pill"><button onclick="configuration(<?php echo $rows['machine_id'];?>);" style="background: None; border: None; color: white; width:4em;">Details</button></span>
-                                        <span class="badge bg-primary rounded-pill"><button onclick="dialog(<?php echo $rows['machine_id'];?>)" style="background: None; border: None; color: white; width:4em;">Reset</button></span>            
                                     </th>
                                 </tr>
                                 
@@ -88,7 +91,7 @@
         </div>
         
         <!-- Dialog Box Reset -->
-        <div class="dialog_bg <?php echo $rows['machine_id'];?>">
+        <div class="dialog_bg">
             <div class="dialog_box">
                 <div class="dialog">
                     <div class="title">
